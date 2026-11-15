@@ -21,7 +21,7 @@ export const en = {
   searchTypePlaceholder: 'Search QR code types...',
 
   // QR Types
-  typeUrl: 'Link / URL',
+  typeUrl: 'Website / Link',
   typeText: 'Text',
   typeImage: 'Image',
   typePdf: 'PDF',
@@ -30,11 +30,11 @@ export const en = {
   typeWifi: 'Wi-Fi',
   typePhone: 'X (Twitter)',
   typeMultiurl: 'Video',
-  typeEmail: 'Email Message',
-  typeVcard: 'Digital Business Card',
+  typeEmail: 'Email',
+  typeVcard: 'vCard Contact',
   typeWhatsapp: 'WhatsApp',
-  typeSms: 'SMS Text',
-  typeEvent: 'Calendar Event',
+  typeSms: 'SMS',
+  typeEvent: 'Event Calendar',
 
   // Step 2
   step2Title: 'Enter Content',

@@ -55,10 +55,10 @@ export const BlogPostPage: React.FC = () => {
         {/* Meta badges & Title */}
         <div className="space-y-3 mb-6">
           <div className="flex items-center gap-2">
-            <span className="text-[11px] font-bold text-purple-700 bg-purple-50 px-3 py-0.5 rounded-full border border-purple-200">
+            <span className="text-xs font-bold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
               {post.category}
             </span>
-            <div className="flex items-center gap-1 text-xs text-slate-400">
+            <div className="flex items-center gap-1 text-xs text-slate-500">
               <Clock size={13} /><span>{post.readingTime}</span>
             </div>
           </div>
@@ -85,13 +85,13 @@ export const BlogPostPage: React.FC = () => {
             <BookOpen size={15} className="text-purple-600" />
             <span>Mục lục bài viết</span>
           </div>
-          <ul className="space-y-1.5 text-xs text-slate-600">
+          <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
             {post.sections.map((sec, i) => (
-              <li key={i} className="flex items-center gap-2 hover:text-purple-600">
-                <span className="w-4 h-4 rounded-full bg-purple-50 text-purple-700 text-[10px] font-bold flex items-center justify-center shrink-0">
+              <li key={i} className="flex items-center gap-2.5 hover:text-purple-600 transition-colors">
+                <span className="w-5 h-5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold flex items-center justify-center shrink-0 border border-purple-200">
                   {i + 1}
                 </span>
-                <a href={`#sec-${i}`} className="hover:underline">{sec.heading}</a>
+                <a href={`#sec-${i}`} className="hover:underline font-medium">{sec.heading}</a>
               </li>
             ))}
           </ul>
@@ -150,9 +150,9 @@ export const BlogPostPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {relatedPosts.map((rel) => (
               <Link key={rel.id} to={`/blog/${rel.slug}`} className="bg-white rounded-xl border border-slate-200 p-4 hover:border-purple-300 transition-all group shadow-2xs">
-                <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">{rel.category}</span>
+                <span className="text-xs font-bold text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full">{rel.category}</span>
                 <h4 className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-purple-600 mt-2 line-clamp-2 leading-snug">{rel.title}</h4>
-                <div className="flex items-center gap-1 text-[11px] text-slate-400 mt-2"><Clock size={11} /><span>{rel.readingTime}</span></div>
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-2"><Clock size={12} /><span>{rel.readingTime}</span></div>
               </Link>
             ))}
           </div>

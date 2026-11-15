@@ -117,20 +117,20 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
             <canvas ref={previewRef} className="w-[190px] h-[190px] object-contain" />
           </QrFrameWrapper>
         </div>
-        <button type="button" onClick={handleCopy} className="absolute top-2.5 right-2.5 flex items-center gap-1 text-[11px] text-purple-600 font-semibold hover:underline cursor-pointer bg-white/90 px-2 py-1 rounded-md border border-slate-200/60 shadow-2xs">
-          {copied ? <Check size={12} className="text-emerald-600" /> : <Copy size={12} />}<span>{copied ? t('copied') : t('copy')}</span>
+        <button type="button" onClick={handleCopy} className="absolute top-2.5 right-2.5 flex items-center gap-1.5 text-xs text-purple-700 font-semibold hover:bg-purple-50 cursor-pointer bg-white px-2.5 py-1.5 rounded-lg border border-slate-200/80 shadow-2xs transition-colors">
+          {copied ? <Check size={13} className="text-emerald-600" /> : <Copy size={13} />}<span>{copied ? t('copied') : t('copy')}</span>
         </button>
       </div>
 
-      <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border ${scannability.isScannable ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
-        <CheckCircle2 size={15} className={scannability.isScannable ? 'text-emerald-600 shrink-0' : 'text-amber-600 shrink-0'} />
+      <div className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold border ${scannability.isScannable ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
+        <CheckCircle2 size={16} className={scannability.isScannable ? 'text-emerald-600 shrink-0' : 'text-amber-600 shrink-0'} />
         <span>{scannability.isScannable ? t('qrGreatScannable') : t('contrastWarning')}</span>
-        {!scannability.isScannable && onAutoFix && <button type="button" onClick={onAutoFix} className="ml-auto text-[10px] font-bold text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded cursor-pointer">{t('autoFix')}</button>}
+        {!scannability.isScannable && onAutoFix && <button type="button" onClick={onAutoFix} className="ml-auto text-xs font-bold text-amber-800 bg-amber-100 hover:bg-amber-200 px-2 py-0.5 rounded-md cursor-pointer transition-colors">{t('autoFix')}</button>}
       </div>
 
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="block text-[11px] font-medium text-slate-600 mb-1">{t('format')}</label>
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">{t('format')}</label>
           <div className="relative">
             <select value={format} onChange={(e) => setFormat(e.target.value as 'png' | 'svg' | 'pdf')} className="w-full appearance-none px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 cursor-pointer focus:outline-none focus:border-purple-500">
               <option value="png">PNG</option><option value="svg">SVG</option><option value="pdf">PDF</option>
@@ -139,7 +139,7 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
           </div>
         </div>
         <div>
-          <label className="block text-[11px] font-medium text-slate-600 mb-1">{t('size')}</label>
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">{t('size')}</label>
           <div className="relative">
             <select value={size} onChange={(e) => setSize(parseInt(e.target.value, 10))} className="w-full appearance-none px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 cursor-pointer focus:outline-none focus:border-purple-500">
               <option value="500">500x500 px</option><option value="1000">1000x1000 px</option><option value="2000">2000x2000 px</option>
@@ -153,13 +153,13 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
         {isExporting ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} strokeWidth={2.2} />}<span>{isExporting ? t('generating') : t('downloadBtn')}</span>
       </button>
 
-      <p className="text-[10px] text-slate-500 text-center leading-relaxed px-1">
+      <p className="text-[11px] text-slate-500 text-center leading-relaxed px-1">
         {t('termsDisclaimerPrefix')} <span className="text-[#9333EA] underline cursor-pointer font-medium">{t('termsAndConditions')}</span>. {t('termsDisclaimerSuffix')}
       </p>
 
       <div className="text-center pt-0.5">
         <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9333EA] hover:text-purple-700 transition-colors cursor-pointer">
-          <Printer size={13} /><span>{t('printQr')}</span><span className="bg-purple-100 text-[#9333EA] text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase">{t('badgeNew')}</span>
+          <Printer size={14} /><span>{t('printQr')}</span><span className="bg-purple-100 text-[#9333EA] text-[10px] font-extrabold px-1.5 py-0.5 rounded-full uppercase">{t('badgeNew')}</span>
         </button>
       </div>
     </div>

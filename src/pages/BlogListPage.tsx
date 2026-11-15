@@ -123,21 +123,21 @@ export const BlogListPage: React.FC = () => {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-white/20">
+                  <span className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20">
                     {post.category}
                   </span>
                 </Link>
 
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-3 text-[11px] text-slate-400 mb-2.5">
+                    <div className="flex items-center gap-3 text-xs text-slate-500 mb-2.5">
                       <div className="flex items-center gap-1">
-                        <Calendar size={12} />
+                        <Calendar size={13} />
                         <span>{post.publishedAt}</span>
                       </div>
                       <span>•</span>
                       <div className="flex items-center gap-1">
-                        <Clock size={12} />
+                        <Clock size={13} />
                         <span>{post.readingTime}</span>
                       </div>
                     </div>
@@ -146,14 +146,14 @@ export const BlogListPage: React.FC = () => {
                       <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
 
-                    <p className="text-xs text-slate-500 mt-2.5 line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed">
                       {post.description}
                     </p>
                   </div>
 
                   <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[11px] font-medium text-slate-500">
-                      Bởi <strong className="text-slate-700">{post.author}</strong>
+                    <span className="text-xs font-medium text-slate-600">
+                      Bởi <strong className="text-slate-800">{post.author}</strong>
                     </span>
                     <Link
                       to={`/blog/${post.slug}`}

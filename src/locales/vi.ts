@@ -21,7 +21,7 @@ export const vi = {
   searchTypePlaceholder: 'Tìm kiếm loại mã QR...',
 
   // QR Types
-  typeUrl: 'Liên kết / URL',
+  typeUrl: 'Website / Link',
   typeText: 'Văn bản',
   typeImage: 'Hình ảnh',
   typePdf: 'PDF',
@@ -30,11 +30,11 @@ export const vi = {
   typeWifi: 'Wi-Fi',
   typePhone: 'X (Twitter)',
   typeMultiurl: 'Video',
-  typeEmail: 'Thư điện tử',
-  typeVcard: 'Danh thiếp số',
+  typeEmail: 'Email',
+  typeVcard: 'Danh thiếp vCard',
   typeWhatsapp: 'WhatsApp',
   typeSms: 'Tin nhắn SMS',
-  typeEvent: 'Sự kiện lịch',
+  typeEvent: 'Sự kiện Lịch',
 
   // Step 2
   step2Title: 'Thêm nội dung',

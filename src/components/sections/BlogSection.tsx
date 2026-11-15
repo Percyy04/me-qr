@@ -45,14 +45,14 @@ export const BlogSection: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
-                  <span className="absolute top-3 left-3 text-[10px] font-bold text-purple-700 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full border border-purple-100 shadow-xs">
+                  <span className="absolute top-3 left-3 text-xs font-bold text-purple-700 bg-white/95 backdrop-blur-xs px-3 py-1 rounded-full border border-purple-100 shadow-xs">
                     {post.category}
                   </span>
                 </Link>
 
                 <div className="p-4 sm:p-5">
-                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mb-2">
-                    <Clock size={12} />
+                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                    <Clock size={13} />
                     <span>{post.readingTime}</span>
                     <span>•</span>
                     <span>{post.publishedAt}</span>
@@ -63,14 +63,14 @@ export const BlogSection: React.FC = () => {
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
                     {post.description}
                   </p>
                 </div>
               </div>
 
               <div className="p-4 sm:p-5 pt-0 mt-auto border-t border-slate-100 flex items-center justify-between">
-                <span className="text-[11px] text-slate-400 font-medium">Bởi {post.author}</span>
+                <span className="text-xs text-slate-500 font-medium">Bởi {post.author}</span>
                 <Link
                   to={`/blog/${post.slug}`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-purple-600 hover:text-purple-700 group-hover:translate-x-0.5 transition-transform"

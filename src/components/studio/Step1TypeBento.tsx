@@ -71,7 +71,7 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
                 <div className={`transition-transform ${isActive ? 'scale-105 text-[#9333EA]' : 'text-slate-600'}`}>
                   {item.icon}
                 </div>
-                <span className="text-[10px] sm:text-[11px] text-center leading-tight truncate w-full px-0.5">
+                <span className="text-[11px] sm:text-xs text-center leading-tight truncate w-full px-0.5">
                   {item.label}
                 </span>
               </button>

@@ -29,30 +29,38 @@ export const StudioHeader: React.FC = () => {
     <header className="bg-surface-card border-b border-border-subtle sticky top-0 z-40 px-4 sm:px-8 py-3 shadow-xs">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo & Version Pill */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <Link to="/" className="flex items-center gap-2 hover:opacity-95 transition-opacity">
             <Logo size="md" />
           </Link>
-          <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-indigo-tint text-primary-container border border-indigo-200">
+          <span className="text-[11px] uppercase font-bold px-2.5 py-0.5 rounded-full bg-indigo-tint text-primary-container border border-indigo-200">
             {t('proBadge')}
           </span>
         </div>
 
         {/* Center Nav Links */}
-        <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600">
-          <Link to="/" className="hover:text-purple-600 transition-colors">
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+          <Link to="/" className="hover:text-purple-600 transition-colors py-1">
             {language === 'en' ? 'Studio' : 'Tạo mã QR'}
           </Link>
-          <Link to="/blog" className="hover:text-purple-600 transition-colors">
+          <Link to="/blog" className="hover:text-purple-600 transition-colors py-1">
             {language === 'en' ? 'Blog & Guides' : 'Cẩm nang QR'}
           </Link>
-          <a href="/#faq" className="hover:text-purple-600 transition-colors">
+          <a href="/#faq" className="hover:text-purple-600 transition-colors py-1">
             {language === 'en' ? 'FAQ' : 'Hỏi đáp'}
           </a>
         </nav>
 
         {/* Right Badges & Language Selector */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Quick Blog Link for Mobile */}
+          <Link
+            to="/blog"
+            className="flex lg:hidden items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-lg text-purple-700 bg-purple-50 hover:bg-purple-100 transition-colors"
+          >
+            <span>{language === 'en' ? 'Guides' : 'Cẩm nang'}</span>
+          </Link>
+
           {/* Privacy Pill */}
           <div className="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
             <ShieldCheck size={14} />
