@@ -93,7 +93,7 @@ export const en = {
   tabFrame: 'Frame',
   tabShape: 'Shape',
   tabLogoShort: 'Logo',
-  tabLevel: 'Level',
+  tabLevel: 'Color',
   resetBtn: 'Reset',
   presetsLabel: 'Presets:',
   presetMinimal: 'Minimal',

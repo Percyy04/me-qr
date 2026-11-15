@@ -93,7 +93,7 @@ export const vi = {
   tabFrame: 'Khung',
   tabShape: 'Hình dạng',
   tabLogoShort: 'Logo',
-  tabLevel: 'Cấp độ',
+  tabLevel: 'Màu sắc',
   resetBtn: 'Đặt lại',
   presetsLabel: 'Mẫu gợi ý:',
   presetMinimal: 'Tối giản',

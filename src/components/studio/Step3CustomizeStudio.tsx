@@ -43,7 +43,7 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
   };
 
   const tabs: TabKey[] = styleMode === 'logo'
-    ? ['logo', 'patterns', 'colors']
+    ? ['logo', 'colors']
     : ['frames', 'patterns', 'logo', 'colors'];
 
   const tabLabels: Record<TabKey, string> = {
@@ -134,7 +134,7 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
         </button>
       </div>
 
-      {/* Sub-Tabs: Logo, Hình dạng, Cấp độ (+ Khung in classic) */}
+      {/* Sub-Tabs: Logo, Màu sắc (in logo mode) or Khung, Hình dạng, Logo, Màu sắc (in classic) */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-4">
         <div className="flex items-center gap-1 sm:gap-2">
           {tabs.map((tabKey) => {
@@ -166,7 +166,7 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
         </button>
       </div>
 
-      {/* Tab Panels: Cấp độ renders ColorTab (Màu sắc) */}
+      {/* Tab Panels */}
       <div>
         {activeTab === 'frames' && <FrameTab design={design} onChange={onChange} />}
         {activeTab === 'patterns' && <PatternEyeTab design={design} onChange={onChange} />}
