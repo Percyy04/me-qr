@@ -1,73 +1,8 @@
-import jsPDF from 'jspdf';
 import QRCodeStyling, { Options } from 'qr-code-styling';
+import { drawClassicCenterLogo } from './classicLogoHelper';
+import { exportPNG, exportSVG, exportPDF, copyCanvasToClipboard } from './fileDownloader';
 
-function triggerDownload(url: string, filename: string) {
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-export function exportPNG(canvas: HTMLCanvasElement, filename = 'quickqr-code.png') {
-  canvas.toBlob((blob) => {
-    if (!blob) return;
-    const url = URL.createObjectURL(blob);
-    triggerDownload(url, filename);
-    URL.revokeObjectURL(url);
-  }, 'image/png');
-}
-
-export function exportSVG(svgElementOrString: string | SVGElement, filename = 'quickqr-code.svg') {
-  const content = typeof svgElementOrString === 'string'
-    ? svgElementOrString
-    : new XMLSerializer().serializeToString(svgElementOrString);
-  const blob = new Blob([content], { type: 'image/svg+xml;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  triggerDownload(url, filename);
-  URL.revokeObjectURL(url);
-}
-
-export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<boolean> {
-  return new Promise((resolve) => {
-    if (!navigator.clipboard || typeof ClipboardItem === 'undefined') return resolve(false);
-    canvas.toBlob(async (blob) => {
-      if (!blob) return resolve(false);
-      try {
-        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-        resolve(true);
-      } catch {
-        resolve(false);
-      }
-    }, 'image/png');
-  });
-}
-
-export function exportPDF(canvas: HTMLCanvasElement, filename = 'quickqr-document.pdf') {
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-  const pw = doc.internal.pageSize.getWidth();
-  const ph = doc.internal.pageSize.getHeight();
-  const imgData = canvas.toDataURL('image/png');
-  const imgW = 140;
-  const imgH = (canvas.height / canvas.width) * imgW;
-  const x = (pw - imgW) / 2;
-  const y = (ph - imgH) / 2;
-
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(22);
-  doc.setTextColor(79, 70, 229);
-  doc.text('QUICKQR STUDIO PRO', pw / 2, y - 18, { align: 'center' });
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(10);
-  doc.setTextColor(100, 116, 139);
-  doc.text('Scan with your smartphone camera', pw / 2, y - 8, { align: 'center' });
-  doc.addImage(imgData, 'PNG', x, y, imgW, imgH);
-  doc.setFontSize(9);
-  doc.setTextColor(148, 163, 184);
-  doc.text('Created with QuickQR Studio (100% Client-Side)', pw / 2, y + imgH + 16, { align: 'center' });
-  doc.save(filename);
-}
+export { exportPNG, exportSVG, exportPDF, copyCanvasToClipboard };
 
 async function getQrCanvas(qr: QRCodeStyling): Promise<HTMLCanvasElement | null> {
   try {
@@ -84,12 +19,20 @@ async function getQrCanvas(qr: QRCodeStyling): Promise<HTMLCanvasElement | null>
 export async function renderHighResCanvas(
   frameEl: HTMLElement | null,
   optionsBuilder: (size: number) => Options,
-  size: number
+  size: number,
+  logoImg?: HTMLImageElement | null,
+  logoScale?: number,
+  bgColor?: string
 ): Promise<HTMLCanvasElement | null> {
   const targetQrSize = size || 1000;
   const qr = new QRCodeStyling(optionsBuilder(targetQrSize));
   const qrCanvas = await getQrCanvas(qr);
   if (!qrCanvas) return null;
+
+  if (logoImg) {
+    const ctx = qrCanvas.getContext('2d');
+    if (ctx) drawClassicCenterLogo(ctx, logoImg, targetQrSize, logoScale, bgColor);
+  }
 
   const svg = frameEl?.querySelector('svg');
   if (!svg) return qrCanvas;
@@ -143,9 +86,12 @@ export async function exportHighResPNG(
   frameEl: HTMLElement | null,
   optionsBuilder: (size: number) => Options,
   size: number,
-  filename = 'quickqr-code.png'
+  filename = 'quickqr-code.png',
+  logoImg?: HTMLImageElement | null,
+  logoScale?: number,
+  bgColor?: string
 ) {
-  const canvas = await renderHighResCanvas(frameEl, optionsBuilder, size);
+  const canvas = await renderHighResCanvas(frameEl, optionsBuilder, size, logoImg, logoScale, bgColor);
   if (canvas) exportPNG(canvas, filename);
 }
 
@@ -153,7 +99,10 @@ export async function exportHighResSVG(
   frameEl: HTMLElement | null,
   optionsBuilder: (size: number) => Options,
   size: number,
-  filename = 'quickqr-vector.svg'
+  filename = 'quickqr-vector.svg',
+  logoUrl?: string | null,
+  logoScale?: number,
+  bgColor?: string
 ) {
   const targetQrSize = size || 1000;
   const qr = new QRCodeStyling(optionsBuilder(targetQrSize));
@@ -177,10 +126,38 @@ export async function exportHighResSVG(
   nested.setAttribute('height', '200');
   nested.setAttribute('viewBox', `0 0 ${targetQrSize} ${targetQrSize}`);
   Array.from(qrDoc.documentElement.childNodes).forEach((n) => nested.appendChild(n.cloneNode(true)));
+
+  if (logoUrl) {
+    const safeScale = Math.min(Math.max(logoScale || 0.24, 0.15), 0.32);
+    const logoW = Math.round(targetQrSize * safeScale);
+    const padding = Math.max(4, Math.round(logoW * 0.12));
+    const badgeSize = logoW + padding * 2;
+    const bx = Math.round((targetQrSize - badgeSize) / 2);
+    const by = bx;
+    const lx = bx + padding;
+    const ly = lx;
+    const radius = Math.round(badgeSize * 0.22);
+
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', String(bx));
+    rect.setAttribute('y', String(by));
+    rect.setAttribute('width', String(badgeSize));
+    rect.setAttribute('height', String(badgeSize));
+    rect.setAttribute('rx', String(radius));
+    rect.setAttribute('fill', bgColor || '#FFFFFF');
+    rect.setAttribute('stroke', 'rgba(0,0,0,0.08)');
+    rect.setAttribute('stroke-width', '2');
+    nested.appendChild(rect);
+
+    const img = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+    img.setAttribute('x', String(lx));
+    img.setAttribute('y', String(ly));
+    img.setAttribute('width', String(logoW));
+    img.setAttribute('height', String(logoW));
+    img.setAttribute('href', logoUrl);
+    nested.appendChild(img);
+  }
+
   clone.appendChild(nested);
   exportSVG(new XMLSerializer().serializeToString(clone), filename);
-}
-
-export function exportFramedPNG(_frameEl: HTMLElement | null, fallbackCanvas: HTMLCanvasElement, filename = 'quickqr-code.png') {
-  exportPNG(fallbackCanvas, filename);
 }

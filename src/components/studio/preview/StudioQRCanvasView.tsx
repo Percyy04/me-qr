@@ -9,6 +9,7 @@ import {
 import {
   exportHighResPNG, exportHighResSVG, renderHighResCanvas, exportPDF, copyCanvasToClipboard,
 } from '../../../utils/exportHelper';
+import { drawClassicCenterLogo } from '../../../utils/classicLogoHelper';
 import { ENV } from '../../../config/env';
 import { useScannability } from '../../../hooks/useScannability';
 import { useLanguage } from '../../../context/LanguageContext';
@@ -54,8 +55,6 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
     cornersSquareOptions: { type: design.cornersSquare.type, color: design.cornersSquare.customColor ? design.cornersSquare.color : design.dots.color },
     cornersDotOptions: { type: design.cornersDot.type, color: design.cornersDot.customColor ? design.cornersDot.color : design.dots.color },
     backgroundOptions: { color: design.background.isTransparent ? 'rgba(0,0,0,0)' : design.background.color },
-    image: design.logo.url || undefined,
-    imageOptions: { hideBackgroundDots: design.logo.hideBackgroundDots, imageSize: design.logo.size, margin: design.logo.margin, crossOrigin: 'anonymous' },
     qrOptions: { errorCorrectionLevel: design.errorCorrectionLevel || (design.logo.url ? 'H' : 'Q') },
   });
 
@@ -79,7 +78,13 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
       const raw = hiddenRef.current?.querySelector('canvas');
       if (raw && previewRef.current) {
         previewRef.current.width = raw.width; previewRef.current.height = raw.height;
-        previewRef.current.getContext('2d')?.drawImage(raw, 0, 0);
+        const ctx = previewRef.current.getContext('2d');
+        if (ctx) {
+          ctx.drawImage(raw, 0, 0);
+          if (design.logo.url && logoImg) {
+            drawClassicCenterLogo(ctx, logoImg, raw.width, design.logo.size || 0.24, design.background.color);
+          }
+        }
       }
     }, 40);
     return () => clearTimeout(timer);
@@ -95,9 +100,11 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
         else if (format === 'svg') exportHalftoneSVG(matrix, logoImg, opt, 'halftone-qr.svg');
         else { const c = document.createElement('canvas'); renderHalftoneQRToCanvas(c, matrix, logoImg, opt); exportPDF(c, 'halftone-qr.pdf'); }
       } else {
-        if (format === 'png') await exportHighResPNG(frameRef.current, buildOptions, size, 'quickqr-code.png');
-        else if (format === 'pdf') { const c = await renderHighResCanvas(frameRef.current, buildOptions, size); if (c) exportPDF(c, 'quickqr-document.pdf'); }
-        else if (format === 'svg') await exportHighResSVG(frameRef.current, buildOptions, size, 'quickqr-vector.svg');
+        const logoScale = design.logo.size || 0.24;
+        const bg = design.background.color || '#FFFFFF';
+        if (format === 'png') await exportHighResPNG(frameRef.current, buildOptions, size, 'quickqr-code.png', logoImg, logoScale, bg);
+        else if (format === 'pdf') { const c = await renderHighResCanvas(frameRef.current, buildOptions, size, logoImg, logoScale, bg); if (c) exportPDF(c, 'quickqr-document.pdf'); }
+        else if (format === 'svg') await exportHighResSVG(frameRef.current, buildOptions, size, 'quickqr-vector.svg', design.logo.url, logoScale, bg);
       }
     } finally { setIsExporting(false); }
   };

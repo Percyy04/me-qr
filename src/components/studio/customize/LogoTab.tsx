@@ -12,7 +12,14 @@ interface LogoTabProps {
 export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
   const { t } = useLanguage();
   const logo = design.logo;
-  const currentScale = logo.size >= 0.4 ? logo.size : 0.75;
+  const isLogoMode = design.mode === 'logo';
+
+  const minScale = isLogoMode ? 0.5 : 0.16;
+  const maxScale = isLogoMode ? 0.85 : 0.32;
+  const stepScale = isLogoMode ? 0.02 : 0.01;
+  const currentScale = isLogoMode
+    ? (logo.size >= 0.4 ? logo.size : 0.75)
+    : (logo.size <= 0.35 && logo.size >= 0.15 ? logo.size : 0.24);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -30,9 +37,16 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
 
   return (
     <div className="space-y-4 pt-1">
-      <h4 className="text-sm font-bold text-slate-800">Logo</h4>
+      <div className="flex items-center justify-between">
+        <h4 className="text-sm font-bold text-slate-800">
+          {isLogoMode ? 'Biểu trưng Halftone (LogoQR)' : 'Logo ở tâm mã QR (Cổ điển)'}
+        </h4>
+        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+          {isLogoMode ? 'Halftone Dithering' : 'Center Badge (Level H)'}
+        </span>
+      </div>
 
-      {/* Upload Button matching ME-QR */}
+      {/* Upload Button */}
       <label className="w-full py-2.5 px-4 rounded-xl border border-purple-400 bg-white hover:bg-purple-50 text-purple-600 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-2xs">
         <Upload size={15} />
         <span>{t('uploadLogoBtn')}</span>
@@ -46,15 +60,19 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
 
       {/* Info Callout */}
       <div className="flex items-start gap-1.5 text-[11px] text-slate-500 leading-snug">
-        <Info size={14} className="text-slate-400 shrink-0 mt-0.5" />
-        <span>{t('uploadLogoFormatsHelp')}</span>
+        <Info size={14} className="text-purple-600 shrink-0 mt-0.5" />
+        <span>
+          {isLogoMode
+            ? 'Chế độ LogoQR Halftone phủ biểu trưng chìm/nổi lên toàn bộ ma trận hạt QR nghệ thuật.'
+            : 'Mã QR Cổ điển đặt logo gọn gàng ở tâm kèm badge bảo vệ, tự động nâng mức sửa lỗi H (30%) đảm bảo quét 100% không bị che khuất.'}
+        </span>
       </div>
 
-      {/* Slider: Kích Thước Biểu Trưng (0.4 to 0.85) */}
+      {/* Slider: Kích Thước Biểu Trưng */}
       <div className="flex items-center justify-between gap-4 pt-1">
         <div className="flex items-center gap-2">
           <label className="text-xs font-semibold text-slate-700 shrink-0">
-            {t('logoSizeLabel')}
+            {isLogoMode ? 'Kích thước Halftone' : t('logoSizeLabel')}
           </label>
           <span className="text-[11px] font-mono font-bold text-purple-600">
             {Math.round(currentScale * 100)}%
@@ -62,9 +80,9 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
         </div>
         <input
           type="range"
-          min="0.4"
-          max="0.85"
-          step="0.02"
+          min={minScale}
+          max={maxScale}
+          step={stepScale}
           value={currentScale}
           onChange={(e) =>
             onChange({
@@ -72,11 +90,11 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
               logo: { ...logo, size: parseFloat(e.target.value) },
             })
           }
-          className="w-full max-w-[200px] h-1.5 bg-purple-100 rounded-lg appearance-none cursor-pointer accent-[#9333EA]"
+          className="w-full max-w-[180px] h-1.5 bg-purple-100 rounded-lg appearance-none cursor-pointer accent-[#9333EA]"
         />
       </div>
 
-      {/* Preset Icons Row matching ME-QR screenshot */}
+      {/* Preset Icons Row matching ME-QR */}
       <div className="flex items-center gap-2 overflow-x-auto py-1">
         <button
           type="button"
@@ -114,13 +132,6 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
             </button>
           );
         })}
-
-        <button
-          type="button"
-          className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl border border-slate-200 bg-white hover:border-slate-300 flex items-center justify-center shrink-0 text-xs font-bold text-slate-700 cursor-pointer"
-        >
-          +64
-        </button>
       </div>
     </div>
   );

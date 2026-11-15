@@ -39,7 +39,14 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
       });
     } else {
       setActiveTab('frames');
-      onChange({ ...design, mode: 'classic' });
+      onChange({
+        ...design,
+        mode: 'classic',
+        logo: {
+          ...design.logo,
+          size: design.logo.size <= 0.35 && design.logo.size >= 0.15 ? design.logo.size : 0.24,
+        },
+      });
     }
   };
 
