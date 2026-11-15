@@ -34,9 +34,10 @@ export const LogoQrCustomizer: React.FC<Props> = ({ payload }) => {
     renderHalftoneQRToCanvas(canvasRef.current, matrixData, mode === 'logo' ? imgElement : null, {
       size: 400,
       logoScale,
-      dotScale: 0.36,
+      dotScale: 0.44,
       darkColor: '#000000',
       lightColor: '#ffffff',
+      margin: 3,
     });
   }, [payload, mode, logoScale, imgElement]);
 
@@ -54,7 +55,8 @@ export const LogoQrCustomizer: React.FC<Props> = ({ payload }) => {
     exportHalftonePNG(matrixData, mode === 'logo' ? imgElement : null, {
       size: resolution,
       logoScale,
-      dotScale: 0.36,
+      dotScale: 0.44,
+      margin: 3,
     }, 'halftone-logo-qr.png');
   };
 
@@ -63,7 +65,8 @@ export const LogoQrCustomizer: React.FC<Props> = ({ payload }) => {
     exportHalftoneSVG(matrixData, mode === 'logo' ? imgElement : null, {
       size: resolution,
       logoScale,
-      dotScale: 0.36,
+      dotScale: 0.44,
+      margin: 3,
     }, 'halftone-logo-qr.svg');
   };
 
