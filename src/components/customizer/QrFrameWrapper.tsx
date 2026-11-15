@@ -21,7 +21,13 @@ export const QrFrameWrapper: React.FC<QrFrameWrapperProps> = ({
   const frame = getFrameById(frameId);
 
   if (!frame || frameId === 'NONE' || frameId === 'none') {
-    return <div className="w-full flex items-center justify-center">{children}</div>;
+    return (
+      <div className="w-full flex items-center justify-center py-1">
+        <div className="p-2.5 bg-white rounded-2xl shadow-xs border border-slate-200/60 flex items-center justify-center">
+          {children}
+        </div>
+      </div>
+    );
   }
 
   return (

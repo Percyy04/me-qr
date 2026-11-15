@@ -118,15 +118,28 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
   return (
     <div className="space-y-3.5">
       <div ref={hiddenRef} className="hidden" />
-      <div className="bg-slate-50/70 rounded-xl p-3 border border-slate-200/80 flex flex-col items-center justify-center relative shadow-2xs">
+      <div className="bg-slate-50/80 rounded-2xl p-4 border border-slate-200/80 flex flex-col items-center shadow-2xs">
+        {/* Top Action Toolbar (Separated to prevent any overlap with QR code) */}
+        <div className="flex items-center justify-between w-full mb-3 px-1">
+          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+            {t('previewTitle') || 'Xem trước mã QR'}
+          </span>
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="flex items-center gap-1.5 text-xs text-purple-700 font-semibold hover:bg-purple-50 cursor-pointer bg-white px-2.5 py-1.5 rounded-lg border border-slate-200/80 shadow-2xs transition-colors"
+          >
+            {copied ? <Check size={13} className="text-emerald-600" /> : <Copy size={13} />}
+            <span>{copied ? t('copied') : t('copy')}</span>
+          </button>
+        </div>
+
+        {/* QR Frame Container */}
         <div ref={frameRef} className="w-full max-w-[240px] flex flex-col items-center">
           <QrFrameWrapper frameId={isHalftone ? 'none' : design.frame.id} labelText={design.frame.text} primaryColor={design.frame.frameColor || design.dots.color} secondaryColor={design.cornersDot.color || '#10B981'} bgColor={design.background.color}>
-            <canvas ref={previewRef} className="w-[190px] h-[190px] object-contain" />
+            <canvas ref={previewRef} className="w-[190px] h-[190px] object-contain block rounded-lg" />
           </QrFrameWrapper>
         </div>
-        <button type="button" onClick={handleCopy} className="absolute top-2.5 right-2.5 flex items-center gap-1.5 text-xs text-purple-700 font-semibold hover:bg-purple-50 cursor-pointer bg-white px-2.5 py-1.5 rounded-lg border border-slate-200/80 shadow-2xs transition-colors">
-          {copied ? <Check size={13} className="text-emerald-600" /> : <Copy size={13} />}<span>{copied ? t('copied') : t('copy')}</span>
-        </button>
       </div>
 
       <div className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold border ${scannability.isScannable ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>

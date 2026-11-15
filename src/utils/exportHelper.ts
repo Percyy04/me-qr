@@ -128,15 +128,15 @@ export async function exportHighResSVG(
   Array.from(qrDoc.documentElement.childNodes).forEach((n) => nested.appendChild(n.cloneNode(true)));
 
   if (logoUrl) {
-    const safeScale = Math.min(Math.max(logoScale || 0.24, 0.15), 0.32);
+    const safeScale = Math.min(Math.max(logoScale || 0.22, 0.15), 0.30);
     const logoW = Math.round(targetQrSize * safeScale);
-    const padding = Math.max(4, Math.round(logoW * 0.12));
+    const padding = Math.max(3, Math.round(logoW * 0.08));
     const badgeSize = logoW + padding * 2;
     const bx = Math.round((targetQrSize - badgeSize) / 2);
     const by = bx;
     const lx = bx + padding;
     const ly = lx;
-    const radius = Math.round(badgeSize * 0.22);
+    const radius = Math.round(badgeSize * 0.24);
 
     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     rect.setAttribute('x', String(bx));

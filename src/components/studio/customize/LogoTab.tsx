@@ -15,11 +15,11 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
   const isLogoMode = design.mode === 'logo';
 
   const minScale = isLogoMode ? 0.5 : 0.16;
-  const maxScale = isLogoMode ? 0.85 : 0.32;
+  const maxScale = isLogoMode ? 0.85 : 0.30;
   const stepScale = isLogoMode ? 0.02 : 0.01;
   const currentScale = isLogoMode
     ? (logo.size >= 0.4 ? logo.size : 0.75)
-    : (logo.size <= 0.35 && logo.size >= 0.15 ? logo.size : 0.24);
+    : (logo.size <= 0.32 && logo.size >= 0.15 ? logo.size : 0.22);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
