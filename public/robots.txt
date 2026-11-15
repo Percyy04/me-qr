@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://quickqr.io/sitemap.xml
+Sitemap: https://quickqr-murex.vercel.app/sitemap.xml
