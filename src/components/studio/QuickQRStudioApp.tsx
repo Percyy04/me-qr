@@ -14,14 +14,6 @@ const INITIAL_INPUTS: QRInputs = {
   utmMedium: 'print',
   utmCampaign: 'launch-2026',
   conditionalRouting: false,
-  file: {
-    name: 'Catalog-Spring-2026.pdf',
-    size: '4.2 MB',
-    type: 'application/pdf',
-    title: 'Spring Collection 2026',
-    description: 'Explore the newest design catalog and seasonal texture materials.',
-    ctaText: 'Download PDF Catalog',
-  },
   wifi: {
     ssid: 'Studio_Coffee_5G',
     password: 'SuperSecretPassword',

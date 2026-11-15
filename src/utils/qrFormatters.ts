@@ -97,13 +97,6 @@ export function formatQRPayload(type: QRType, inputs: QRInputs): string {
       return `tel:${ph}`;
     }
 
-    case 'pdf':
-    case 'image':
-    case 'audio':
-    case 'pptx': {
-      return inputs.file?.url || inputs.url || `https://quickqr.io/landing/${type}`;
-    }
-
     case 'app':
     case 'multiurl':
     case 'social':

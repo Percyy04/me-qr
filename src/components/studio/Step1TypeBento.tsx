@@ -4,8 +4,8 @@ import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { AllTypesModal } from './AllTypesModal';
 import { useLanguage } from '../../context/LanguageContext';
 import {
-  Link, AlignLeft, Image as ImageIcon, FileText,
-  MapPin, Wifi, Video, Sparkles
+  Link, AlignLeft, User, MessageCircle,
+  MapPin, Wifi, Mail, Sparkles
 } from 'lucide-react';
 
 interface Step1Props {
@@ -32,13 +32,13 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
   const primaryItems = [
     { id: 'url' as QRType, label: t('typeUrl'), icon: <Link size={20} strokeWidth={2.2} /> },
     { id: 'text' as QRType, label: t('typeText'), icon: <AlignLeft size={20} strokeWidth={2.2} /> },
-    { id: 'image' as QRType, label: t('typeImage'), icon: <ImageIcon size={20} strokeWidth={2.2} /> },
-    { id: 'pdf' as QRType, label: t('typePdf'), icon: <FileText size={20} strokeWidth={2.2} /> },
+    { id: 'vcard' as QRType, label: t('typeVcard'), icon: <User size={20} strokeWidth={2.2} /> },
+    { id: 'wifi' as QRType, label: t('typeWifi'), icon: <Wifi size={20} strokeWidth={2.2} /> },
+    { id: 'whatsapp' as QRType, label: t('typeWhatsapp'), icon: <MessageCircle size={20} strokeWidth={2.2} /> },
     { id: 'social' as QRType, label: 'Facebook', icon: <FacebookIcon /> },
     { id: 'map' as QRType, label: t('typeMap'), icon: <MapPin size={20} strokeWidth={2.2} /> },
-    { id: 'wifi' as QRType, label: t('typeWifi'), icon: <Wifi size={20} strokeWidth={2.2} /> },
     { id: 'phone' as QRType, label: 'X (Twitter)', icon: <XTwitterIcon /> },
-    { id: 'multiurl' as QRType, label: 'Video', icon: <Video size={20} strokeWidth={2.2} /> },
+    { id: 'email' as QRType, label: t('typeEmail'), icon: <Mail size={20} strokeWidth={2.2} /> },
   ];
 
   const isSelectedInPrimary = primaryItems.some((item) => item.id === selectedType);

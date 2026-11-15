@@ -4,9 +4,8 @@ import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { Logo } from '../common/Logo';
 import { useLanguage } from '../../context/LanguageContext';
 import {
-  X, Search, Check, Link, FileText, User, Wifi, MessageCircle,
-  Image, Smartphone, Share2, MapPin, Type, Music, Calendar, Mail,
-  Phone, Globe, Presentation, Sparkles
+  X, Search, Check, Link, User, Wifi, MessageCircle,
+  MapPin, Type, Calendar, Mail, Phone, Globe, Sparkles
 } from 'lucide-react';
 
 interface AllTypesModalProps {
@@ -18,21 +17,15 @@ interface AllTypesModalProps {
 
 const ICONS: Record<string, React.ReactNode> = {
   url: <Link size={18} />,
-  pdf: <FileText size={18} />,
+  text: <Type size={18} />,
   vcard: <User size={18} />,
   wifi: <Wifi size={18} />,
   whatsapp: <MessageCircle size={18} />,
-  image: <Image size={18} />,
-  app: <Smartphone size={18} />,
-  multiurl: <Share2 size={18} />,
+  social: <Globe size={18} />,
   map: <MapPin size={18} />,
-  text: <Type size={18} />,
-  audio: <Music size={18} />,
   event: <Calendar size={18} />,
   email: <Mail size={18} />,
   phone: <Phone size={18} />,
-  social: <Globe size={18} />,
-  pptx: <Presentation size={18} />,
 };
 
 export const AllTypesModal: React.FC<AllTypesModalProps> = ({

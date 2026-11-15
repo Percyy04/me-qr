@@ -1,7 +1,6 @@
 import React from 'react';
 import { QRInputs, QRType, getFormVariant } from '../../types/qr.types';
 import { FormALinkRouting } from './forms/FormALinkRouting';
-import { FormBFileMedia } from './forms/FormBFileMedia';
 import { FormCVCard } from './forms/FormCVCard';
 import { FormDWifiWhatsApp } from './forms/FormDWifiWhatsApp';
 import { useLanguage } from '../../context/LanguageContext';
@@ -20,8 +19,6 @@ export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChan
     switch (variant) {
       case 'form-a':
         return <FormALinkRouting inputs={inputs} onChange={onChange} />;
-      case 'form-b':
-        return <FormBFileMedia inputs={inputs} onChange={onChange} />;
       case 'form-c':
         return <FormCVCard inputs={inputs} onChange={onChange} />;
       case 'form-d':
@@ -34,8 +31,6 @@ export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChan
     switch (variant) {
       case 'form-a':
         return t('step2UrlDesc');
-      case 'form-b':
-        return t('step2FileDesc');
       case 'form-c':
         return t('step2VcardDesc');
       case 'form-d':

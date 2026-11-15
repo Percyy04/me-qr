@@ -1,6 +1,6 @@
 import React from 'react';
 import { QRInputs, QRType, getFormVariant } from '../../../types/qr.types';
-import { Globe, FileText, User, Wifi, MessageCircle, Phone, Mail, ExternalLink, Download, UserPlus, CheckCircle } from 'lucide-react';
+import { Globe, FileText, User, Wifi, MessageCircle, Phone, Mail, ExternalLink, UserPlus, CheckCircle } from 'lucide-react';
 
 interface StudioMobilePageViewProps {
   type: QRType;
@@ -47,29 +47,6 @@ export const StudioMobilePageView: React.FC<StudioMobilePageViewProps> = ({ type
                   <span>Truy cập trang đích</span>
                   <ExternalLink size={12} />
                 </a>
-              </div>
-            )}
-
-            {variant === 'form-b' && (
-              <div className="space-y-3 text-center">
-                <div className="w-12 h-12 mx-auto rounded-2xl bg-rose-500 text-white flex items-center justify-center shadow-md">
-                  <FileText size={24} />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-slate-900">{inputs.file?.title || 'Spring Catalog 2026'}</h4>
-                  <p className="text-[10px] text-slate-500 mt-0.5">{inputs.file?.description || 'Tài liệu hướng dẫn trực tuyến'}</p>
-                </div>
-                <div className="p-2 bg-white rounded-xl border border-border-subtle text-left flex items-center gap-2">
-                  <div className="w-8 h-8 rounded bg-rose-100 text-rose-600 flex items-center justify-center text-xs font-bold">PDF</div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[10px] font-bold text-slate-800 truncate">{inputs.file?.name || 'document.pdf'}</p>
-                    <span className="text-[9px] text-slate-400">{inputs.file?.size || '4.2 MB'}</span>
-                  </div>
-                </div>
-                <button type="button" className="w-full py-2.5 px-3 rounded-xl bg-secondary-cta text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow">
-                  <Download size={14} />
-                  <span>{inputs.file?.ctaText || 'Tải tệp tài liệu'}</span>
-                </button>
               </div>
             )}
 

@@ -17,7 +17,7 @@ export type QRType =
   | 'pptx'
   | 'sms';
 
-export type FormVariant = 'form-a' | 'form-b' | 'form-c' | 'form-d';
+export type FormVariant = 'form-a' | 'form-c' | 'form-d';
 
 export function getFormVariant(type: QRType): FormVariant {
   switch (type) {
@@ -27,11 +27,6 @@ export function getFormVariant(type: QRType): FormVariant {
     case 'social':
     case 'map':
       return 'form-a';
-    case 'pdf':
-    case 'image':
-    case 'audio':
-    case 'pptx':
-      return 'form-b';
     case 'vcard':
       return 'form-c';
     case 'wifi':
@@ -67,15 +62,6 @@ export interface QRInputs {
   iosUrl?: string;
   androidUrl?: string;
   conditionalRouting?: boolean;
-  file?: {
-    name: string;
-    size: string;
-    type: string;
-    url?: string;
-    title: string;
-    description: string;
-    ctaText: string;
-  };
   wifi: {
     ssid: string;
     password: string;
