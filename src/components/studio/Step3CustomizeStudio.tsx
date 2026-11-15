@@ -4,6 +4,7 @@ import { FrameTab } from './customize/FrameTab';
 import { PatternEyeTab } from './customize/PatternEyeTab';
 import { ColorTab } from './customize/ColorTab';
 import { LogoTab } from './customize/LogoTab';
+import { PRESET_LOGOS } from '../../data/presetLogos';
 import { useLanguage } from '../../context/LanguageContext';
 import { Sparkles, Paintbrush } from 'lucide-react';
 
@@ -24,9 +25,26 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
     setStyleMode(mode);
     if (mode === 'logo') {
       setActiveTab('logo');
+      const insta = PRESET_LOGOS.find((l) => l.id === 'instagram');
+      onChange({
+        ...design,
+        frame: { ...design.frame, id: 'none' },
+        logo: { ...design.logo, url: design.logo.url || (insta ? insta.dataUrl : null) },
+      });
     } else {
       setActiveTab('frames');
     }
+  };
+
+  const tabs: TabKey[] = styleMode === 'logo'
+    ? ['logo', 'patterns', 'colors']
+    : ['frames', 'patterns', 'logo', 'colors'];
+
+  const tabLabels: Record<TabKey, string> = {
+    frames: t('tabFrame'),
+    patterns: t('tabShape'),
+    logo: t('tabLogoShort'),
+    colors: t('tabLevel'),
   };
 
   return (
@@ -43,18 +61,19 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
 
       {/* Two Large Style Cards: Classic QR vs Logo QR */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
-        {/* Left Card: QR cổ điển */}
         <button
           type="button"
           onClick={() => handleSelectMode('classic')}
-          className={`p-3.5 rounded-xl border flex items-center justify-between text-left transition-all cursor-pointer ${styleMode === 'classic'
+          className={`p-3.5 rounded-xl border flex items-center justify-between text-left transition-all cursor-pointer ${
+            styleMode === 'classic'
               ? 'bg-[#F5E7F8] border-[#E9D5FF] shadow-xs'
               : 'bg-[#F8FAFC] border-slate-200 hover:border-purple-200'
-            }`}
+          }`}
         >
           <div className="flex items-center gap-2.5">
-            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${styleMode === 'classic' ? 'border-[#9333EA]' : 'border-slate-300'
-              }`}>
+            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+              styleMode === 'classic' ? 'border-[#9333EA]' : 'border-slate-300'
+            }`}>
               {styleMode === 'classic' && <span className="w-2 h-2 rounded-full bg-[#9333EA]" />}
             </span>
             <span className="text-xs sm:text-sm font-bold text-slate-800">
@@ -62,7 +81,6 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
             </span>
           </div>
 
-          {/* 3 Mini Classic QR Thumbnails */}
           <div className="flex items-center gap-1.5 opacity-90">
             <div className="w-5 h-5 rounded border border-cyan-400 bg-cyan-50 flex items-center justify-center">
               <span className="w-2.5 h-2.5 bg-cyan-600 rounded-xs" />
@@ -76,15 +94,15 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
           </div>
         </button>
 
-        {/* Right Card: Logo QR with Gradient & Badges */}
         <button
           type="button"
           onClick={() => handleSelectMode('logo')}
           className="p-3.5 rounded-xl bg-gradient-to-r from-[#3B0764] via-[#7E22CE] to-[#E11D48] text-white flex items-center justify-between text-left transition-all shadow-xs hover:opacity-95 cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${styleMode === 'logo' ? 'border-white' : 'border-white/60'
-              }`}>
+            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+              styleMode === 'logo' ? 'border-white' : 'border-white/60'
+            }`}>
               {styleMode === 'logo' && <span className="w-2 h-2 rounded-full bg-white" />}
             </span>
             <span className="text-xs sm:text-sm font-bold flex items-center gap-1.5">
@@ -96,7 +114,6 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
             </span>
           </div>
 
-          {/* 3 Brand Logos (Starbucks, Burger King, UPS) */}
           <div className="flex items-center gap-1 shrink-0">
             <div className="w-5 h-5 rounded-full bg-[#00704A] border border-white/40 flex items-center justify-center text-[8px] font-black text-white">
               S
@@ -111,34 +128,28 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
         </button>
       </div>
 
-      {/* Sub-Tabs Bar: Khung, Hình dạng, Logo, Cấp độ + Đặt lại */}
+      {/* Sub-Tabs: Logo, Hình dạng, Cấp độ (+ Khung in classic) */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-4">
         <div className="flex items-center gap-1 sm:gap-2">
-          {(['frames', 'patterns', 'logo', 'colors'] as const).map((tabKey) => {
-            const labels: Record<TabKey, string> = {
-              frames: t('tabFrame'),
-              patterns: t('tabShape'),
-              logo: t('tabLogoShort'),
-              colors: t('tabLevel'),
-            };
+          {tabs.map((tabKey) => {
             const isActive = activeTab === tabKey;
             return (
               <button
                 key={tabKey}
                 type="button"
                 onClick={() => setActiveTab(tabKey)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${isActive
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  isActive
                     ? 'bg-[#F5E7F8] text-[#9333EA]'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
+                }`}
               >
-                {labels[tabKey]}
+                {tabLabels[tabKey]}
               </button>
             );
           })}
         </div>
 
-        {/* Reset Button */}
         <button
           type="button"
           onClick={onReset}
@@ -149,7 +160,7 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
         </button>
       </div>
 
-      {/* Active Tab Panel */}
+      {/* Tab Panels: Cấp độ renders ColorTab (Màu sắc) */}
       <div>
         {activeTab === 'frames' && <FrameTab design={design} onChange={onChange} />}
         {activeTab === 'patterns' && <PatternEyeTab design={design} onChange={onChange} />}

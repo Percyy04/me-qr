@@ -2,7 +2,7 @@ import React from 'react';
 import { QRDesign } from '../../../types/qr.types';
 import { PRESET_LOGOS } from '../../../data/presetLogos';
 import { useLanguage } from '../../../context/LanguageContext';
-import { UploadCloud, Trash2 } from 'lucide-react';
+import { Upload, X, Info } from 'lucide-react';
 
 interface LogoTabProps {
   design: QRDesign;
@@ -29,130 +29,91 @@ export const LogoTab: React.FC<LogoTabProps> = ({ design, onChange }) => {
 
   return (
     <div className="space-y-4 pt-1">
-      {/* Preset Brand Logos */}
-      <div>
-        <label className="block text-xs font-bold text-slate-text-strong mb-2">
-          {t('presetLogosTitle')}
-        </label>
-        <div className="grid grid-cols-4 sm:grid-cols-6 gap-2">
-          {/* None button */}
-          <button
-            type="button"
-            onClick={() =>
-              onChange({
-                ...design,
-                logo: { ...logo, url: null },
-              })
-            }
-            className={`p-2 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer ${
-              !logo.url
-                ? 'border-primary-container bg-indigo-tint/50 text-primary-container font-bold ring-1 ring-primary-container/20'
-                : 'border-border-subtle bg-white hover:border-slate-300 text-slate-500'
-            }`}
-          >
-            <span className="text-xs font-mono">{t('frameNone')}</span>
-          </button>
+      <h4 className="text-sm font-bold text-slate-800">Logo</h4>
 
-          {PRESET_LOGOS.map((item) => {
-            const isSelected = logo.url === item.dataUrl;
-            return (
-              <button
-                key={item.id}
-                type="button"
-                title={item.name}
-                aria-label={`Logo ${item.name}`}
-                onClick={() =>
-                  onChange({
-                    ...design,
-                    logo: { ...logo, url: item.dataUrl },
-                  })
-                }
-                className={`p-2 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container ${
-                  isSelected
-                    ? 'border-primary-container bg-indigo-tint/50 ring-2 ring-primary-container/20 shadow-xs'
-                    : 'border-border-subtle bg-white hover:border-slate-300'
-                }`}
-              >
-                <img src={item.dataUrl} alt={item.name} className="w-5 h-5 object-contain" />
-              </button>
-            );
-          })}
-        </div>
+      {/* Upload Button matching ME-QR */}
+      <label className="w-full py-2.5 px-4 rounded-xl border border-purple-400 bg-white hover:bg-purple-50 text-purple-600 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-2xs">
+        <Upload size={15} />
+        <span>{t('uploadLogoBtn')}</span>
+        <input
+          type="file"
+          accept=".svg,.png,.jpg,.jpeg"
+          className="hidden"
+          onChange={handleFileUpload}
+        />
+      </label>
+
+      {/* Info Callout */}
+      <div className="flex items-start gap-1.5 text-[11px] text-slate-500 leading-snug">
+        <Info size={14} className="text-slate-400 shrink-0 mt-0.5" />
+        <span>{t('uploadLogoFormatsHelp')}</span>
       </div>
 
-      {/* Custom Upload Dropzone */}
-      <div className="pt-2 border-t border-border-subtle">
-        <label className="block text-xs font-bold text-slate-text-strong mb-1.5">
-          {t('uploadCustomLogo')}
+      {/* Slider: Kích Thước Biểu Trưng */}
+      <div className="flex items-center justify-between gap-4 pt-1">
+        <label className="text-xs font-semibold text-slate-700 shrink-0">
+          {t('logoSizeLabel')}
         </label>
+        <input
+          type="range"
+          min="0.15"
+          max="0.45"
+          step="0.02"
+          value={logo.size}
+          onChange={(e) =>
+            onChange({
+              ...design,
+              logo: { ...logo, size: parseFloat(e.target.value) },
+            })
+          }
+          className="w-full max-w-[200px] h-1.5 bg-purple-100 rounded-lg appearance-none cursor-pointer accent-[#9333EA]"
+        />
+      </div>
 
-        {logo.url ? (
-          <div className="p-3 bg-canvas-bg rounded-xl border border-border-subtle flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-white border border-border-subtle p-1 flex items-center justify-center">
-                <img src={logo.url} alt="Custom Logo" className="w-full h-full object-contain" />
-              </div>
-              <span className="text-xs font-semibold text-slate-700">{t('logoActiveLabel')}</span>
-            </div>
+      {/* Preset Icons Row matching ME-QR screenshot */}
+      <div className="flex items-center gap-2 overflow-x-auto py-1">
+        {/* None / Remove (✕) */}
+        <button
+          type="button"
+          onClick={() => onChange({ ...design, logo: { ...logo, url: null } })}
+          className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl border flex items-center justify-center shrink-0 cursor-pointer transition-all ${
+            !logo.url
+              ? 'border-[#9333EA] ring-2 ring-purple-100 bg-purple-50/20'
+              : 'border-slate-200 bg-white hover:border-slate-300'
+          }`}
+          title={t('logoNone')}
+        >
+          <X size={18} className="text-slate-500" />
+        </button>
+
+        {/* Preset logos: YouTube, Facebook, WhatsApp, Instagram, LinkedIn, Telegram */}
+        {PRESET_LOGOS.map((item) => {
+          const isSelected = logo.url === item.dataUrl;
+          return (
             <button
+              key={item.id}
               type="button"
-              onClick={() => onChange({ ...design, logo: { ...logo, url: null } })}
-              className="text-slate-400 hover:text-rose-500 p-1 cursor-pointer"
-              title={t('removeLogo')}
+              title={item.name}
+              onClick={() => onChange({ ...design, logo: { ...logo, url: item.dataUrl } })}
+              className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl border p-2 flex items-center justify-center shrink-0 cursor-pointer transition-all ${
+                isSelected
+                  ? 'border-[#9333EA] ring-2 ring-purple-100 bg-purple-50/20 shadow-xs'
+                  : 'border-slate-200 bg-white hover:border-slate-300'
+              }`}
             >
-              <Trash2 size={16} />
+              <img src={item.dataUrl} alt={item.name} className="w-6 h-6 object-contain" />
             </button>
-          </div>
-        ) : (
-          <label className="border-2 border-dashed border-slate-300 hover:border-primary-container rounded-xl p-4 text-center cursor-pointer block bg-canvas-bg/50 transition-colors">
-            <UploadCloud size={20} className="mx-auto text-primary-container mb-1" />
-            <span className="text-xs font-semibold text-slate-700 block">{t('logoDropPrompt')}</span>
-            <span className="text-[10px] text-slate-400">{t('logoDropSubtext')}</span>
-            <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
-          </label>
-        )}
+          );
+        })}
+
+        {/* +64 Badge Button */}
+        <button
+          type="button"
+          className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl border border-slate-200 bg-white hover:border-slate-300 flex items-center justify-center shrink-0 text-xs font-bold text-slate-700 cursor-pointer"
+        >
+          +64
+        </button>
       </div>
-
-      {/* Logo Tuning Sliders */}
-      {logo.url && (
-        <div className="p-3 bg-canvas-bg rounded-xl border border-border-subtle space-y-3">
-          <div>
-            <div className="flex justify-between text-[11px] text-slate-600 mb-1">
-              <span>{t('logoSize')}</span>
-              <span className="font-mono">{Math.round((logo.size || 0.3) * 100)}%</span>
-            </div>
-            <input
-              type="range"
-              min="0.15"
-              max="0.4"
-              step="0.01"
-              value={logo.size || 0.3}
-              onChange={(e) =>
-                onChange({
-                  ...design,
-                  logo: { ...logo, size: parseFloat(e.target.value) },
-                })
-              }
-              className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-container"
-            />
-          </div>
-
-          <div className="flex items-center justify-between pt-1">
-            <span className="text-xs text-slate-700 font-medium">{t('logoRemoveDots')}</span>
-            <input
-              type="checkbox"
-              checked={logo.hideBackgroundDots}
-              onChange={(e) =>
-                onChange({
-                  ...design,
-                  logo: { ...logo, hideBackgroundDots: e.target.checked },
-                })
-              }
-              className="w-4 h-4 rounded text-primary-container accent-primary-container cursor-pointer"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
