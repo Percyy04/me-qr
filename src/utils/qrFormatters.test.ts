@@ -113,12 +113,12 @@ describe('QR Payload Formatters - Core & Edge Cases', () => {
 });
 
 describe('Design Presets Integrity', () => {
-  it('has 10 valid preset logos with SVG data URLs', () => {
+  it('has valid preset logos from public/logo or SVG data URLs', () => {
     expect(PRESET_LOGOS.length).toBeGreaterThanOrEqual(8);
     PRESET_LOGOS.forEach((logo) => {
       expect(logo.id).toBeTruthy();
       expect(logo.name).toBeTruthy();
-      expect(logo.dataUrl.startsWith('data:image/svg+xml;utf8,')).toBe(true);
+      expect(logo.dataUrl.startsWith('data:image/') || logo.dataUrl.startsWith('/logo/')).toBe(true);
     });
   });
 

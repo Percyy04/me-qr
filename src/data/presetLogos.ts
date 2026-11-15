@@ -4,54 +4,29 @@ export interface PresetLogo {
   dataUrl: string;
 }
 
-function toDataUrl(svg: string): string {
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-}
-
 export const PRESET_LOGOS: PresetLogo[] = [
-  {
-    id: 'youtube',
-    name: 'YouTube',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`),
-  },
-  {
-    id: 'facebook',
-    name: 'Facebook',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>`),
-  },
-  {
-    id: 'whatsapp',
-    name: 'WhatsApp',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>`),
-  },
-  {
-    id: 'instagram',
-    name: 'Instagram',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><radialGradient id="rg" cx="10%" cy="100%" r="140%"><stop offset="0%" stop-color="#FEC379"/><stop offset="30%" stop-color="#E4405F"/><stop offset="60%" stop-color="#C13584"/><stop offset="100%" stop-color="#833AB4"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#rg)"/><rect x="4.5" y="4.5" width="15" height="15" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><circle cx="16.5" cy="7.5" r="1.1" fill="#FFFFFF"/></svg>`),
-  },
-  {
-    id: 'linkedin',
-    name: 'LinkedIn',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>`),
-  },
-  {
-    id: 'telegram',
-    name: 'Telegram',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#24A1DE"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.536-.196 1.006.128.832.943z"/></svg>`),
-  },
-  {
-    id: 'twitter',
-    name: 'X (Twitter)',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`),
-  },
-  {
-    id: 'tiktok',
-    name: 'TikTok',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>`),
-  },
-  {
-    id: 'spotify',
-    name: 'Spotify',
-    dataUrl: toDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>`),
-  },
+  { id: 'youtube', name: 'YouTube', dataUrl: '/logo/imgi_19_default.webp' },
+  { id: 'facebook', name: 'Facebook', dataUrl: '/logo/imgi_20_default.webp' },
+  { id: 'whatsapp', name: 'WhatsApp', dataUrl: '/logo/imgi_21_default.webp' },
+  { id: 'instagram', name: 'Instagram', dataUrl: '/logo/imgi_22_default.webp' },
+  { id: 'linkedin', name: 'LinkedIn', dataUrl: '/logo/imgi_23_default.webp' },
+  { id: 'telegram', name: 'Telegram', dataUrl: '/logo/imgi_24_default.webp' },
+  { id: 'twitter', name: 'X (Twitter)', dataUrl: '/logo/imgi_174_default.webp' },
+  { id: 'messenger', name: 'Messenger', dataUrl: '/logo/imgi_175_default.webp' },
+  { id: 'tiktok', name: 'TikTok', dataUrl: '/logo/imgi_176_default.webp' },
+  { id: 'snapchat', name: 'Snapchat', dataUrl: '/logo/imgi_177_default.webp' },
+  { id: 'skype', name: 'Skype', dataUrl: '/logo/imgi_178_default.webp' },
+  { id: 'spotify', name: 'Spotify', dataUrl: '/logo/imgi_179_default.webp' },
+  { id: 'pinterest', name: 'Pinterest', dataUrl: '/logo/imgi_180_default.webp' },
+  { id: 'dribbble', name: 'Dribbble', dataUrl: '/logo/imgi_181_default.webp' },
+  { id: 'behance', name: 'Behance', dataUrl: '/logo/imgi_182_default.webp' },
+  { id: 'google', name: 'Google', dataUrl: '/logo/imgi_183_default.webp' },
+  { id: 'twitch', name: 'Twitch', dataUrl: '/logo/imgi_184_default.webp' },
+  { id: 'slack', name: 'Slack', dataUrl: '/logo/imgi_185_default.webp' },
+  { id: 'xbox', name: 'Xbox', dataUrl: '/logo/imgi_186_default.webp' },
+  { id: 'dropbox', name: 'Dropbox', dataUrl: '/logo/imgi_187_default.webp' },
+  { id: 'reddit', name: 'Reddit', dataUrl: '/logo/imgi_188_default.webp' },
+  { id: 'vimeo', name: 'Vimeo', dataUrl: '/logo/imgi_189_default.webp' },
+  { id: 'github', name: 'GitHub', dataUrl: '/logo/imgi_190_default.webp' },
+  { id: 'apple', name: 'Apple', dataUrl: '/logo/imgi_191_default.webp' },
 ];
