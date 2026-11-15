@@ -12,13 +12,10 @@ dist
 dist-ssr
 *.tsbuildinfo
 
-# Environment & local overrides
-.env.local
-.env.*.local
+# Environment files
+.env
+.env.*
 *.local
-!.env.example
-!.env.development
-!.env.production
 
 # Editor directories and files
 .vscode/*
