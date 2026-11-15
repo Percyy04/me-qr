@@ -25,14 +25,20 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
     setStyleMode(mode);
     if (mode === 'logo') {
       setActiveTab('logo');
-      const insta = PRESET_LOGOS.find((l) => l.id === 'instagram');
+      const fb = PRESET_LOGOS.find((l) => l.id === 'facebook') || PRESET_LOGOS[0];
       onChange({
         ...design,
+        mode: 'logo',
         frame: { ...design.frame, id: 'none' },
-        logo: { ...design.logo, url: design.logo.url || (insta ? insta.dataUrl : null) },
+        logo: {
+          ...design.logo,
+          url: design.logo.url || fb.dataUrl,
+          size: design.logo.size >= 0.4 ? design.logo.size : 0.75,
+        },
       });
     } else {
       setActiveTab('frames');
+      onChange({ ...design, mode: 'classic' });
     }
   };
 

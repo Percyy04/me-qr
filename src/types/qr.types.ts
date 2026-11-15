@@ -110,6 +110,7 @@ export interface QRInputs {
 }
 
 export interface QRDesign {
+  mode?: 'classic' | 'logo';
   frame: {
     id: FrameId;
     templateUrl: string | null;
