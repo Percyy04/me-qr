@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QuickQR Studio - High-Conversion QR Code Suite</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c7c4d8",
+            "secondary": "#006c49",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8f9ff",
+            "on-primary-fixed-variant": "#3323cc",
+            "outline": "#777587",
+            "inverse-on-surface": "#eaf1ff",
+            "slate-text-muted": "#64748B",
+            "on-tertiary-fixed": "#340042",
+            "indigo-tint": "#EEF2FF",
+            "slate-text-strong": "#0F172A",
+            "border-subtle": "#E2E8F0",
+            "secondary-fixed-dim": "#4edea3",
+            "on-error": "#ffffff",
+            "tertiary": "#7b0498",
+            "success-emerald-glow": "#D1FAE5",
+            "on-background": "#0b1c30",
+            "primary-fixed": "#e2dfff",
+            "surface-container-high": "#dce9ff",
+            "surface": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "canvas-bg": "#F8FAFC",
+            "primary": "#3525cd",
+            "tertiary-fixed": "#fdd6ff",
+            "surface-container-highest": "#d3e4fe",
+            "surface-card": "#FFFFFF",
+            "on-primary-fixed": "#0f0069",
+            "primary-container": "#4f46e5",
+            "surface-variant": "#d3e4fe",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#dad7ff",
+            "on-surface": "#0b1c30",
+            "tertiary-fixed-dim": "#f3aeff",
+            "on-tertiary-fixed-variant": "#790096",
+            "secondary-container": "#6cf8bb",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#972eb2",
+            "on-surface-variant": "#464555",
+            "inverse-surface": "#213145",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#6ffbbe",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#00714d",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container": "#e5eeff",
+            "surface-tint": "#4d44e3",
+            "surface-bright": "#f8f9ff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#facdff",
+            "inverse-primary": "#c3c0ff",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-lg": "2rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "margin-sm": "1rem",
+            "margin": "1.5rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin-lg": "3rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #CBD5E1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    .pattern-dot {
+      background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+  </style>
+</head>
+<body class="bg-canvas-bg text-slate-text-strong font-body-md antialiased selection:bg-indigo-tint selection:text-primary min-h-screen flex flex-col">
+<!-- ================= TOP NAV BAR (Shared Component JSON Source) ================= -->
+<header class="w-full bg-surface-card border-b border-border-subtle sticky top-0 z-50 shadow-sm">
+<div class="w-full max-w-7xl mx-auto px-gutter-lg h-16 flex items-center justify-between">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-space-md">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-surface-card shadow-sm group-hover:scale-105 transition-transform duration-150">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+</div>
+<span class="text-headline-md font-headline-md font-extrabold text-slate-text-strong tracking-tight">QuickQR Studio</span>
+</a>
+<span class="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-success-emerald-glow text-secondary border border-secondary-fixed-dim">
+          v3.4 Dynamic
+        </span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-6">
+<!-- Active link mapping: QR Generator is the active context of this suite -->
+<a class="text-primary font-label-md text-label-md border-b-2 border-primary pb-1 flex items-center gap-1.5" href="#generator">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+          QR Generator
+        </a>
+<a class="text-slate-text-muted font-label-md text-label-md hover:text-slate-text-strong transition-colors duration-150" href="#pricing">
+          Pricing
+        </a>
+<a class="text-slate-text-muted font-label-md text-label-md hover:text-slate-text-strong transition-colors duration-150" href="#api">
+          API
+        </a>
+<a class="text-slate-text-muted font-label-md text-label-md hover:text-slate-text-strong transition-colors duration-150" href="#templates">
+          Templates
+        </a>
+<a class="text-slate-text-muted font-label-md text-label-md hover:text-slate-text-strong transition-colors duration-150" href="#faq">
+          FAQ
+        </a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Language selector icon action -->
+<button class="p-2 text-slate-text-muted hover:text-slate-text-strong hover:bg-canvas-bg rounded-lg transition-colors" title="Change Language" type="button">
+<span class="material-symbols-outlined text-xl">language</span>
+</button>
+<a class="text-slate-text-strong font-label-md text-label-md px-3 py-2 rounded-lg hover:bg-canvas-bg transition-colors" href="#login">
+          Log In
+        </a>
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-primary font-label-md text-label-md bg-indigo-tint rounded-lg hover:bg-surface-container-high transition-colors" href="#my-qr">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+          My QR Codes
+        </a>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg shadow-sm hover:bg-primary transition-all active:scale-[0.98]" type="button">
+          Create Account
+        </button>
+</div>
+</div>
+</header>
+<!-- ================= SUB-HEADER / SYSTEM STATUS BANNER ================= -->
+<div class="bg-surface-card border-b border-border-subtle py-2.5 px-gutter-lg">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-body-sm">
+<div class="flex items-center gap-2 text-slate-text-muted">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-medium text-slate-text-strong">Realtime QR Engine Active:</span>
+<span>Dynamic Redirects, Scalable SVG, Error Correction 30% H-Level ready</span>
+</div>
+<div class="flex items-center gap-4 text-slate-text-muted font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span> 99.98% Routing Uptime</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-primary">security</span> Enterprise Encryption</span>
+</div>
+</div>
+</div>
+<!-- ================= MAIN WORKSPACE CANVAS ================= -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-gutter-lg py-space-xl space-y-space-xl">
+<!-- ========================================================================= -->
+<!-- SECTION 1: 'ALL QR CODE TYPES' BENTO GRID HUB (Step 1 Master Directory) -->
+<!-- ========================================================================= -->
+<section class="space-y-space-lg" id="step-1-hub">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-border-subtle">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-indigo-tint text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">filter_1</span>
+            Step 1: Choose QR Type
+          </div>
+<h1 class="text-headline-lg font-headline-lg text-slate-text-strong">All QR Code Categories</h1>
+<p class="text-body-md font-body-md text-slate-text-muted max-w-2xl">
+            Select from 18+ high-conversion destination formats for your target campaign. Static formats are free forever; dynamic formats enable instant redirection and real-time scan analytics.
+          </p>
+</div>
+<!-- Search Bar -->
+<div class="flex items-center gap-2 w-full md:w-80">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-text-muted text-lg">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-body-md bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-slate-text-strong placeholder:text-slate-text-muted" placeholder="Search QR type (e.g. WiFi, Menu)..." type="text"/>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary px-3.5 py-2 rounded-lg font-label-md text-label-md shadow-sm transition-all flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid (18+ QR Types) -->
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Row 1: Top Wide Hero Card (Active Link/URL) - spans 3 cols -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-card border-2 border-primary-container rounded-xl p-space-md shadow-md relative overflow-hidden group cursor-pointer transition-all">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary text-[10px] font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1 uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Selected Type
+          </div>
+<div class="flex items-start gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-indigo-tint flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">link</span>
+</div>
+<div class="space-y-1 pr-16">
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Link / URL</h3>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-success-emerald-glow text-secondary">Dynamic Active</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Direct traffic to any external website, custom landing page, e-commerce funnel, or tracking affiliate URL.</p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-body-sm text-primary font-medium">
+<span class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-sm text-secondary">verified</span> Auto-shortened quickqr.io link</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Row 1: PDF Document Card - spans 3 cols -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">picture_as_pdf</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">PDF Document</h3>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-canvas-bg text-slate-text-muted border border-border-subtle">File Host</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Host menus, brochures, whitepapers, &amp; technical manuals with instant mobile PDF previewer.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-text-muted group-hover:text-primary transition-colors">download</span>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between text-body-sm">
+<span class="text-slate-text-muted text-[12px]">Supports up to 20MB files</span>
+<span class="text-label-sm text-slate-text-strong font-semibold group-hover:text-primary">Configure Document →</span>
+</div>
+</div>
+<!-- Row 2: Image Gallery (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">collections</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Image Gallery</h3>
+<p class="text-body-sm text-slate-text-muted">Multi-image mobile carousel</p>
+</div>
+</div>
+<p class="mt-2.5 text-body-sm text-slate-text-muted">Display product looks, real-estate portfolios, and art exhibits in a fast mobile viewer.</p>
+</div>
+<!-- Row 2: Google Play & App Store (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-indigo-50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">storefront</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">App Store &amp; Play</h3>
+<p class="text-body-sm text-slate-text-muted">Smart OS deep link routing</p>
+</div>
+</div>
+<p class="mt-2.5 text-body-sm text-slate-text-muted">Single QR detects iOS or Android device and routes directly to the respective store.</p>
+</div>
+<!-- Row 2: Plain Text (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">notes</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Plain Text</h3>
+<p class="text-body-sm text-slate-text-muted">Static offline encoding</p>
+</div>
+</div>
+<p class="mt-2.5 text-body-sm text-slate-text-muted">Encode raw alphanumeric codes, serial numbers, voucher codes, or instructions.</p>
+</div>
+<!-- Row 3: Prominent 2x2 card for WhatsApp Direct & Auto-Chat (spans 3 cols on desktop) -->
+<div class="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-surface-card to-emerald-50/40 border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-secondary hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-emerald-100 text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">WhatsApp Direct &amp; Auto-Chat</h3>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-secondary">High Conversion</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Pre-filled order inquiry &amp; CRM capture</p>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="mt-3 p-3 bg-surface-card/80 rounded-lg border border-border-subtle space-y-1">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-slate-text-muted">Target Phone:</span>
+<span class="font-mono text-slate-text-strong font-medium">+1 (555) 019-2834</span>
+</div>
+<div class="text-[12px] text-slate-text-muted italic">"Hello QuickQR, I want to activate the Dynamic Enterprise plan..."</div>
+</div>
+</div>
+<!-- Row 3: Google Maps Location (3 cols) -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Google Maps Location</h3>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-canvas-bg text-slate-text-muted border border-border-subtle">Geo-Pin</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Direct navigation for retail &amp; events</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-text-muted group-hover:text-rose-600 transition-colors">pin_drop</span>
+</div>
+<p class="mt-3 text-body-sm text-slate-text-muted">Coordinates or street address directly opens Google Maps, Apple Maps, or Waze app instantly upon scan.</p>
+</div>
+<!-- Row 4: 2x2 Mini Square Social Brand-Icon Grid (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Social Hub</h3>
+<span class="text-[11px] font-semibold text-primary">4-in-1</span>
+</div>
+<p class="text-body-sm text-slate-text-muted mb-3">Multi-channel profile connector card.</p>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-lg bg-red-50 hover:bg-red-100 flex items-center gap-2 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-red-600 text-lg">smart_display</span>
+<span class="text-label-sm font-label-sm text-slate-text-strong">YouTube</span>
+</div>
+<div class="p-2 rounded-lg bg-pink-50 hover:bg-pink-100 flex items-center gap-2 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-pink-600 text-lg">photo_camera</span>
+<span class="text-label-sm font-label-sm text-slate-text-strong">Instagram</span>
+</div>
+<div class="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 flex items-center gap-2 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-blue-600 text-lg">thumb_up</span>
+<span class="text-label-sm font-label-sm text-slate-text-strong">Facebook</span>
+</div>
+<div class="p-2 rounded-lg bg-sky-50 hover:bg-sky-100 flex items-center gap-2 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sky-600 text-lg">send</span>
+<span class="text-label-sm font-label-sm text-slate-text-strong">Telegram</span>
+</div>
+</div>
+</div>
+<!-- Row 4: Wi-Fi Access (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">wifi</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Wi-Fi Access</h3>
+<p class="text-body-sm text-slate-text-muted">Zero-typing instant login</p>
+</div>
+</div>
+<p class="mt-2.5 text-body-sm text-slate-text-muted">Guests connect without manual password entry. Supports WPA/WPA2, WEP, and hidden SSIDs.</p>
+</div>
+<!-- Row 4: vCard Digital Card (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 hover:shadow-md transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">contact_page</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">vCard Business</h3>
+<p class="text-body-sm text-slate-text-muted">One-tap contact sync</p>
+</div>
+</div>
+<p class="mt-2.5 text-body-sm text-slate-text-muted">Downloads contact details directly into iPhone Contacts or Google Address Book.</p>
+</div>
+<!-- Row 5: Audio / MP3 (1.5 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 transition-all cursor-pointer">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-violet-600 text-xl">graphic_eq</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Audio / MP3 Player</h3>
+</div>
+<p class="text-body-sm text-slate-text-muted">Podcast episodes, album previews, or museum tour guides.</p>
+</div>
+<!-- Row 5: Booking & Event Calendar (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-sm hover:border-primary-container/60 transition-all cursor-pointer">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-xl">calendar_month</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Event &amp; Calendar</h3>
+</div>
+<p class="text-body-sm text-slate-text-muted">Adds date, venue, reminders, and RSVP links to calendar with 1 scan.</p>
+</div>
+<!-- Row 5: Smart Multi-Link (Conditional OS & Geo) (2 cols) -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-primary-container/40 rounded-xl p-space-md shadow-sm hover:border-primary transition-all cursor-pointer bg-gradient-to-br from-indigo-50/30 to-surface-card">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">alt_route</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Smart Multi-Link</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary-container text-white">PRO</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Conditional rule routing by Device OS, language, day of week, or geolocation.</p>
+</div>
+<!-- Additional Row: Phone Call, Email Dispatch, PPTX -->
+<div class="md:col-span-1 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-3.5 shadow-sm hover:border-primary-container/60 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-green-600">call</span>
+<div>
+<h4 class="text-label-md font-label-md text-slate-text-strong">Phone Call Dial</h4>
+<span class="text-body-sm text-slate-text-muted">Instant telephone ring</span>
+</div>
+</div>
+<div class="md:col-span-1 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-3.5 shadow-sm hover:border-primary-container/60 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-sky-600">outgoing_mail</span>
+<div>
+<h4 class="text-label-md font-label-md text-slate-text-strong">E-mail Dispatch</h4>
+<span class="text-body-sm text-slate-text-muted">Pre-filled subject &amp; body</span>
+</div>
+</div>
+<div class="md:col-span-2 lg:col-span-2 bg-surface-card border border-border-subtle rounded-xl p-3.5 shadow-sm hover:border-primary-container/60 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-orange-600">co_present</span>
+<div>
+<h4 class="text-label-md font-label-md text-slate-text-strong">PPTX Slide Deck</h4>
+<span class="text-body-sm text-slate-text-muted">Keynote &amp; conference decks</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 2: DYNAMIC 'STEP 2: ENTER CONTENT' FORM VARIANTS (Modular States) -->
+<!-- ========================================================================= -->
+<section class="space-y-space-lg" id="step-2-variants">
+<!-- Section Header -->
+<div class="space-y-1 pb-2 border-b border-border-subtle">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-indigo-tint text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">filter_2</span>
+          Step 2: Enter Content (Modular State Engine)
+        </div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-2">
+<h2 class="text-headline-lg font-headline-lg text-slate-text-strong">Dynamic Content Matrix Comparison</h2>
+<span class="text-body-sm text-slate-text-muted">Visualizing 4 core interchange states ready for production payload binding</span>
+</div>
+</div>
+<!-- 2x2 Grid of Variant State Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- ================= VARIANT A: Link / URL & Smart Conditional Routing ================= -->
+<div class="bg-surface-card border-2 border-primary-container/80 rounded-xl p-space-lg shadow-sm space-y-space-md relative">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-indigo-tint text-primary flex items-center justify-center font-bold text-xs">2A</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Link / URL &amp; Conditional Routing</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-label-sm bg-indigo-tint text-primary font-semibold">Live Mode</span>
+</div>
+<!-- Website URL Input -->
+<div class="space-y-1.5">
+<label class="text-label-md font-label-md text-slate-text-strong flex items-center justify-between">
+              Destination URL
+              <span class="text-secondary text-body-sm flex items-center gap-1 font-normal">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> Valid Link Verified
+              </span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-text-muted text-lg">language</span>
+<input class="w-full pl-10 pr-24 py-2.5 text-body-md font-mono bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-slate-text-strong" type="url" value="https://quickqr.studio/pricing?ref=summer_promo_2026"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-body-sm text-primary hover:underline font-medium" type="button">Test URL</button>
+</div>
+</div>
+<!-- Dynamic QR Code Toggle Switch -->
+<div class="p-3.5 rounded-lg bg-canvas-bg border border-border-subtle flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-slate-text-strong">Dynamic QR Code</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-success-emerald-glow text-secondary">RECOMMENDED</span>
+</div>
+<p class="text-body-sm text-slate-text-muted">Edit destination anytime after printing. Scan analytics tracking enabled.</p>
+</div>
+<!-- Custom active toggle -->
+<button class="w-12 h-6 bg-primary-container rounded-full relative p-0.5 transition-colors duration-200" type="button">
+<div class="w-5 h-5 bg-white rounded-full shadow-md transform translate-x-6 transition-transform"></div>
+</button>
+</div>
+<!-- Short Link Display & Campaign Tag -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="text-label-md font-label-md text-slate-text-strong">Assigned Short Link</label>
+<div class="flex items-center bg-surface-card border border-border-subtle rounded-lg px-2.5 py-2">
+<span class="font-mono text-body-sm text-slate-text-strong flex-1 truncate">quickqr.io/s/x9K2p</span>
+<button class="text-slate-text-muted hover:text-primary" title="Copy Short Link" type="button">
+<span class="material-symbols-outlined text-[17px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-label-md font-label-md text-slate-text-strong">Campaign Tag</label>
+<input class="w-full px-3 py-2 text-body-md bg-surface-card border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-slate-text-strong" type="text" value="summer_outreach_q2"/>
+</div>
+</div>
+<!-- Conditional OS Routing Drawer -->
+<div class="border border-border-subtle rounded-lg p-3 space-y-3 bg-surface-card">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-slate-text-strong flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">alt_route</span>
+                Conditional Mobile OS Routing
+              </span>
+<span class="text-body-sm text-primary font-medium cursor-pointer">Rules Active (2)</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-sm">phone_iphone</span>
+</div>
+<input class="flex-1 px-3 py-1.5 text-body-sm font-mono border border-border-subtle rounded-lg" placeholder="iOS App Store URL fallback" type="url" value="https://apps.apple.com/app/id644901928"/>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-slate-100 flex items-center justify-center text-slate-700">
+<span class="material-symbols-outlined text-sm">android</span>
+</div>
+<input class="flex-1 px-3 py-1.5 text-body-sm font-mono border border-border-subtle rounded-lg" placeholder="Android Play Store URL fallback" type="url" value="https://play.google.com/store/apps/details?id=io.quickqr"/>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= VARIANT B: File & Media Landing Page ================= -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold text-xs">2B</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">File &amp; Media Landing Page</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-label-sm bg-canvas-bg border border-border-subtle text-slate-text-muted">Storage: 4.2 / 20 MB</span>
+</div>
+<!-- Drag and Drop Upload Zone -->
+<div class="border-2 border-dashed border-primary-container/60 hover:border-primary bg-indigo-tint/30 rounded-xl p-4 text-center cursor-pointer transition-colors space-y-1">
+<div class="w-10 h-10 mx-auto rounded-full bg-indigo-tint text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">cloud_upload</span>
+</div>
+<p class="text-body-md font-medium text-slate-text-strong">Drop PDF, Images, Audio, or PPTX</p>
+<p class="text-body-sm text-slate-text-muted">Maximum file size: 20MB. Drag files here or <span class="text-primary underline">browse folder</span></p>
+</div>
+<!-- Uploaded File State Card -->
+<div class="p-3 bg-canvas-bg rounded-lg border border-border-subtle flex items-center justify-between gap-3">
+<div class="w-9 h-9 rounded bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-medium text-slate-text-strong truncate">Catalog-Spring-2026.pdf</span>
+<span class="text-slate-text-muted text-xs">4.2 MB</span>
+</div>
+<div class="w-full bg-border-subtle rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-full"></div>
+</div>
+</div>
+<button class="text-slate-text-muted hover:text-error transition-colors p-1" title="Remove File" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Mini Landing Page Builder Inputs -->
+<div class="space-y-3 pt-1">
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="text-label-md font-label-md text-slate-text-strong">Display Title</label>
+<input class="mt-1 w-full px-3 py-2 text-body-md border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Spring Collection 2026"/>
+</div>
+<div>
+<label class="text-label-md font-label-md text-slate-text-strong">Custom CTA Button</label>
+<input class="mt-1 w-full px-3 py-2 text-body-md border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Download PDF Menu"/>
+</div>
+</div>
+<div>
+<label class="text-label-md font-label-md text-slate-text-strong">Subtitle / Description</label>
+<input class="mt-1 w-full px-3 py-2 text-body-md border border-border-subtle rounded-lg text-slate-text-muted" type="text" value="Explore our complete line of seasonal textures and materials."/>
+</div>
+</div>
+</div>
+<!-- ================= VARIANT C: vCard Digital Business Card & Contact ================= -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center font-bold text-xs">2C</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">vCard Digital Business Card</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-label-sm bg-purple-50 text-purple-700 font-semibold">Contact Sync</span>
+</div>
+<!-- Profile Photo + Basic Identity -->
+<div class="flex items-center gap-4">
+<div class="relative group cursor-pointer">
+<!-- Placeholder avatar -->
+<img class="w-16 h-16 rounded-full object-cover border-2 border-border-subtle group-hover:opacity-80 transition-opacity" data-alt="Professional modern studio headshot of a business technology executive smiling in front of a clean minimalist slate architectural background with warm rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAdiGRbq7Hp4aP-82I0lUjV0lLwOsNiMN6ddYNa1qx4-LmencH4fjuXSBwS02dlf6ZadVEHXe4nw8M1738eq35VlqJozrlONkDJij8ivZG9ygfHJnEu_MZw50GUxk5I3aqORwzIt87wTT3WfpOUvQLYb9VIP7R6huQrUy5xuCab8bSsIAOQhKsCGfMxxAG0FSEV6Wr64jRzs-jtUzT7gctq81gdaox8GbGIyLUKAs"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-white p-1 rounded-full text-xs shadow">
+<span class="material-symbols-outlined text-[13px] block">photo_camera</span>
+</span>
+</div>
+<div class="flex-1 grid grid-cols-2 gap-2">
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">FIRST NAME</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Elena"/>
+</div>
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">LAST NAME</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Vance"/>
+</div>
+</div>
+</div>
+<!-- Position & Company -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">JOB TITLE</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Head of Growth"/>
+</div>
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">COMPANY</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong" type="text" value="Acme Labs Inc."/>
+</div>
+</div>
+<!-- Communication Channels -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">MOBILE PHONE</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg font-mono text-slate-text-strong" type="text" value="+1 (415) 890-2100"/>
+</div>
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">WORK EMAIL</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg font-mono text-slate-text-strong" type="email" value="elena@acmelabs.io"/>
+</div>
+</div>
+<!-- Social Links Tags -->
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-slate-text-muted">SOCIAL PROFILES CONNECTED</label>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs bg-slate-100 text-slate-text-strong border border-border-subtle">
+<span class="font-medium">in/elenavance</span>
+<span class="material-symbols-outlined text-[13px] text-slate-text-muted cursor-pointer">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs bg-slate-100 text-slate-text-strong border border-border-subtle">
+<span class="font-medium">@elena_growth</span>
+<span class="material-symbols-outlined text-[13px] text-slate-text-muted cursor-pointer">close</span>
+</span>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs bg-indigo-tint text-primary font-medium hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span> Add Profile
+              </button>
+</div>
+</div>
+</div>
+<!-- ================= VARIANT D: Wi-Fi & Direct Actions ================= -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-700 flex items-center justify-center font-bold text-xs">2D</span>
+<h3 class="text-headline-sm font-headline-sm text-slate-text-strong">Wi-Fi &amp; Direct WhatsApp Actions</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-label-sm bg-cyan-50 text-cyan-700 font-semibold">Instant Protocol</span>
+</div>
+<!-- Sub-module 1: Wi-Fi Connection -->
+<div class="p-3.5 rounded-lg bg-canvas-bg border border-border-subtle space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-slate-text-strong flex items-center gap-1.5">
+<span class="material-symbols-outlined text-cyan-700 text-base">wifi</span> Wi-Fi Quick Join
+              </span>
+<!-- Encryption radio pills -->
+<div class="inline-flex rounded-lg bg-surface-card p-0.5 border border-border-subtle text-xs">
+<button class="px-2 py-0.5 rounded bg-primary-container text-white font-medium" type="button">WPA/WPA2</button>
+<button class="px-2 py-0.5 rounded text-slate-text-muted hover:text-slate-text-strong" type="button">WEP</button>
+<button class="px-2 py-0.5 rounded text-slate-text-muted hover:text-slate-text-strong" type="button">None</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">NETWORK SSID</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong font-mono" type="text" value="StudioGuest_5G"/>
+</div>
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">PASSWORD</label>
+<div class="relative">
+<input class="w-full pl-2.5 pr-7 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong font-mono" type="password" value="DesignSystem2026!"/>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-text-muted text-sm cursor-pointer">visibility</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-0.5">
+<input class="rounded text-primary focus:ring-primary h-4 w-4 border-border-subtle" id="hidden-ssid" type="checkbox"/>
+<label class="text-body-sm text-slate-text-muted" for="hidden-ssid">Hidden network (SSID not broadcast)</label>
+</div>
+</div>
+<!-- Sub-module 2: WhatsApp Action -->
+<div class="space-y-2">
+<span class="text-label-md font-label-md text-slate-text-strong flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">chat</span> WhatsApp Message Pre-fill
+            </span>
+<div class="grid grid-cols-3 gap-2">
+<div class="col-span-1">
+<label class="text-label-sm font-label-sm text-slate-text-muted">COUNTRY</label>
+<select class="w-full px-2 py-1.5 text-body-sm border border-border-subtle rounded-lg bg-surface-card text-slate-text-strong">
+<option>US (+1)</option>
+<option>UK (+44)</option>
+<option>DE (+49)</option>
+</select>
+</div>
+<div class="col-span-2">
+<label class="text-label-sm font-label-sm text-slate-text-muted">PHONE NUMBER</label>
+<input class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg font-mono text-slate-text-strong" type="text" value="5550192834"/>
+</div>
+</div>
+<div>
+<label class="text-label-sm font-label-sm text-slate-text-muted">PRE-FILLED MESSAGE TEXT</label>
+<textarea class="w-full px-2.5 py-1.5 text-body-sm border border-border-subtle rounded-lg text-slate-text-strong resize-none" rows="2">Hi, I scanned your QR code and want to know more about the QuickQR enterprise dynamic fleet.</textarea>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 3: STEP 3: CUSTOMIZE APPEARANCE & STICKY LIVE PREVIEW SUITE       -->
+<!-- ========================================================================= -->
+<section class="space-y-space-lg" id="step-3-customizer">
+<!-- Section Header -->
+<div class="space-y-1 pb-2 border-b border-border-subtle">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-indigo-tint text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">filter_3</span>
+          Step 3: Customize Appearance &amp; Realtime Diagnostic Suite
+        </div>
+<h2 class="text-headline-lg font-headline-lg text-slate-text-strong">Universal Styler &amp; Real-time Diagnostic Preview</h2>
+<p class="text-body-md text-slate-text-muted">Fine-tune brand colors, frames, eye shapes, and embedded badges while monitoring optical scanability scores.</p>
+</div>
+<!-- Split Layout: 8 cols Customizer, 4 cols Sticky Preview -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ================= LEFT PANEL: CUSTOMIZER (8 Cols) ================= -->
+<div class="lg:col-span-7 xl:col-span-8 bg-surface-card border border-border-subtle rounded-xl p-space-lg shadow-sm space-y-space-lg">
+<!-- Tab Bar Navigation -->
+<div class="flex items-center border-b border-border-subtle space-x-6 overflow-x-auto">
+<button class="text-primary font-semibold border-b-2 border-primary pb-3 text-body-md flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-lg">crop_free</span>
+              Frames
+            </button>
+<button class="text-slate-text-muted hover:text-slate-text-strong font-medium pb-3 text-body-md flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-lg">grain</span>
+              Patterns &amp; Eyes
+            </button>
+<button class="text-slate-text-muted hover:text-slate-text-strong font-medium pb-3 text-body-md flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-lg">palette</span>
+              Colors &amp; Gradients
+            </button>
+<button class="text-slate-text-muted hover:text-slate-text-strong font-medium pb-3 text-body-md flex items-center gap-2 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-lg">verified</span>
+              Logo &amp; Branding
+            </button>
+</div>
+<!-- 1. Frame Template Carousel -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-slate-text-strong">Select Frame Template</label>
+<span class="text-body-sm text-primary cursor-pointer hover:underline">Browse 24+ Frames</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<!-- Frame 1: SCAN ME Classic (Active) -->
+<div class="border-2 border-primary-container bg-indigo-tint/40 rounded-xl p-3 text-center cursor-pointer relative shadow-sm">
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span>
+<div class="w-14 h-16 mx-auto bg-surface-card border border-primary-container rounded flex flex-col items-center justify-between p-1.5 mb-2 shadow-xs">
+<div class="w-full h-8 bg-slate-100 rounded-xs flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-slate-700">qr_code</span>
+</div>
+<span class="text-[7px] font-extrabold uppercase bg-primary-container text-white px-1 py-0.5 rounded-xs w-full text-center">SCAN ME</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-text-strong">Classic Card</span>
+</div>
+<!-- Frame 2: Top Balloon -->
+<div class="border border-border-subtle hover:border-primary-container rounded-xl p-3 text-center cursor-pointer bg-surface-card transition-colors">
+<div class="w-14 h-16 mx-auto bg-slate-50 border border-border-subtle rounded flex flex-col items-center justify-between p-1.5 mb-2">
+<span class="text-[7px] font-bold uppercase bg-slate-800 text-white px-1 py-0.5 rounded-xs w-full text-center">OPEN CAMERA</span>
+<div class="w-full h-8 bg-slate-200 rounded-xs flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-slate-600">qr_code</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-slate-text-muted">Top Balloon</span>
+</div>
+<!-- Frame 3: Ticket Pass -->
+<div class="border border-border-subtle hover:border-primary-container rounded-xl p-3 text-center cursor-pointer bg-surface-card transition-colors">
+<div class="w-14 h-16 mx-auto bg-slate-50 border-dashed border-2 border-slate-300 rounded flex flex-col items-center justify-center p-1.5 mb-2">
+<span class="material-symbols-outlined text-[18px] text-slate-600">confirmation_number</span>
+<span class="text-[6px] font-mono text-slate-500 mt-1">ADMIT ONE</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-text-muted">Ticket Pass</span>
+</div>
+<!-- Frame 4: Minimalist Frame -->
+<div class="border border-border-subtle hover:border-primary-container rounded-xl p-3 text-center cursor-pointer bg-surface-card transition-colors">
+<div class="w-14 h-16 mx-auto bg-slate-50 border border-slate-400 rounded-lg flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-lg text-slate-700">border_outer</span>
+</div>
+<span class="text-label-sm font-label-sm text-slate-text-muted">Minimalist</span>
+</div>
+</div>
+</div>
+<!-- 2. QR Pattern & Eye Shape Selectors -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-2">
+<!-- Pattern selector -->
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-slate-text-strong">Body Data Pattern</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-11 rounded-lg border-2 border-primary-container bg-indigo-tint flex items-center justify-center" title="Square (Standard)" type="button">
+<span class="w-4 h-4 bg-primary-container rounded-xs"></span>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" title="Rounded Dots" type="button">
+<span class="w-3.5 h-3.5 bg-slate-700 rounded-full"></span>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" title="Diamond Matrix" type="button">
+<span class="w-3 h-3 bg-slate-700 rotate-45 transform"></span>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" title="Fluid Connected" type="button">
+<span class="w-4 h-2 bg-slate-700 rounded-full"></span>
+</button>
+</div>
+</div>
+<!-- Eye Shape selector -->
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-slate-text-strong">Corner Eye Marker</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-11 rounded-lg border-2 border-primary-container bg-indigo-tint flex items-center justify-center" type="button">
+<div class="w-5 h-5 border-2 border-primary-container rounded-sm flex items-center justify-center">
+<div class="w-2 h-2 bg-primary-container rounded-xs"></div>
+</div>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" type="button">
+<div class="w-5 h-5 border-2 border-slate-700 rounded-md flex items-center justify-center">
+<div class="w-2 h-2 bg-slate-700 rounded-sm"></div>
+</div>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" type="button">
+<div class="w-5 h-5 border-2 border-slate-700 rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-slate-700 rounded-full"></div>
+</div>
+</button>
+<button class="h-11 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg flex items-center justify-center" type="button">
+<div class="w-5 h-5 border-2 border-slate-700 rounded-tl-lg rounded-br-lg flex items-center justify-center">
+<div class="w-2 h-2 bg-slate-700"></div>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Color Engine & Hex Inputs -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-slate-text-strong">Color Engine &amp; Contrast Setup</label>
+<div class="flex items-center gap-2">
+<span class="text-body-sm text-slate-text-muted">Gradient Mode</span>
+<button class="w-9 h-5 bg-primary-container rounded-full relative p-0.5" type="button">
+<div class="w-4 h-4 bg-white rounded-full shadow transform translate-x-4"></div>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<!-- Dot Primary -->
+<div class="p-2.5 rounded-lg border border-border-subtle bg-canvas-bg flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary-container border-2 border-white shadow-xs"></div>
+<div>
+<span class="text-[10px] uppercase font-bold text-slate-text-muted block">DOT COLOR 1</span>
+<span class="font-mono text-body-sm font-semibold text-slate-text-strong">#4F46E5</span>
+</div>
+</div>
+<!-- Dot Gradient Stop -->
+<div class="p-2.5 rounded-lg border border-border-subtle bg-canvas-bg flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-white shadow-xs"></div>
+<div>
+<span class="text-[10px] uppercase font-bold text-slate-text-muted block">GRADIENT STOP</span>
+<span class="font-mono text-body-sm font-semibold text-slate-text-strong">#10B981</span>
+</div>
+</div>
+<!-- Background Surface -->
+<div class="p-2.5 rounded-lg border border-border-subtle bg-canvas-bg flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-card border-2 border-border-subtle shadow-xs"></div>
+<div>
+<span class="text-[10px] uppercase font-bold text-slate-text-muted block">BACKGROUND</span>
+<span class="font-mono text-body-sm font-semibold text-slate-text-strong">#FFFFFF</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Center Logo Upload & Quick Brand Presets -->
+<div class="space-y-3 pt-2">
+<label class="text-label-md font-label-md text-slate-text-strong">Center Logo Badge &amp; Social Presets</label>
+<div class="flex flex-wrap items-center gap-3">
+<!-- Upload Custom -->
+<div class="border border-dashed border-primary-container/80 bg-indigo-tint/30 rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-indigo-tint/60 transition-colors">
+<span class="material-symbols-outlined text-primary text-base">add_photo_alternate</span>
+<span class="text-body-sm font-medium text-primary">Upload Custom SVG/PNG</span>
+</div>
+<!-- Quick Presets -->
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-lg border-2 border-primary-container bg-indigo-tint text-primary flex items-center justify-center font-bold text-xs" title="QuickQR Mark" type="button">
+<span class="material-symbols-outlined text-base">qr_code_2</span>
+</button>
+<button class="w-9 h-9 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg text-red-600 flex items-center justify-center" title="YouTube" type="button">
+<span class="material-symbols-outlined text-base">smart_display</span>
+</button>
+<button class="w-9 h-9 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg text-secondary flex items-center justify-center" title="WhatsApp" type="button">
+<span class="material-symbols-outlined text-base">chat</span>
+</button>
+<button class="w-9 h-9 rounded-lg border border-border-subtle bg-surface-card hover:bg-canvas-bg text-cyan-700 flex items-center justify-center" title="Wi-Fi" type="button">
+<span class="material-symbols-outlined text-base">wifi</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= RIGHT PANEL: STICKY LIVE PREVIEW SUITE (4 Cols) ================= -->
+<div class="lg:col-span-5 xl:col-span-4 sticky top-20 space-y-space-md">
+<div class="bg-surface-card border border-border-subtle rounded-xl p-space-md shadow-md space-y-space-md">
+<!-- Dual-mode View Toggle Tab -->
+<div class="grid grid-cols-2 p-1 bg-canvas-bg rounded-lg border border-border-subtle text-body-sm">
+<button class="py-1.5 font-semibold bg-surface-card text-primary rounded shadow-xs text-center flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-base">qr_code</span> QR Canvas
+              </button>
+<button class="py-1.5 text-slate-text-muted hover:text-slate-text-strong rounded text-center flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-base">smartphone</span> Mobile Page
+              </button>
+</div>
+<!-- Stylized Vector QR Preview Stage with Frame -->
+<div class="relative bg-gradient-to-b from-indigo-tint/40 to-canvas-bg rounded-xl p-5 border border-border-subtle flex flex-col items-center justify-center">
+<!-- Frame container simulation: SCAN ME Classic -->
+<div class="bg-white p-4 pb-2 rounded-xl shadow-md border border-border-subtle max-w-[240px] w-full flex flex-col items-center">
+<!-- Authentic SVG QR Matrix with Embedded Logo -->
+<svg class="w-48 h-48" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="qrGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4F46E5"></stop>
+<stop offset="100%" stop-color="#10B981"></stop>
+</lineargradient>
+</defs>
+<!-- Corner Eye 1 (Top Left) -->
+<rect fill="none" height="50" rx="8" stroke="url(#qrGrad)" stroke-width="7" width="50" x="10" y="10"></rect>
+<rect fill="url(#qrGrad)" height="24" rx="4" width="24" x="23" y="23"></rect>
+<!-- Corner Eye 2 (Top Right) -->
+<rect fill="none" height="50" rx="8" stroke="url(#qrGrad)" stroke-width="7" width="50" x="140" y="10"></rect>
+<rect fill="url(#qrGrad)" height="24" rx="4" width="24" x="153" y="23"></rect>
+<!-- Corner Eye 3 (Bottom Left) -->
+<rect fill="none" height="50" rx="8" stroke="url(#qrGrad)" stroke-width="7" width="50" x="10" y="140"></rect>
+<rect fill="url(#qrGrad)" height="24" rx="4" width="24" x="23" y="153"></rect>
+<!-- Synthetic Dot Pattern Grid with Round Matrix Feel -->
+<!-- Row 1-4 misc dots -->
+<circle cx="75" cy="20" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="90" cy="20" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="105" cy="20" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="120" cy="20" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="75" cy="35" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="105" cy="35" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="75" cy="50" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="90" cy="50" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="120" cy="50" fill="url(#qrGrad)" r="4.5"></circle>
+<!-- Timing Tracks -->
+<circle cx="35" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="35" cy="90" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="35" cy="105" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="35" cy="120" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="75" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="90" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="105" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="120" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="150" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="165" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="180" cy="75" fill="url(#qrGrad)" r="4.5"></circle>
+<!-- Center Logo Badge Isolation Mask -->
+<rect fill="#FFFFFF" height="52" rx="10" stroke="#E2E8F0" stroke-width="1.5" width="52" x="74" y="74"></rect>
+<circle cx="100" cy="100" fill="#4F46E5" r="16"></circle>
+<path d="M93 100 L98 105 L108 95" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Bottom Grid Dots -->
+<circle cx="75" cy="140" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="90" cy="140" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="120" cy="140" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="150" cy="140" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="170" cy="140" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="75" cy="160" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="105" cy="160" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="135" cy="160" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="165" cy="160" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="90" cy="175" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="120" cy="175" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="150" cy="175" fill="url(#qrGrad)" r="4.5"></circle>
+<circle cx="180" cy="175" fill="url(#qrGrad)" r="4.5"></circle>
+</svg>
+<!-- Frame bottom banner -->
+<div class="w-full bg-primary-container text-white py-1 px-3 mt-2 rounded-lg text-center flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+<span class="text-[11px] font-extrabold tracking-wider">SCAN ME</span>
+</div>
+</div>
+<div class="mt-3 text-[11px] text-slate-text-muted font-mono flex items-center gap-1">
+<span>quickqr.io/s/x9K2p</span>
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+<span>0 scans</span>
+</div>
+</div>
+<!-- Optical Diagnostics & Validation Badges -->
+<div class="p-3 bg-canvas-bg rounded-lg border border-border-subtle space-y-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-slate-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+                  Optical Scanability
+                </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-success-emerald-glow text-secondary">
+                  98% (Excellent)
+                </span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-slate-text-muted">WCAG Contrast:</span>
+<span class="font-mono font-medium text-slate-text-strong">14.2:1 (AAA Pass)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-slate-text-muted">Error Correction:</span>
+<span class="font-mono font-medium text-slate-text-strong">Level H (30% Damage Tolerance)</span>
+</div>
+</div>
+<!-- Export Formats & Resolution -->
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-slate-text-muted block">EXPORT FORMAT</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-1.5 text-body-sm font-semibold rounded-lg bg-indigo-tint text-primary border border-primary-container/40 text-center" type="button">PNG HD</button>
+<button class="py-1.5 text-body-sm font-medium rounded-lg bg-surface-card text-slate-text-strong border border-border-subtle hover:bg-canvas-bg text-center" type="button">SVG Vector</button>
+<button class="py-1.5 text-body-sm font-medium rounded-lg bg-surface-card text-slate-text-strong border border-border-subtle hover:bg-canvas-bg text-center" type="button">PDF Print</button>
+</div>
+<div class="pt-1">
+<select class="w-full text-body-sm px-2.5 py-1.5 rounded-lg border border-border-subtle bg-surface-card text-slate-text-strong">
+<option>1000 × 1000 px - 300 DPI (Standard Print)</option>
+<option>2000 × 2000 px - 600 DPI (Billboard / Ultra)</option>
+<option>500 × 500 px - 72 DPI (Web Screen Only)</option>
+</select>
+</div>
+</div>
+<!-- PRIMARY CONVERSION CTA BUTTON -->
+<button class="w-full py-3 px-4 rounded-xl bg-secondary hover:bg-on-secondary-container text-white font-semibold text-body-md shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined group-hover:translate-y-0.5 transition-transform">download</span>
+              Download QR Code
+            </button>
+<!-- Secondary Actions -->
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<button class="py-2 px-2 rounded-lg border border-border-subtle hover:bg-canvas-bg text-slate-text-strong flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">bookmark</span> Save Preset
+              </button>
+<button class="py-2 px-2 rounded-lg border border-border-subtle hover:bg-canvas-bg text-slate-text-strong flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">code</span> Copy Embed
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER (Shared Component JSON Source) ================= -->
+<footer class="w-full bg-surface-card border-t border-border-subtle mt-auto">
+<div class="max-w-7xl mx-auto py-space-lg px-gutter-lg flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand & Copyright -->
+<div class="space-y-1 text-center md:text-left">
+<div class="text-headline-sm font-headline-sm font-bold text-slate-text-strong">QuickQR Studio</div>
+<p class="text-slate-text-muted font-body-sm text-body-sm max-w-xl">
+          © 2024 QuickQR Studio Inc. All rights reserved. High-conversion dynamic routing and custom QR design suite.
+        </p>
+</div>
+<!-- Links Cluster -->
+<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+<a class="text-slate-text-muted font-body-sm text-body-sm hover:text-slate-text-strong hover:underline transition-colors duration-150" href="#privacy">
+          Privacy Policy
+        </a>
+<a class="text-slate-text-muted font-body-sm text-body-sm hover:text-slate-text-strong hover:underline transition-colors duration-150" href="#terms">
+          Terms of Service
+        </a>
+<a class="text-slate-text-muted font-body-sm text-body-sm hover:text-slate-text-strong hover:underline transition-colors duration-150" href="#security">
+          Security
+        </a>
+<a class="text-slate-text-muted font-body-sm text-body-sm hover:text-slate-text-strong hover:underline transition-colors duration-150" href="#api-docs">
+          API Documentation
+        </a>
+<a class="text-slate-text-muted font-body-sm text-body-sm hover:text-slate-text-strong hover:underline transition-colors duration-150 flex items-center gap-1.5" href="#status">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Status
+        </a>
+</div>
+</div>
+</footer>
+</body></html>

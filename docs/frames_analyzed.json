@@ -1,0 +1,397 @@
+[
+  {
+    "id": "FRAME-01",
+    "title": "Club Event Pass",
+    "category": "campus",
+    "detectedLabel": "CHECK-IN SỰ KIỆN 🎟️",
+    "mainColors": [
+      "#3B82F6",
+      "#93C5FD",
+      "#EFF6FF"
+    ]
+  },
+  {
+    "id": "FRAME-02",
+    "title": "Student ID Lanyard",
+    "category": "campus",
+    "detectedLabel": "THẺ THÀNH VIÊN CLB 🪪",
+    "mainColors": [
+      "#4F46E5",
+      "#94A3B8"
+    ]
+  },
+  {
+    "id": "FRAME-03",
+    "title": "Club Recruitment",
+    "category": "campus",
+    "detectedLabel": "TUYỂN QUÂN / APPLY NGAY 📢",
+    "mainColors": [
+      "#FFFBEB",
+      "#F59E0B",
+      "#EF4444"
+    ]
+  },
+  {
+    "id": "FRAME-04",
+    "title": "Graduation Portfolio",
+    "category": "campus",
+    "detectedLabel": "XEM DEMO ĐỒ ÁN 🎓",
+    "mainColors": [
+      "#F0F9FF",
+      "#0284C7",
+      "#0369A1"
+    ]
+  },
+  {
+    "id": "FRAME-05",
+    "title": "Survey Clipboard",
+    "category": "campus",
+    "detectedLabel": "KHẢO SÁT NGHIÊN CỨU 📝",
+    "mainColors": [
+      "#059669",
+      "#E2E8F0",
+      "#065F46"
+    ]
+  },
+  {
+    "id": "FRAME-06",
+    "title": "Study Drive Folder",
+    "category": "campus",
+    "detectedLabel": "TÀI LIỆU ÔN THI 📂",
+    "mainColors": [
+      "#F5F3FF",
+      "#7C3AED",
+      "#6D28D9"
+    ]
+  },
+  {
+    "id": "FRAME-07",
+    "title": "Boba Milk Tea Cup",
+    "category": "student-life",
+    "detectedLabel": "DONATE TRÀ SỮA 🧋",
+    "mainColors": [
+      "#F43F5E",
+      "#FFF1F2",
+      "#FB7185"
+    ]
+  },
+  {
+    "id": "FRAME-08",
+    "title": "VietQR Piggy Bank",
+    "category": "student-life",
+    "detectedLabel": "QUÉT CHIA TIỀN NHÓM 🐷",
+    "mainColors": [
+      "#FDF2F8",
+      "#EC4899",
+      "#FBBF24"
+    ]
+  },
+  {
+    "id": "FRAME-09",
+    "title": "SOS Instant Noodles",
+    "category": "student-life",
+    "detectedLabel": "CỨU ĐÓI CUỐI THÁNG 🍜",
+    "mainColors": [
+      "#FFF7ED",
+      "#EA580C",
+      "#78350F"
+    ]
+  },
+  {
+    "id": "FRAME-10",
+    "title": "Wi-Fi Access Card",
+    "category": "student-life",
+    "detectedLabel": "QUÉT VÀO WI-FI 🛜",
+    "mainColors": [
+      "#0891B2",
+      "#06B6D4",
+      "#0E7490"
+    ]
+  },
+  {
+    "id": "FRAME-11",
+    "title": "Boarding House Rules",
+    "category": "student-life",
+    "detectedLabel": "NỘI QUY PHÒNG TRỌ 🏠",
+    "mainColors": [
+      "#F0FDFA",
+      "#0D9488",
+      "#CCFBF1"
+    ]
+  },
+  {
+    "id": "FRAME-12",
+    "title": "Lost &amp; Found Tag",
+    "category": "student-life",
+    "detectedLabel": "NHẶT ĐƯỢC XIN LIÊN HỆ 📞",
+    "mainColors": [
+      "#F7FEE7",
+      "#65A30D",
+      "#4D7C0F"
+    ]
+  },
+  {
+    "id": "FRAME-13",
+    "title": "Esports Shield",
+    "category": "esports-tech",
+    "detectedLabel": "ĐĂNG KÝ GIẢI ĐẤU 🎮",
+    "mainColors": [
+      "#FAF5FF",
+      "#9333EA",
+      "#7E22CE"
+    ]
+  },
+  {
+    "id": "FRAME-14",
+    "title": "Cyberpunk HUD",
+    "category": "esports-tech",
+    "detectedLabel": "&gt; QUÉT KHÁM PHÁ ⚡ &lt;",
+    "mainColors": [
+      "#090D16",
+      "#22D3EE",
+      "#10B981"
+    ]
+  },
+  {
+    "id": "FRAME-15",
+    "title": "Acoustic Music Night",
+    "category": "esports-tech",
+    "detectedLabel": "ĐẶT VÉ ĐÊM NHẠC 🎸",
+    "mainColors": [
+      "#FFF1F2",
+      "#E11D48",
+      "#FDA4AF"
+    ]
+  },
+  {
+    "id": "FRAME-16",
+    "title": "Livestream Viewfinder",
+    "category": "esports-tech",
+    "detectedLabel": "REC",
+    "mainColors": [
+      "#18181B",
+      "#3F3F46",
+      "#EF4444"
+    ]
+  },
+  {
+    "id": "FRAME-17",
+    "title": "macOS Terminal Code",
+    "category": "esports-tech",
+    "detectedLabel": "terminal — git clone",
+    "mainColors": [
+      "#0F172A",
+      "#EF4444",
+      "#F59E0B"
+    ]
+  },
+  {
+    "id": "FRAME-18",
+    "title": "Mobile App Bezel",
+    "category": "esports-tech",
+    "detectedLabel": "TẢI APP TRẢI NGHIỆM 📱",
+    "mainColors": [
+      "#0F172A",
+      "#3B82F6",
+      "#2563EB"
+    ]
+  },
+  {
+    "id": "FRAME-19",
+    "title": "Lunar New Year Red Packet",
+    "category": "vn-festival",
+    "detectedLabel": "LÌ XÌ ĐẦU NĂM 🧧",
+    "mainColors": [
+      "#DC2626",
+      "#FDE047",
+      "#FBBF24"
+    ]
+  },
+  {
+    "id": "FRAME-20",
+    "title": "Mid-Autumn Lantern",
+    "category": "vn-festival",
+    "detectedLabel": "VUI TẾT TRUNG THU 🏮",
+    "mainColors": [
+      "#FFFBEB",
+      "#D97706",
+      "#B45309"
+    ]
+  },
+  {
+    "id": "FRAME-21",
+    "title": "Teachers' Day 20/11",
+    "category": "vn-festival",
+    "detectedLabel": "TRI ÂN THẦY CÔ 20/11 🌹",
+    "mainColors": [
+      "#F0FDF4",
+      "#16A34A",
+      "#15803D"
+    ]
+  },
+  {
+    "id": "FRAME-22",
+    "title": "Lotus Heritage",
+    "category": "vn-festival",
+    "detectedLabel": "TINH HOA VIỆT NAM 🪷",
+    "mainColors": [
+      "#FFFBEB",
+      "#B45309",
+      "#D97706"
+    ]
+  },
+  {
+    "id": "FRAME-23",
+    "title": "Wedding &amp; Romance",
+    "category": "vn-festival",
+    "detectedLabel": "SAVE THE DATE 💍",
+    "mainColors": [
+      "#FFF1F2",
+      "#E11D48",
+      "#F59E0B"
+    ]
+  },
+  {
+    "id": "FRAME-24",
+    "title": "Women's Day Bouquet",
+    "category": "vn-festival",
+    "detectedLabel": "GỬI LỜI YÊU THƯƠNG 💐",
+    "mainColors": [
+      "#FDF4FF",
+      "#C026D3",
+      "#E879F9"
+    ]
+  },
+  {
+    "id": "FRAME-25",
+    "title": "Phin Coffee Filter",
+    "category": "fnb",
+    "detectedLabel": "MENU CÀ PHÊ &amp; TRÀ ☕",
+    "mainColors": [
+      "#FFFBEB",
+      "#78350F",
+      "#94A3B8"
+    ]
+  },
+  {
+    "id": "FRAME-26",
+    "title": "Restaurant Cloche Menu",
+    "category": "fnb",
+    "detectedLabel": "THỰC ĐƠN MÓN NGON 🍽️",
+    "mainColors": [
+      "#FFF7ED",
+      "#EA580C",
+      "#F97316"
+    ]
+  },
+  {
+    "id": "FRAME-27",
+    "title": "Street Food Cart",
+    "category": "fnb",
+    "detectedLabel": "QUÉT ĐẶT ĐỒ ĂN NGAY 🥖",
+    "mainColors": [
+      "#DC2626",
+      "#B91C1C",
+      "#FEF2F2"
+    ]
+  },
+  {
+    "id": "FRAME-28",
+    "title": "Table Tent Standee",
+    "category": "fnb",
+    "detectedLabel": "BÀN SỐ 08",
+    "mainColors": [
+      "#4F46E5",
+      "#312E81",
+      "#EEF2FF"
+    ]
+  },
+  {
+    "id": "FRAME-29",
+    "title": "5-Star Customer Review",
+    "category": "fnb",
+    "detectedLabel": "ĐÁNH GIÁ 5 SAO GOOGLE ⭐",
+    "mainColors": [
+      "#F59E0B",
+      "#FBBF24",
+      "#D97706"
+    ]
+  },
+  {
+    "id": "FRAME-30",
+    "title": "Spa &amp; Nail Voucher",
+    "category": "fnb",
+    "detectedLabel": "ƯU ĐÃI LÀM ĐẸP -20% ✂️",
+    "mainColors": [
+      "#FDF2F8",
+      "#DB2777",
+      "#F472B6"
+    ]
+  },
+  {
+    "id": "FRAME-31",
+    "title": "Shopping Bag Store",
+    "category": "ecommerce",
+    "detectedLabel": "MUA SẮM NGAY 🛍️",
+    "mainColors": [
+      "#059669",
+      "#047857",
+      "#ECFDF5"
+    ]
+  },
+  {
+    "id": "FRAME-32",
+    "title": "Flash Sale Voucher",
+    "category": "ecommerce",
+    "detectedLabel": "SĂN VOUCHER GIẢM SỐC 🔥",
+    "mainColors": [
+      "#FFF7ED",
+      "#EA580C",
+      "#C2410C"
+    ]
+  },
+  {
+    "id": "FRAME-33",
+    "title": "Gift Box Ribbon",
+    "category": "ecommerce",
+    "detectedLabel": "QUÉT MỞ QUÀ TẶNG 🎁",
+    "mainColors": [
+      "#EFF6FF",
+      "#2563EB",
+      "#60A5FA"
+    ]
+  },
+  {
+    "id": "FRAME-34",
+    "title": "Sleeper Bus / Boarding",
+    "category": "ecommerce",
+    "detectedLabel": "LỊCH TRÌNH CHUYẾN ĐI 🎫",
+    "mainColors": [
+      "#F0FDF4",
+      "#059669",
+      "#6EE7B7"
+    ]
+  },
+  {
+    "id": "FRAME-35",
+    "title": "Google Maps Location Pin",
+    "category": "ecommerce",
+    "detectedLabel": "CHỈ ĐƯỜNG ĐẾN ĐÂY 📍",
+    "mainColors": [
+      "#FFF1F2",
+      "#E11D48",
+      "#BE123C"
+    ]
+  },
+  {
+    "id": "FRAME-36",
+    "title": "Polaroid Photo Memory",
+    "category": "ecommerce",
+    "detectedLabel": "ALBUM ẢNH KỶ NIỆM 📸",
+    "mainColors": [
+      "#CBD5E1",
+      "#FDE047",
+      "#0F172A"
+    ]
+  }
+]

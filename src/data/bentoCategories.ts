@@ -1,0 +1,158 @@
+import { QRType } from '../types/qr.types';
+
+export interface BentoCategory {
+  id: QRType;
+  title: string;
+  badge: string;
+  badgeType: 'dynamic' | 'static';
+  description: string;
+  highlight?: string;
+  span?: 'col-span-1' | 'col-span-2' | 'col-span-3';
+}
+
+export const BENTO_CATEGORIES: BentoCategory[] = [
+  {
+    id: 'url',
+    title: 'Link / URL',
+    badge: 'Dynamic Active',
+    badgeType: 'dynamic',
+    description: 'Chuyển hướng đến website ngoài, landing page sản phẩm hoặc link tiếp thị theo dõi UTM.',
+    highlight: 'Auto-shortened quickqr.io link',
+    span: 'col-span-3',
+  },
+  {
+    id: 'pdf',
+    title: 'PDF Document',
+    badge: 'PDF Viewer',
+    badgeType: 'dynamic',
+    description: 'Tải lên tài liệu PDF, brochure thực đơn và cho phép xem trực tiếp trên mọi thiết bị di động.',
+    highlight: 'Built-in document viewer & download',
+    span: 'col-span-3',
+  },
+  {
+    id: 'vcard',
+    title: 'vCard Business',
+    badge: 'Contact Sync',
+    badgeType: 'dynamic',
+    description: 'Danh bạ thông minh đồng bộ 1 chạm vào danh bạ điện thoại với avatar và mạng xã hội.',
+    highlight: 'Native iOS & Android .vcf sync',
+    span: 'col-span-2',
+  },
+  {
+    id: 'wifi',
+    title: 'Wi-Fi Access',
+    badge: 'Zero-Typing',
+    badgeType: 'static',
+    description: 'Kết nối mạng Wi-Fi tự động không cần nhập mật khẩu thủ công cho quán cafe, văn phòng.',
+    highlight: 'WPA/WPA2/WEP auto-connect protocol',
+    span: 'col-span-2',
+  },
+  {
+    id: 'whatsapp',
+    title: 'WhatsApp Direct',
+    badge: 'Auto-Chat',
+    badgeType: 'dynamic',
+    description: 'Mở cửa sổ chat WhatsApp ngay lập tức với số điện thoại và nội dung soạn sẵn.',
+    highlight: 'Direct wa.me deep-link trigger',
+    span: 'col-span-2',
+  },
+  {
+    id: 'image',
+    title: 'Image Gallery',
+    badge: 'Media Carousel',
+    badgeType: 'dynamic',
+    description: 'Trang trưng bày bộ sưu tập ảnh sản phẩm, portfolio chất lượng cao với hiệu ứng trượt.',
+    highlight: 'Mobile-optimized swipeable gallery',
+    span: 'col-span-2',
+  },
+  {
+    id: 'app',
+    title: 'App Store & Play',
+    badge: 'Smart OS Router',
+    badgeType: 'dynamic',
+    description: 'Tự động phát hiện iOS hoặc Android để điều hướng đúng chợ ứng dụng tương ứng.',
+    highlight: 'User-agent device auto-routing',
+    span: 'col-span-2',
+  },
+  {
+    id: 'multiurl',
+    title: 'Smart Multi-Link',
+    badge: 'Custom Routing',
+    badgeType: 'dynamic',
+    description: 'Trang Bio Link tổng hợp tất cả tài khoản mạng xã hội, cửa hàng và kênh liên hệ.',
+    highlight: 'All-in-one Linktree alternative',
+    span: 'col-span-2',
+  },
+  {
+    id: 'map',
+    title: 'Google Maps Location',
+    badge: 'Geo Pin',
+    badgeType: 'static',
+    description: 'Chỉ đường định vị trực tiếp trên bản đồ Google Maps cho cửa hàng và sự kiện.',
+    highlight: 'Direct GPS navigation intent',
+    span: 'col-span-2',
+  },
+  {
+    id: 'text',
+    title: 'Plain Text',
+    badge: 'Free Forever',
+    badgeType: 'static',
+    description: 'Hiển thị đoạn văn bản thuần, ghi chú hoặc mã số bảo mật khi quét không cần mạng.',
+    highlight: '100% offline scannable payload',
+    span: 'col-span-2',
+  },
+  {
+    id: 'audio',
+    title: 'Audio / MP3 Player',
+    badge: 'Audio Stream',
+    badgeType: 'dynamic',
+    description: 'Phát trực tiếp bài hát, tập podcast hoặc bản thu âm thuyết minh trên nền web di động.',
+    highlight: 'Embedded HTML5 audio player',
+    span: 'col-span-2',
+  },
+  {
+    id: 'event',
+    title: 'Event & Calendar',
+    badge: 'iCal / Google',
+    badgeType: 'static',
+    description: 'Thêm lịch hẹn sự kiện, hội thảo kèm thời gian và địa điểm vào ứng dụng Lịch.',
+    highlight: 'RFC 5545 calendar standard',
+    span: 'col-span-2',
+  },
+  {
+    id: 'email',
+    title: 'E-mail Dispatch',
+    badge: 'Pre-filled Mail',
+    badgeType: 'static',
+    description: 'Kích hoạt ứng dụng email với địa chỉ nhận, tiêu đề và nội dung mẫu có sẵn.',
+    highlight: 'Standard mailto: URI handler',
+    span: 'col-span-2',
+  },
+  {
+    id: 'phone',
+    title: 'Phone Call Dial',
+    badge: 'Direct Dial',
+    badgeType: 'static',
+    description: 'Khởi động cuộc gọi tức thì đến tổng đài hoặc số cá nhân chỉ với 1 lượt quét.',
+    highlight: 'Native tel: dialing action',
+    span: 'col-span-2',
+  },
+  {
+    id: 'social',
+    title: 'Social Hub',
+    badge: 'Channel Boost',
+    badgeType: 'dynamic',
+    description: 'Liên kết đồng thời Facebook, Instagram, YouTube, TikTok và Twitter trong một mã.',
+    highlight: 'Omnichannel social follower growth',
+    span: 'col-span-2',
+  },
+  {
+    id: 'pptx',
+    title: 'PPTX Slide Deck',
+    badge: 'Presentation',
+    badgeType: 'dynamic',
+    description: 'Chia sẻ bài thuyết trình PowerPoint hoặc Google Slides cho người nghe tải về.',
+    highlight: 'Conference & webinar instant share',
+    span: 'col-span-2',
+  },
+];

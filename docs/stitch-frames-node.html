@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QuickQR Studio — Complete Vietnam &amp; Student SVG QR Frame Mega-Library (FRAME-01 to FRAME-36)</title>
+<!-- Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-card": "#FFFFFF",
+            "outline-variant": "#c7c4d8",
+            "tertiary-fixed-dim": "#f3aeff",
+            "on-tertiary-container": "#facdff",
+            "surface-container": "#e5eeff",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#213145",
+            "outline": "#777587",
+            "secondary-fixed": "#6ffbbe",
+            "secondary-container": "#6cf8bb",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "secondary-fixed-dim": "#4edea3",
+            "border-subtle": "#E2E8F0",
+            "inverse-on-surface": "#eaf1ff",
+            "slate-text-strong": "#0F172A",
+            "on-surface-variant": "#464555",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-fixed": "#340042",
+            "primary-fixed-dim": "#c3c0ff",
+            "inverse-primary": "#c3c0ff",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed-variant": "#790096",
+            "canvas-bg": "#F8FAFC",
+            "secondary": "#006c49",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#dad7ff",
+            "primary-fixed": "#e2dfff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "success-emerald-glow": "#D1FAE5",
+            "tertiary": "#7b0498",
+            "tertiary-fixed": "#fdd6ff",
+            "slate-text-muted": "#64748B",
+            "surface-container-high": "#dce9ff",
+            "on-secondary-fixed": "#002113",
+            "indigo-tint": "#EEF2FF",
+            "surface-dim": "#cbdbf5",
+            "on-secondary-container": "#00714d",
+            "primary": "#3525cd",
+            "background": "#f8f9ff",
+            "on-primary-fixed": "#0f0069",
+            "surface": "#f8f9ff",
+            "surface-container-highest": "#d3e4fe",
+            "primary-container": "#4f46e5",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#3323cc",
+            "tertiary-container": "#972eb2",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#4d44e3",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "3rem",
+            "space-xs": "0.25rem",
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "gutter-lg": "2rem",
+            "margin": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "800"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    /* Safe-zone grid toggle helper */
+    body.hide-safe-zone .qr-safe-guide {
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body class="bg-canvas-bg text-slate-text-strong font-body-md antialiased min-h-screen flex flex-col selection:bg-primary selection:text-white">
+<!-- ================= TOP APP BAR (Shared Component JSON Blueprint) ================= -->
+<header class="w-full sticky top-0 z-50 bg-surface-card dark:bg-inverse-surface border-b border-border-subtle dark:border-outline-variant shadow-sm dark:shadow-none">
+<div class="max-w-7xl mx-auto px-gutter-lg h-16 flex items-center justify-between">
+<!-- Brand Logo & Spec Badge -->
+<div class="flex items-center gap-space-md">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white shadow-md shadow-primary/25">
+<span class="material-symbols-outlined text-[22px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="text-headline-md font-headline-md font-extrabold text-slate-text-strong dark:text-inverse-on-surface tracking-tight">QuickQR Studio</span>
+</a>
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-tint border border-primary/20 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm">spec v4.0 Mega-Sheet</span>
+</div>
+</div>
+<!-- Navigation Links (Templates active) -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-slate-text-muted dark:text-outline-variant font-label-md text-label-md hover:text-slate-text-strong dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">QR Generator</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-label-md text-label-md hover:text-slate-text-strong dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">Pricing</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-label-md text-label-md hover:text-slate-text-strong dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">API</a>
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Templates</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-label-md text-label-md hover:text-slate-text-strong dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">FAQ</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-space-sm">
+<button class="p-2 text-slate-text-muted hover:text-slate-text-strong hover:bg-canvas-bg rounded-lg transition-colors duration-150 flex items-center gap-1 text-label-sm font-label-sm" title="Change Language">
+<span class="material-symbols-outlined text-[18px]" data-icon="language">language</span>
+<span class="hidden sm:inline">VN / EN</span>
+</button>
+<button class="hidden sm:inline-flex px-3.5 py-1.5 text-label-md font-label-md text-slate-text-strong hover:bg-canvas-bg rounded-lg transition-colors duration-150">
+          Log In
+        </button>
+<button class="px-4 py-2 bg-primary text-white font-label-md text-label-md rounded-xl shadow-sm hover:bg-primary-container active:scale-[0.98] transition-all duration-150">
+          Create Account
+        </button>
+</div>
+</div>
+</header>
+<!-- ================= MAIN WORKSHOP CANVAS ================= -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-gutter-lg py-space-xl">
+<!-- Hero / Dev-Handoff Intro Section -->
+<div class="mb-space-xl border-b border-border-subtle pb-space-xl">
+<!-- Status Badges Bar -->
+<div class="flex flex-wrap items-center gap-2 mb-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-secondary font-label-sm text-label-sm border border-emerald-300">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          36/36 Production SVGs
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-tint text-primary font-label-sm text-label-sm border border-primary/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="crop_free">crop_free</span>
+          200x200px Safe Zone Strict Spec
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-card text-slate-text-strong font-label-sm text-label-sm border border-border-subtle shadow-xs">
+<span class="material-symbols-outlined text-[14px] text-amber-500" data-icon="verified_user">verified_user</span>
+          Level H Error Correction Compliant
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-card text-slate-text-muted font-label-sm text-label-sm border border-border-subtle">
+<span class="material-symbols-outlined text-[14px]" data-icon="polyline">polyline</span>
+          Zero-Distortion Coordinate Handoff
+        </span>
+</div>
+<!-- Main Header & Intro -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="max-w-3xl">
+<h1 class="text-headline-lg font-headline-lg text-slate-text-strong tracking-tight">
+            QuickQR Studio — Complete Vietnam &amp; Student SVG QR Frame Mega-Library
+          </h1>
+<p class="mt-2 text-body-lg font-body-lg text-slate-text-muted">
+            Pixel-perfect scalable vector frames engineered for dynamic QR routing, campus club campaigns, student life, and local Vietnamese commerce. Standardized on a <code class="px-1.5 py-0.5 rounded bg-surface-card border border-border-subtle text-primary font-mono text-[13px]">viewBox="0 0 320 380"</code> coordinate system with static 200×200 safe-zone bounds.
+          </p>
+</div>
+<!-- Master Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-label-md text-label-md rounded-xl shadow-md hover:shadow-lg transition-all duration-150 active:scale-[0.98]" id="btnZipExport">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+            Export All 36 SVGs (.zip)
+          </button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-card hover:bg-canvas-bg border border-border-subtle text-slate-text-strong font-label-md text-label-md rounded-xl transition-all duration-150 active:scale-[0.98]" id="btnCopyAll">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+            Copy All Code
+          </button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-card hover:bg-canvas-bg border border-border-subtle text-slate-text-strong font-label-md text-label-md rounded-xl transition-all duration-150">
+<span class="material-symbols-outlined text-[18px]" data-icon="token">token</span>
+            Download Figma (.fig)
+          </button>
+<button class="flex items-center gap-2 px-3.5 py-2.5 bg-indigo-50 border border-primary/20 text-primary font-label-md text-label-md rounded-xl hover:bg-indigo-100 transition-colors" id="btnToggleSafeZone" title="Toggle visible 200x200 Safe Zone bounding box">
+<span class="material-symbols-outlined text-[18px]" data-icon="grid_4x4">grid_4x4</span>
+<span class="hidden xl:inline">Toggle 200x200 Safe Zone Grid</span>
+</button>
+</div>
+</div>
+<!-- Category Filter Tabs Navigation -->
+<div class="mt-space-lg flex items-center gap-2 overflow-x-auto custom-scroll pb-2 border-t border-border-subtle/60 pt-4">
+<a class="px-3.5 py-1.5 rounded-full bg-primary text-white text-label-sm font-label-sm shadow-sm whitespace-nowrap" href="#all">All 36 Frames</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-campus">Row 1: Campus &amp; Clubs (01-06)</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-student">Row 2: Student Life &amp; Donate (07-12)</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-tech">Row 3: Esports &amp; Tech (13-18)</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-festivals">Row 4: Vietnam Festivals (19-24)</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-fb">Row 5: F&amp;B &amp; Local Shops (25-30)</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-canvas-bg text-slate-text-strong border border-border-subtle text-label-sm font-label-sm whitespace-nowrap" href="#row-ecommerce">Row 6: E-Commerce &amp; Travel (31-36)</a>
+</div>
+</div>
+<!-- ================= 6x6 MASTER VECTOR FRAMES WORKSHOP GRID ================= -->
+<div class="space-y-space-xl">
+<!-- ================= ROW 1: CAMPUS & CLUBS ================= -->
+<section class="scroll-mt-24" id="row-campus">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm">R1</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 1: CAMPUS &amp; CLUBS (FRAME-01 to FRAME-06)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">High-density recruitment drives, student association check-ins, research portfolios &amp; digital drive repositories.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-01 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">FRAME-01</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-01')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Club Event Pass</div>
+<div class="text-[11px] font-bold text-blue-600 mb-2 truncate">CHECK-IN SỰ KIỆN 🎟️</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-01" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Ticket Outer Body with notched perforations -->
+<rect fill="#FFFFFF" height="340" rx="18" stroke="#3B82F6" stroke-width="3" width="280" x="20" y="20"></rect>
+<!-- Perforated Notches -->
+<circle cx="20" cy="90" fill="#F8FAFC" r="12" stroke="#3B82F6" stroke-width="3"></circle>
+<circle cx="300" cy="90" fill="#F8FAFC" r="12" stroke="#3B82F6" stroke-width="3"></circle>
+<line stroke="#93C5FD" stroke-dasharray="6 4" stroke-width="2" x1="36" x2="284" y1="90" y2="90"></line>
+<!-- Header Banner -->
+<rect fill="#EFF6FF" height="38" rx="8" width="220" x="50" y="38"></rect>
+<text fill="#1D4ED8" font-family="Plus Jakarta Sans" font-size="14" font-weight="700" text-anchor="middle" x="160" y="62">CHECK-IN SỰ KIỆN 🎟️</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 110)">
+<rect class="qr-safe-guide" fill="#F8FAFC" height="200" rx="12" stroke="#3B82F6" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<rect fill="#DBEAFE" height="50" rx="6" width="50" x="75" y="75"></rect>
+<path d="M85 85h30v30H85z" fill="#2563EB"></path>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="145">[ 200 × 200 px QR ]</text>
+</g>
+<!-- Footer Barcode Graphic -->
+<rect fill="#F1F5F9" height="22" rx="4" width="200" x="60" y="325"></rect>
+<line stroke="#334155" stroke-width="2" x1="75" x2="75" y1="330" y2="342"></line>
+<line stroke="#334155" stroke-width="4" x1="82" x2="82" y1="330" y2="342"></line>
+<line stroke="#334155" stroke-width="1.5" x1="92" x2="92" y1="330" y2="342"></line>
+<line stroke="#334155" stroke-width="3" x1="102" x2="102" y1="330" y2="342"></line>
+<text fill="#475569" font-family="JetBrains Mono" font-size="9" x="180" y="340">PASS-8942-VN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-blue-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-02 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">FRAME-02</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-02')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Student ID Lanyard</div>
+<div class="text-[11px] font-bold text-indigo-600 mb-2 truncate">THẺ THÀNH VIÊN CLB 🪪</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-02" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Lanyard strap & clip -->
+<path d="M140 10 L140 32 M180 10 L180 32" stroke="#4F46E5" stroke-linecap="round" stroke-width="12"></path>
+<rect fill="#94A3B8" height="14" rx="4" width="50" x="135" y="32"></rect>
+<circle cx="160" cy="39" fill="#334155" r="3"></circle>
+<!-- ID Card Body -->
+<rect fill="#FFFFFF" height="316" rx="16" stroke="#4F46E5" stroke-width="2.5" width="270" x="25" y="44"></rect>
+<rect fill="#4F46E5" height="42" rx="16" width="270" x="25" y="44"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="70">THẺ THÀNH VIÊN CLB 🪪</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#F8FAFC" height="200" rx="10" stroke="#4F46E5" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<!-- Footer Tag -->
+<text fill="#4F46E5" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" text-anchor="middle" x="160" y="336">HỌC SINH • SINH VIÊN VN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-200"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-03 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200">FRAME-03</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-03')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Club Recruitment</div>
+<div class="text-[11px] font-bold text-amber-600 mb-2 truncate">APPLY NGAY / GEN MOI 📢</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-03" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Megaphone Frame with Confetti -->
+<rect fill="#FFFBEB" height="336" rx="20" stroke="#F59E0B" stroke-width="3" width="276" x="22" y="22"></rect>
+<!-- Confetti dots -->
+<circle cx="45" cy="50" fill="#EF4444" r="4"></circle>
+<circle cx="275" cy="65" fill="#3B82F6" r="5"></circle>
+<polygon fill="#10B981" points="260,40 268,45 264,52"></polygon>
+<polygon fill="#F59E0B" points="50,75 58,72 55,80"></polygon>
+<!-- Top Header Banner -->
+<rect fill="#F59E0B" height="42" rx="10" width="240" x="40" y="38"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="160" y="65">TUYỂN QUÂN / APPLY NGAY 📢</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#F59E0B" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#B45309" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="336">HẠN NỘP: 23H59 CHỦ NHẬT</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-04 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-sky-50 text-sky-800 border border-sky-200">FRAME-04</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-04')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Graduation Portfolio</div>
+<div class="text-[11px] font-bold text-sky-600 mb-2 truncate">XEM DEMO ĐỒ ÁN 🎓</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-04" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Academic Frame -->
+<rect fill="#F0F9FF" height="332" rx="16" stroke="#0284C7" stroke-width="2.5" width="276" x="22" y="24"></rect>
+<!-- Mortarboard Cap Graphic on Top -->
+<path d="M160 30 L200 48 L160 64 L120 48 Z" fill="#0369A1"></path>
+<path d="M140 57 L140 72 Q160 82 180 72 L180 57" fill="#0284C7"></path>
+<line stroke="#F59E0B" stroke-width="2" x1="195" x2="208" y1="48" y2="70"></line>
+<circle cx="208" cy="72" fill="#F59E0B" r="3"></circle>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#0284C7" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<rect fill="#0284C7" height="30" rx="8" width="220" x="50" y="318"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="338">XEM DEMO ĐỒ ÁN 🎓</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-sky-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-05 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">FRAME-05</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-05')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Survey Clipboard</div>
+<div class="text-[11px] font-bold text-emerald-600 mb-2 truncate">KHẢO SÁT NGHIÊN CỨU 📝</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-05" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Clipboard board base -->
+<rect fill="#FFFFFF" height="328" rx="14" stroke="#059669" stroke-width="2.5" width="270" x="25" y="32"></rect>
+<!-- Metal Clip -->
+<rect fill="#E2E8F0" height="26" rx="6" stroke="#059669" stroke-width="2" width="80" x="120" y="18"></rect>
+<circle cx="160" cy="30" fill="#059669" r="4"></circle>
+<!-- Top title -->
+<text fill="#065F46" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="75">KHẢO SÁT NGHIÊN CỨU 📝</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#ECFDF5" height="200" rx="10" stroke="#059669" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<!-- Footer Checkmark banner -->
+<path d="M125 330 L135 340 L155 320" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<text fill="#065F46" font-family="Inter" font-size="11" font-weight="600" x="180" y="335">DÀNH 2 PHÚT</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-06 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-violet-50 text-violet-800 border border-violet-200">FRAME-06</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-06')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Study Drive Folder</div>
+<div class="text-[11px] font-bold text-violet-600 mb-2 truncate">TÀI LIỆU ÔN THI 📂</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-06" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Folder tab contour -->
+<path d="M25 55 L90 55 L115 35 L295 35 Q300 35 300 40 L300 345 Q300 355 290 355 L35 355 Q25 355 25 345 Z" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"></path>
+<text fill="#6D28D9" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" text-anchor="middle" x="165" y="75">TÀI LIỆU ÔN THI 📂</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#7C3AED" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<rect fill="#DDD6FE" height="22" rx="11" width="160" x="80" y="325"></rect>
+<text fill="#5B21B6" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="160" y="340">GOOGLE DRIVE / ONEDRIVE</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-violet-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-violet-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-100"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ROW 2: STUDENT LIFE & DONATE ================= -->
+<section class="scroll-mt-24" id="row-student">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center font-bold text-sm">R2</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 2: STUDENT LIFE &amp; DONATE (FRAME-07 to FRAME-12)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">Micro-donations, boba tea group orders, hostel Wi-Fi &amp; boarding house utility management.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-07 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-700 border border-pink-200">FRAME-07</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-07')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Boba Milk Tea Cup</div>
+<div class="text-[11px] font-bold text-pink-600 mb-2 truncate">DONATE TRÀ SỮA 🧋</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-07" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Straw on top -->
+<path d="M190 8 L170 45" stroke="#F43F5E" stroke-linecap="round" stroke-width="12"></path>
+<!-- Cup body -->
+<path d="M35 50 L55 330 Q58 350 85 350 L235 350 Q262 350 265 330 L285 50 Z" fill="#FFF1F2" stroke="#FB7185" stroke-width="3"></path>
+<!-- Cup Rim -->
+<rect fill="#FDA4AF" height="14" rx="7" width="270" x="25" y="42"></rect>
+<text fill="#BE123C" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" text-anchor="middle" x="160" y="82">DONATE TRÀ SỮA 🧋</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="14" stroke="#FB7185" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<!-- Boba pearls in footer -->
+<circle cx="95" cy="325" fill="#475569" r="8"></circle>
+<circle cx="125" cy="330" fill="#334155" r="9"></circle>
+<circle cx="160" cy="325" fill="#1E293B" r="8.5"></circle>
+<circle cx="195" cy="330" fill="#475569" r="8"></circle>
+<circle cx="225" cy="325" fill="#334155" r="9"></circle>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-08 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">FRAME-08</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-08')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">VietQR Piggy Bank</div>
+<div class="text-[11px] font-bold text-rose-600 mb-2 truncate">QUÉT CHIA TIỀN NHÓM 🐷</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-08" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Piggy bank contour -->
+<rect fill="#FDF2F8" height="300" rx="30" stroke="#EC4899" stroke-width="2.5" width="270" x="25" y="45"></rect>
+<!-- Coin slot on top -->
+<rect fill="#FBBF24" height="12" rx="6" stroke="#D97706" stroke-width="2" width="60" x="130" y="28"></rect>
+<!-- Piggy ears -->
+<path d="M45 45 L65 20 L85 45 Z" fill="#FBCFE8" stroke="#EC4899" stroke-width="2"></path>
+<path d="M235 45 L255 20 L275 45 Z" fill="#FBCFE8" stroke="#EC4899" stroke-width="2"></path>
+<text fill="#BE185D" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="78">QUÉT CHIA TIỀN NHÓM 🐷</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="14" stroke="#EC4899" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9D174D" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="160" y="332">VIETQR 24/7 NAPAS</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-pink-200"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-09 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 border border-orange-200">FRAME-09</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-09')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">SOS Instant Noodles</div>
+<div class="text-[11px] font-bold text-orange-600 mb-2 truncate">CỨU ĐÓI CUỐI THÁNG 🍜</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-09" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Ramen bowl frame -->
+<rect fill="#FFF7ED" height="330" rx="20" stroke="#EA580C" stroke-width="2.5" width="270" x="25" y="25"></rect>
+<!-- Chopsticks at top right -->
+<line stroke="#78350F" stroke-linecap="round" stroke-width="4" x1="220" x2="280" y1="20" y2="45"></line>
+<line stroke="#78350F" stroke-linecap="round" stroke-width="4" x1="225" x2="285" y1="30" y2="55"></line>
+<rect fill="#FFEDD5" height="36" rx="8" width="200" x="45" y="45"></rect>
+<text fill="#C2410C" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="145" y="68">CỨU ĐÓI CUỐI THÁNG 🍜</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#EA580C" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9A3412" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="160" y="338">MÌ TÔM HẢO HẢO / 5K - 10K</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-700"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-orange-200"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-10 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-800 border border-cyan-200">FRAME-10</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-10')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Wi-Fi Access Card</div>
+<div class="text-[11px] font-bold text-cyan-600 mb-2 truncate">QUÉT VÀO WI-FI 🛜</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-10" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FFFFFF" height="332" rx="18" stroke="#0891B2" stroke-width="2.5" width="272" x="24" y="24"></rect>
+<!-- Wi-Fi Wave Arc -->
+<path d="M125 50 Q160 30 195 50" fill="none" stroke="#06B6D4" stroke-linecap="round" stroke-width="3.5"></path>
+<path d="M135 60 Q160 45 185 60" fill="none" stroke="#06B6D4" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="160" cy="70" fill="#0891B2" r="3.5"></circle>
+<text fill="#0E7490" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="92">QUÉT VÀO WI-FI 🛜</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#ECFEFF" height="200" rx="12" stroke="#0891B2" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#155E75" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="160" y="338">SSID: SV_STUDY_FREE | WPA2</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-300"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-50"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-11 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200">FRAME-11</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-11')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Boarding House Rules</div>
+<div class="text-[11px] font-bold text-teal-600 mb-2 truncate">NỘI QUY PHÒNG TRỌ 🏠</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-11" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Roof contour -->
+<path d="M160 20 L285 75 L285 345 Q285 355 275 355 L45 355 Q35 355 35 345 L35 75 Z" fill="#F0FDFA" stroke="#0D9488" stroke-width="2.5"></path>
+<!-- Chimney & Key -->
+<rect fill="#CCFBF1" height="28" stroke="#0D9488" stroke-width="2" width="20" x="230" y="32"></rect>
+<text fill="#115E59" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="85">NỘI QUY PHÒNG TRỌ 🏠</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#0D9488" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#0F766E" font-family="Inter" font-size="10.5" font-weight="600" text-anchor="middle" x="160" y="338">TIỀN PHÒNG • ĐIỆN NƯỚC • RÁC</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-teal-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-teal-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-teal-50"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-12 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-lime-50 text-lime-900 border border-lime-200">FRAME-12</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-12')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Lost &amp; Found Tag</div>
+<div class="text-[11px] font-bold text-lime-700 mb-2 truncate">NHẶT ĐƯỢC LIÊN HỆ 📞</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-12" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Luggage Tag with corner cutoffs -->
+<path d="M75 25 L245 25 L290 70 L290 350 L30 350 L30 70 Z" fill="#F7FEE7" stroke="#65A30D" stroke-width="2.5"></path>
+<!-- Eyelet hole & loop -->
+<circle cx="160" cy="50" fill="#FFFFFF" r="10" stroke="#65A30D" stroke-width="2.5"></circle>
+<path d="M160 50 Q160 10 180 8" fill="none" stroke="#4D7C0F" stroke-width="2"></path>
+<text fill="#3F6212" font-family="Plus Jakarta Sans" font-size="11.5" font-weight="700" text-anchor="middle" x="160" y="85">NHẶT ĐƯỢC XIN LIÊN HỆ 📞</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#65A30D" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#4D7C0F" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="160" y="335">XIN HẬU TẠ &amp; CẢM ƠN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-lime-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-lime-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-lime-900"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ROW 3: ESPORTS, MEDIA & TECH ================= -->
+<section class="scroll-mt-24" id="row-tech">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm">R3</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 3: ESPORTS, MEDIA &amp; TECH (FRAME-13 to FRAME-18)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">Gaming tournaments, livestream overlays, GitHub repos, acoustic gigs &amp; app download bezels.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-13 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-50 text-purple-800 border border-purple-200">FRAME-13</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-13')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Esports Shield</div>
+<div class="text-[11px] font-bold text-purple-600 mb-2 truncate">ĐĂNG KÝ GIẢI ĐẤU 🎮</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-13" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Esports Shield contour -->
+<path d="M160 22 L285 55 L285 240 Q285 330 160 365 Q35 330 35 240 L35 55 Z" fill="#FAF5FF" stroke="#9333EA" stroke-width="3"></path>
+<!-- Gamepad emblem badge -->
+<rect fill="#9333EA" height="34" rx="8" width="180" x="70" y="45"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="68">ĐĂNG KÝ GIẢI ĐẤU 🎮</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#9333EA" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#7E22CE" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="160" y="338">5v5 TOURNAMENT • FREE</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-purple-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-14 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-900 border border-zinc-300">FRAME-14</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-14')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Cyberpunk HUD</div>
+<div class="text-[11px] font-bold text-emerald-600 mb-2 truncate">QUÉT KHÁM PHÁ ⚡</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-14" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Dark cyberpunk base -->
+<rect fill="#090D16" height="340" rx="14" stroke="#22D3EE" stroke-width="2" width="280" x="20" y="20"></rect>
+<!-- Neon HUD corner brackets -->
+<path d="M35 55 L35 35 L55 35" stroke="#22D3EE" stroke-width="4"></path>
+<path d="M285 55 L285 35 L265 35" stroke="#22D3EE" stroke-width="4"></path>
+<path d="M35 325 L35 345 L55 345" stroke="#22D3EE" stroke-width="4"></path>
+<path d="M285 325 L285 345 L265 345" stroke="#22D3EE" stroke-width="4"></path>
+<text fill="#10B981" font-family="JetBrains Mono" font-size="12" font-weight="700" text-anchor="middle" x="160" y="65">&gt; QUÉT KHÁM PHÁ ⚡ &lt;</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#0F172A" height="200" rx="10" stroke="#22D3EE" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="160" y="335">CYBER_LINK // PROTOCOL_V4</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-15 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-rose-50 text-rose-800 border border-rose-200">FRAME-15</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-15')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Acoustic Music Night</div>
+<div class="text-[11px] font-bold text-rose-600 mb-2 truncate">ĐẶT VÉ ĐÊM NHẠC 🎸</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-15" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FFF1F2" height="332" rx="20" stroke="#E11D48" stroke-width="2.5" width="276" x="22" y="24"></rect>
+<!-- Vinyl record ring peek -->
+<circle cx="160" cy="48" fill="#1E293B" r="28"></circle>
+<circle cx="160" cy="48" fill="#FDA4AF" r="10"></circle>
+<circle cx="160" cy="48" fill="#FFFFFF" r="3"></circle>
+<text fill="#9F1239" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="96">ĐẶT VÉ ĐÊM NHẠC 🎸</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 110)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#E11D48" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#E11D48" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="600" text-anchor="middle" x="160" y="342">ACOUSTIC LIVE @ 20:00</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-16 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-700 border border-red-200">FRAME-16</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-16')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Livestream Viewfinder</div>
+<div class="text-[11px] font-bold text-red-600 mb-2 truncate">THAM GIA LIVESTREAM 🔴</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-16" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#18181B" height="332" rx="16" stroke="#3F3F46" stroke-width="2" width="276" x="22" y="24"></rect>
+<!-- Camera REC Banner -->
+<circle cx="45" cy="52" fill="#EF4444" r="6"></circle>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" x="60" y="56">REC</text>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" x="175" y="56">LIVE CHAT</text>
+<rect fill="none" height="12" rx="3" stroke="#FFFFFF" stroke-width="1.5" width="24" x="250" y="47"></rect>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 85)">
+<rect class="qr-safe-guide" fill="#27272A" height="200" rx="10" stroke="#EF4444" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#A1A1AA" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<rect fill="#EF4444" height="36" rx="8" width="240" x="40" y="305"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="328">THAM GIA LIVESTREAM 🔴</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-900"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-600"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-17 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-900 border border-slate-300">FRAME-17</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-17')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">macOS Terminal Code</div>
+<div class="text-[11px] font-bold text-slate-600 mb-2 truncate">SOURCE CODE &amp; GITHUB 💻</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-17" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Mac Terminal Window -->
+<rect fill="#0F172A" height="332" rx="14" stroke="#334155" stroke-width="2" width="276" x="22" y="24"></rect>
+<!-- Traffic dots -->
+<circle cx="42" cy="44" fill="#EF4444" r="5"></circle>
+<circle cx="58" cy="44" fill="#F59E0B" r="5"></circle>
+<circle cx="74" cy="44" fill="#10B981" r="5"></circle>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="160" y="48">terminal — git clone</text>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="11" x="40" y="80">$ npm run dev --repo</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#1E293B" height="200" rx="10" stroke="#38BDF8" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#F1F5F9" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="160" y="336">SOURCE CODE &amp; GITHUB 💻</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-18 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200">FRAME-18</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-18')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Mobile App Bezel</div>
+<div class="text-[11px] font-bold text-blue-600 mb-2 truncate">TẢI APP TRẢI NGHIỆM 📱</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-18" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Phone Bezel Contour -->
+<rect fill="#FFFFFF" height="350" rx="34" stroke="#0F172A" stroke-width="4" width="260" x="30" y="15"></rect>
+<!-- Dynamic Island -->
+<rect fill="#0F172A" height="14" rx="7" width="70" x="125" y="26"></rect>
+<text fill="#1E293B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="68">TẢI APP TRẢI NGHIỆM 📱</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#F8FAFC" height="200" rx="14" stroke="#3B82F6" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<!-- iOS Home bar -->
+<rect fill="#0F172A" height="4" rx="2" width="100" x="110" y="342"></rect>
+<text fill="#2563EB" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="160" y="325">APP STORE &amp; GOOGLE PLAY</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-200"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ROW 4: VIETNAM FESTIVALS & TRADITION ================= -->
+<section class="scroll-mt-24" id="row-festivals">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">R4</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 4: VIETNAM FESTIVALS &amp; TRADITION (FRAME-19 to FRAME-24)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">Tết Nguyên Đán red envelopes, Mid-Autumn festivals, Teachers' Day, bronze drum heritage &amp; weddings.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-19 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-800 border border-red-200">FRAME-19</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-19')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Lunar New Year Red Packet</div>
+<div class="text-[11px] font-bold text-red-600 mb-2 truncate">LÌ XÌ ĐẦU NĂM 🧧</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-19" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Bao Lì Xì Envelope -->
+<rect fill="#DC2626" height="332" rx="20" stroke="#FDE047" stroke-width="3" width="272" x="24" y="24"></rect>
+<!-- Gold corner ornaments -->
+<path d="M35 50 Q50 50 50 35" fill="none" stroke="#FBBF24" stroke-width="2.5"></path>
+<path d="M285 50 Q270 50 270 35" fill="none" stroke="#FBBF24" stroke-width="2.5"></path>
+<rect fill="#B91C1C" height="38" rx="8" width="220" x="50" y="38"></rect>
+<text fill="#FDE047" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="160" y="63">LÌ XÌ ĐẦU NĂM 🧧</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#FEF2F2" height="200" rx="12" stroke="#FBBF24" stroke-dasharray="5 5" stroke-width="2" width="200"></rect>
+<text fill="#B91C1C" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#FEF08A" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="336">VẠN SỰ NHƯ Ý • TÀI LỘC</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-300"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-red-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-20 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200">FRAME-20</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-20')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Mid-Autumn Lantern</div>
+<div class="text-[11px] font-bold text-amber-600 mb-2 truncate">VUI TẾT TRUNG THU 🏮</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-20" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Lantern Silhouette -->
+<rect fill="#FFFBEB" height="320" rx="24" stroke="#D97706" stroke-width="2.5" width="270" x="25" y="32"></rect>
+<!-- Tassel string hanging on top -->
+<line stroke="#B45309" stroke-width="3" x1="160" x2="160" y1="12" y2="32"></line>
+<text fill="#B45309" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="160" y="70">VUI TẾT TRUNG THU 🏮</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="14" stroke="#D97706" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#92400E" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="160" y="332">RƯỚC ĐÈN PHÁ CỖ • ĐOÀN VIÊN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-100"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-21 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">FRAME-21</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-21')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Teachers' Day 20/11</div>
+<div class="text-[11px] font-bold text-emerald-700 mb-2 truncate">TRI ÂN THẦY CÔ 20/11 🌹</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-21" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Book outline border -->
+<rect fill="#F0FDF4" height="330" rx="16" stroke="#16A34A" stroke-width="2.5" width="270" x="25" y="25"></rect>
+<!-- Open Book top spine -->
+<path d="M120 48 Q160 60 200 48" fill="none" stroke="#15803D" stroke-width="2.5"></path>
+<text fill="#15803D" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="78">TRI ÂN THẦY CÔ 20/11 🌹</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#16A34A" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#166534" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="160" y="338">NGƯỜI LÁI ĐÒ THẦM LẶNG</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-22 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-900 border border-yellow-200">FRAME-22</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-22')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Lotus Heritage</div>
+<div class="text-[11px] font-bold text-amber-700 mb-2 truncate">TINH HOA VIỆT NAM 🪷</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-22" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Dong Son Bronze Drum Motif Border -->
+<rect fill="#FFFBEB" height="332" rx="18" stroke="#B45309" stroke-width="3" width="276" x="22" y="24"></rect>
+<!-- Sunburst circle top -->
+<circle cx="160" cy="50" fill="none" r="16" stroke="#D97706" stroke-width="2"></circle>
+<circle cx="160" cy="50" fill="#D97706" r="6"></circle>
+<text fill="#92400E" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="800" text-anchor="middle" x="160" y="86">TINH HOA VIỆT NAM 🪷</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 102)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="10" stroke="#B45309" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#B45309" font-family="Inter" font-size="10.5" font-weight="700" text-anchor="middle" x="160" y="338">DI SẢN &amp; VĂN HOÁ TRUYỀN THỐNG</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-700"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-pink-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-23 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-rose-50 text-rose-800 border border-rose-200">FRAME-23</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-23')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Wedding &amp; Romance</div>
+<div class="text-[11px] font-bold text-rose-600 mb-2 truncate">SAVE THE DATE 💍</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-23" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Floral Wedding Frame -->
+<rect fill="#FFF1F2" height="332" rx="20" stroke="#E11D48" stroke-width="2" width="272" x="24" y="24"></rect>
+<!-- Intertwined rings -->
+<circle cx="152" cy="46" fill="none" r="10" stroke="#F59E0B" stroke-width="2.5"></circle>
+<circle cx="168" cy="46" fill="none" r="10" stroke="#F59E0B" stroke-width="2.5"></circle>
+<text fill="#BE123C" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="78">SAVE THE DATE 💍</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 98)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="14" stroke="#E11D48" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9F1239" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" text-anchor="middle" x="160" y="335">THIỆP CƯỚI &amp; ALBUM ẢNH</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-24 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-fuchsia-50 text-fuchsia-800 border border-fuchsia-200">FRAME-24</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-24')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Women's Day Bouquet</div>
+<div class="text-[11px] font-bold text-fuchsia-600 mb-2 truncate">GỬI LỜI YÊU THƯƠNG 💐</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-24" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FDF4FF" height="330" rx="18" stroke="#C026D3" stroke-width="2.5" width="270" x="25" y="25"></rect>
+<!-- Ribbon Bow on Top -->
+<path d="M160 44 Q140 25 130 45 Q150 50 160 44 Z" fill="#E879F9"></path>
+<path d="M160 44 Q180 25 190 45 Q170 50 160 44 Z" fill="#E879F9"></path>
+<circle cx="160" cy="44" fill="#A21CAF" r="4"></circle>
+<text fill="#86198F" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" text-anchor="middle" x="160" y="78">GỬI LỜI YÊU THƯƠNG 💐</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 98)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#C026D3" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#A21CAF" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" text-anchor="middle" x="160" y="336">CHÚC MỪNG NGÀY 8/3 &amp; 20/10</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-fuchsia-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-fuchsia-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-fuchsia-900"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ROW 5: F&B & LOCAL SHOPS ================= -->
+<section class="scroll-mt-24" id="row-fb">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">R5</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 5: F&amp;B &amp; LOCAL SHOPS (FRAME-25 to FRAME-30)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">Vietnamese phin coffee, cloche menus, street food stalls, table standees &amp; review collection.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-25 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">FRAME-25</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-25')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Phin Coffee Filter</div>
+<div class="text-[11px] font-bold text-amber-800 mb-2 truncate">MENU CÀ PHÊ &amp; TRÀ ☕</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-25" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Frame -->
+<rect fill="#FFFBEB" height="312" rx="18" stroke="#78350F" stroke-width="2.5" width="270" x="25" y="42"></rect>
+<!-- Aluminum Phin Drip graphic on top -->
+<rect fill="#94A3B8" height="12" rx="2" width="50" x="135" y="16"></rect>
+<rect fill="#CBD5E1" height="14" width="36" x="142" y="28"></rect>
+<rect fill="#64748B" height="6" rx="2" width="80" x="120" y="40"></rect>
+<text fill="#78350F" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="78">MENU CÀ PHÊ &amp; TRÀ ☕</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="10" stroke="#78350F" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#92400E" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="160" y="336">CÀ PHÊ MUỐI • BẠC XỈU • TRÀ ĐÀO</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-900"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-26 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-orange-50 text-orange-900 border border-orange-200">FRAME-26</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-26')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Restaurant Cloche Menu</div>
+<div class="text-[11px] font-bold text-orange-700 mb-2 truncate">THỰC ĐƠN MÓN NGON 🍽️</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-26" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Elegant rounded menu frame -->
+<rect fill="#FFF7ED" height="320" rx="20" stroke="#EA580C" stroke-width="2.5" width="270" x="25" y="35"></rect>
+<!-- Cloche Dome Handle -->
+<circle cx="160" cy="24" fill="#F97316" r="6"></circle>
+<path d="M130 35 Q160 22 190 35" fill="none" stroke="#EA580C" stroke-width="3"></path>
+<text fill="#C2410C" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="75">THỰC ĐƠN MÓN NGON 🍽️</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 98)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#EA580C" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9A3412" font-family="Inter" font-size="10.5" font-weight="600" text-anchor="middle" x="160" y="336">XEM MENU &amp; ĐẶT MÓN TẠI BÀN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-orange-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-27 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-700 border border-red-200">FRAME-27</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-27')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Street Food Cart</div>
+<div class="text-[11px] font-bold text-red-600 mb-2 truncate">QUÉT ĐẶT ĐỒ ĂN NGAY 🥖</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-27" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Frame body -->
+<rect fill="#FFFFFF" height="300" rx="14" stroke="#DC2626" stroke-width="2.5" width="270" x="25" y="55"></rect>
+<!-- Striped Canopy Awning Roof -->
+<path d="M20 55 L35 25 L285 25 L300 55 Z" fill="#DC2626"></path>
+<polygon fill="#FFFFFF" points="50,25 75,25 65,55 40,55"></polygon>
+<polygon fill="#FFFFFF" points="100,25 125,25 115,55 90,55"></polygon>
+<polygon fill="#FFFFFF" points="150,25 175,25 165,55 140,55"></polygon>
+<polygon fill="#FFFFFF" points="200,25 225,25 215,55 190,55"></polygon>
+<polygon fill="#FFFFFF" points="250,25 275,25 265,55 240,55"></polygon>
+<text fill="#B91C1C" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="85">QUÉT ĐẶT ĐỒ ĂN NGAY 🥖</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FEF2F2" height="200" rx="10" stroke="#DC2626" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#7F1D1D" font-family="Inter" font-size="10.5" font-weight="700" text-anchor="middle" x="160" y="338">BÁNH MÌ • BÚN BÒ • TRÀ TẮC</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-red-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-28 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-900 border border-indigo-200">FRAME-28</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-28')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Table Tent Standee</div>
+<div class="text-[11px] font-bold text-indigo-600 mb-2 truncate">GỌI MÓN &amp; THANH TOÁN 🧾</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-28" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- 3D Standee Contour -->
+<path d="M40 30 L280 30 L295 335 L25 335 Z" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2.5"></path>
+<!-- Base stand shadow -->
+<rect fill="#312E81" height="20" rx="4" width="290" x="15" y="335"></rect>
+<!-- Table Number Badge -->
+<rect fill="#EEF2FF" height="32" rx="16" stroke="#4F46E5" stroke-width="1.5" width="130" x="95" y="44"></rect>
+<text fill="#4338CA" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="65">BÀN SỐ 08</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 95)">
+<rect class="qr-safe-guide" fill="#F8FAFC" height="200" rx="10" stroke="#4F46E5" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#3730A3" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="160" y="322">GỌI MÓN &amp; THANH TOÁN 🧾</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-900"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-indigo-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-29 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-900 border border-yellow-200">FRAME-29</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-29')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">5-Star Customer Review</div>
+<div class="text-[11px] font-bold text-amber-600 mb-2 truncate">ĐÁNH GIÁ 5 SAO ⭐</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-29" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FFFFFF" height="330" rx="20" stroke="#F59E0B" stroke-width="2.5" width="270" x="25" y="25"></rect>
+<!-- 5 Golden Stars Array on top -->
+<g fill="#FBBF24" stroke="#D97706" stroke-width="1" transform="translate(70, 40)">
+<polygon points="12,2 15,9 23,10 17,15 19,23 12,19 5,23 7,15 1,10 9,9"></polygon>
+<polygon points="44,2 47,9 55,10 49,15 51,23 44,19 37,23 39,15 33,10 41,9"></polygon>
+<polygon points="76,2 79,9 87,10 81,15 83,23 76,19 69,23 71,15 65,10 73,9"></polygon>
+<polygon points="108,2 111,9 119,10 113,15 115,23 108,19 101,23 103,15 97,10 105,9"></polygon>
+<polygon points="140,2 143,9 151,10 145,15 147,23 140,19 133,23 135,15 129,10 137,9"></polygon>
+</g>
+<text fill="#B45309" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="85">ĐÁNH GIÁ 5 SAO GOOGLE ⭐</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 102)">
+<rect class="qr-safe-guide" fill="#FFFBEB" height="200" rx="12" stroke="#F59E0B" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#92400E" font-family="Inter" font-size="10.5" font-weight="600" text-anchor="middle" x="160" y="335">TẶNG NGAY VOUCHER 10% KHI REVIEW</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-100"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-30 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-900 border border-pink-200">FRAME-30</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-30')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Spa &amp; Nail Voucher</div>
+<div class="text-[11px] font-bold text-pink-700 mb-2 truncate">ƯU ĐÃI LÀM ĐẸP -20% ✂️</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-30" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Scalloped beauty border -->
+<rect fill="#FDF2F8" height="330" rx="22" stroke="#DB2777" stroke-width="2.5" width="270" x="25" y="25"></rect>
+<!-- Scissors / Sparkle icon -->
+<path d="M152 40 L168 56 M168 40 L152 56" stroke="#DB2777" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="160" cy="48" fill="#F472B6" r="3"></circle>
+<text fill="#BE185D" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="80">ƯU ĐÃI LÀM ĐẸP -20% ✂️</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="14" stroke="#DB2777" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9D174D" font-family="Inter" font-size="10.5" font-weight="700" text-anchor="middle" x="160" y="336">SPA • NAILS • HAIR SALON</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-pink-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-pink-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-950"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ROW 6: E-COMMERCE & TRAVEL ================= -->
+<section class="scroll-mt-24" id="row-ecommerce">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">R6</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-slate-text-strong">ROW 6: E-COMMERCE &amp; TRAVEL (FRAME-31 to FRAME-36)</h2>
+<p class="text-body-sm font-body-sm text-slate-text-muted">Flash sale banners, shopping bag handles, gift boxes, sleeper bus boarding passes &amp; GPS location markers.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded bg-slate-100 text-slate-600">6 Production Frames</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- FRAME-31 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-900 border border-emerald-200">FRAME-31</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-31')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Shopping Bag Store</div>
+<div class="text-[11px] font-bold text-emerald-700 mb-2 truncate">MUA SẮM NGAY 🛍️</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-31" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Rope Handles -->
+<path d="M120 50 Q160 10 200 50" fill="none" stroke="#059669" stroke-linecap="round" stroke-width="4"></path>
+<!-- Bag Body -->
+<rect fill="#FFFFFF" height="305" rx="14" stroke="#059669" stroke-width="2.5" width="270" x="25" y="50"></rect>
+<text fill="#047857" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="160" y="85">MUA SẮM NGAY 🛍️</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#ECFDF5" height="200" rx="10" stroke="#059669" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#065F46" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="160" y="336">QUÉT MÃ MUA HÀNG TIỆN LỢI</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-100"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-32 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-orange-50 text-orange-900 border border-orange-200">FRAME-32</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-32')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Flash Sale Voucher</div>
+<div class="text-[11px] font-bold text-orange-600 mb-2 truncate">SĂN VOUCHER GIẢM SỐC 🔥</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-32" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Jagged Sale Border -->
+<rect fill="#FFF7ED" height="332" rx="18" stroke="#EA580C" stroke-width="3" width="276" x="22" y="24"></rect>
+<!-- Lightning flash tag -->
+<rect fill="#EA580C" height="40" rx="8" width="250" x="35" y="38"></rect>
+<text fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="64">SĂN VOUCHER GIẢM SỐC 🔥</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 100)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#EA580C" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#C2410C" font-family="Inter" font-size="12" font-weight="800" text-anchor="middle" x="160" y="338">FLASH SALE 50% • CHỈ HÔM NAY</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-orange-100"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-33 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200">FRAME-33</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-33')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Gift Box Ribbon</div>
+<div class="text-[11px] font-bold text-blue-600 mb-2 truncate">QUÉT MỞ QUÀ TẶNG 🎁</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-33" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Gift Box Lid & Body -->
+<rect fill="#EFF6FF" height="305" rx="14" stroke="#2563EB" stroke-width="2.5" width="270" x="25" y="50"></rect>
+<!-- Ribbon loop on top -->
+<path d="M160 50 Q130 15 110 35 Q135 50 160 50" fill="#60A5FA"></path>
+<path d="M160 50 Q190 15 210 35 Q185 50 160 50" fill="#60A5FA"></path>
+<circle cx="160" cy="50" fill="#1D4ED8" r="5"></circle>
+<text fill="#1D4ED8" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="800" text-anchor="middle" x="160" y="85">QUÉT MỞ QUÀ TẶNG 🎁</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#2563EB" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#1E40AF" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="160" y="338">QUÀ BÍ MẬT DÀNH CHO BẠN</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-blue-300"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-blue-50"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-34 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-900 border border-emerald-200">FRAME-34</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-34')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Sleeper Bus / Boarding</div>
+<div class="text-[11px] font-bold text-emerald-700 mb-2 truncate">LỊCH TRÌNH CHUYẾN ĐI 🎫</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-34" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Bus Ticket Boarding Pass -->
+<rect fill="#F0FDF4" height="332" rx="16" stroke="#059669" stroke-width="2.5" width="270" x="25" y="24"></rect>
+<!-- Perforated Cutouts -->
+<circle cx="25" cy="88" fill="#F8FAFC" r="10" stroke="#059669" stroke-width="2.5"></circle>
+<circle cx="295" cy="88" fill="#F8FAFC" r="10" stroke="#059669" stroke-width="2.5"></circle>
+<line stroke="#6EE7B7" stroke-dasharray="4 4" stroke-width="2" x1="38" x2="282" y1="88" y2="88"></line>
+<text fill="#047857" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="60">LỊCH TRÌNH CHUYẾN ĐI 🎫</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="10" stroke="#059669" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#065F46" font-family="Inter" font-size="10.5" font-weight="600" text-anchor="middle" x="160" y="336">XE KHÁCH GIƯỜNG NẰM • VÉ ĐIỆN TỬ</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-200"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-35 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-rose-50 text-rose-900 border border-rose-200">FRAME-35</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-35')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Google Maps Location Pin</div>
+<div class="text-[11px] font-bold text-rose-600 mb-2 truncate">CHỈ ĐƯỜNG ĐẾN ĐÂY 📍</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-35" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Location Pin Contour -->
+<rect fill="#FFF1F2" height="310" rx="20" stroke="#E11D48" stroke-width="2.5" width="270" x="25" y="45"></rect>
+<!-- Oversized GPS Pin -->
+<path d="M160 12 C145 12 135 24 135 38 C135 55 160 70 160 70 C160 70 185 55 185 38 C185 24 175 12 160 12 Z" fill="#E11D48"></path>
+<circle cx="160" cy="35" fill="#FFFFFF" r="7"></circle>
+<text fill="#BE123C" font-family="Plus Jakarta Sans" font-size="12" font-weight="800" text-anchor="middle" x="160" y="88">CHỈ ĐƯỜNG ĐẾN ĐÂY 📍</text>
+<!-- Safe-Zone Guide -->
+<g id="qr-safe-zone" transform="translate(60, 105)">
+<rect class="qr-safe-guide" fill="#FFFFFF" height="200" rx="12" stroke="#E11D48" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<text fill="#9F1239" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="160" y="336">MỞ TRỰC TIẾP GOOGLE MAPS</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-rose-100"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+</div>
+</div>
+</div>
+<!-- FRAME-36 -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-3 group">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">FRAME-36</span>
+<button class="text-slate-text-muted hover:text-primary transition-colors" onclick="copySvgCode('frame-36')" title="Copy SVG Path">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="text-[13px] font-bold text-slate-text-strong leading-snug truncate">Polaroid Photo Memory</div>
+<div class="text-[11px] font-bold text-slate-700 mb-2 truncate">ALBUM ẢNH KỶ NIỆM 📸</div>
+<div class="bg-slate-50 rounded-lg p-2 border border-slate-100 flex items-center justify-center aspect-[320/380] relative overflow-hidden">
+<svg class="w-full h-full" fill="none" id="svg-frame-36" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Polaroid Frame -->
+<rect fill="#FFFFFF" height="330" rx="8" stroke="#CBD5E1" stroke-width="2" width="270" x="25" y="25"></rect>
+<!-- Washi Tape on top -->
+<rect fill="#FDE047" height="20" opacity="0.8" rx="3" transform="rotate(-3 160 25)" width="80" x="120" y="15"></rect>
+<!-- Safe-Zone Guide (Polaroid Photo Square) -->
+<g id="qr-safe-zone" transform="translate(60, 55)">
+<rect class="qr-safe-guide" fill="#F8FAFC" height="200" rx="4" stroke="#64748B" stroke-dasharray="5 5" stroke-width="1.5" width="200"></rect>
+<text fill="#64748B" font-family="Inter" font-size="10" text-anchor="middle" x="100" y="105">[ 200 × 200 px QR ]</text>
+</g>
+<!-- Polaroid Bottom area with handwritten text -->
+<text fill="#0F172A" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="160" y="300">ALBUM ẢNH KỶ NIỆM 📸</text>
+<text fill="#64748B" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="160" y="325">QUÉT XEM TOÀN BỘ ẢNH CHUYẾN ĐI</text>
+</svg>
+</div>
+<div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-text-muted">
+<span class="font-mono">320×380</span>
+<div class="flex gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-800"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-yellow-300"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-slate-200"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= TECHNICAL DEVELOPER REFERENCE SECTION ================= -->
+<section class="mt-space-xl pt-space-xl border-t border-border-subtle">
+<div class="flex flex-col lg:flex-row gap-space-lg">
+<!-- Left: Strict Spec Parameters & Metric Dimensions -->
+<div class="lg:w-1/2 space-y-space-md">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-indigo-100 text-primary flex items-center justify-center font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="straighten">straighten</span>
+</span>
+<h3 class="text-headline-md font-headline-md text-slate-text-strong">Standard Coordinate &amp; Safe Zone Specification</h3>
+</div>
+<p class="text-body-md font-body-md text-slate-text-muted">
+            All 36 vector frames are engineered strictly to the standardized 320×380 outer canvas. The embedded dynamic QR engine maps directly into the static bounding coordinates below with 0% geometric skewing or path overflow.
+          </p>
+<div class="overflow-hidden rounded-xl border border-border-subtle bg-surface-card">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-slate-50 border-b border-border-subtle text-slate-text-muted uppercase text-[10px] tracking-wider font-semibold">
+<tr>
+<th class="px-4 py-2.5">Parameter</th>
+<th class="px-4 py-2.5">Value</th>
+<th class="px-4 py-2.5">Production Requirement</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-mono text-[12px]">
+<tr>
+<td class="px-4 py-2 text-slate-text-strong font-sans font-semibold">Canvas viewBox</td>
+<td class="px-4 py-2 text-primary font-bold">0 0 320 380</td>
+<td class="px-4 py-2 text-slate-text-muted font-sans">100% scalable SVG vector root</td>
+</tr>
+<tr>
+<td class="px-4 py-2 text-slate-text-strong font-sans font-semibold">QR Safe Zone X</td>
+<td class="px-4 py-2 text-primary">60 px</td>
+<td class="px-4 py-2 text-slate-text-muted font-sans">Strict horizontal center alignment</td>
+</tr>
+<tr>
+<td class="px-4 py-2 text-slate-text-strong font-sans font-semibold">QR Safe Zone Y</td>
+<td class="px-4 py-2 text-primary">100 - 110 px</td>
+<td class="px-4 py-2 text-slate-text-muted font-sans">Accommodates variable top hero banner</td>
+</tr>
+<tr>
+<td class="px-4 py-2 text-slate-text-strong font-sans font-semibold">Safe Zone Bounds</td>
+<td class="px-4 py-2 text-emerald-600 font-bold">200 × 200 px</td>
+<td class="px-4 py-2 text-slate-text-muted font-sans">Minimum 30mm print physical dimension</td>
+</tr>
+<tr>
+<td class="px-4 py-2 text-slate-text-strong font-sans font-semibold">Error Correction</td>
+<td class="px-4 py-2 text-amber-600 font-bold">Level H (30%)</td>
+<td class="px-4 py-2 text-slate-text-muted font-sans">Guarantees logo overlay readability</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right: Code Injection Block with Tabs -->
+<div class="lg:w-1/2 flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="code">code</span>
+<span class="text-label-md font-label-md text-slate-text-strong">Dynamic Frame Injection Boilerplate</span>
+</div>
+<!-- Framework Switcher -->
+<div class="flex bg-slate-100 p-0.5 rounded-lg text-[11px] font-medium text-slate-600">
+<button class="px-2.5 py-1 rounded-md bg-white text-primary shadow-xs font-semibold">React / Next.js</button>
+<button class="px-2.5 py-1 hover:text-slate-900">Vue 3</button>
+<button class="px-2.5 py-1 hover:text-slate-900">Flutter</button>
+<button class="px-2.5 py-1 hover:text-slate-900">SwiftUI</button>
+</div>
+</div>
+<div class="flex-1 bg-slate-900 rounded-xl p-4 text-slate-100 font-mono text-[12px] flex flex-col justify-between border border-slate-800 shadow-md">
+<pre class="overflow-x-auto custom-scroll leading-relaxed text-slate-300"><code><span class="text-emerald-400">// QuickQR Studio Dynamic Frame Injection</span>
+<span class="text-purple-400">import</span> { QRCodeSVG } <span class="text-purple-400">from</span> <span class="text-amber-300">'qrcode.react'</span>;
+
+<span class="text-purple-400">export const</span> <span class="text-blue-400">VietnamQRCard</span> = ({ <span class="text-orange-300">frameId</span> = <span class="text-amber-300">'FRAME-01'</span>, <span class="text-orange-300">destinationUrl</span> }) =&gt; {
+  <span class="text-purple-400">return</span> (
+    &lt;<span class="text-red-400">svg</span> <span class="text-yellow-300">viewBox</span>=<span class="text-amber-300">"0 0 320 380"</span> <span class="text-yellow-300">className</span>=<span class="text-amber-300">"w-full h-auto drop-shadow-md"</span>&gt;
+      {<span class="text-slate-500">/* 1. Static Frame Decorative Geometry */</span>}
+      &lt;<span class="text-red-400">FrameVectorBackground</span> <span class="text-yellow-300">id</span>={frameId} /&gt;
+      
+      {<span class="text-slate-500">/* 2. Standardized 200x200 Coordinate Safe-Zone Group */</span>}
+      &lt;<span class="text-red-400">g</span> <span class="text-yellow-300">id</span>=<span class="text-amber-300">"qr-safe-zone"</span> <span class="text-yellow-300">transform</span>=<span class="text-amber-300">"translate(60, 110)"</span>&gt;
+        &lt;<span class="text-red-400">QRCodeSVG</span>
+          <span class="text-yellow-300">value</span>={destinationUrl}
+          <span class="text-yellow-300">size</span>={<span class="text-cyan-300">200</span>}
+          <span class="text-yellow-300">level</span>=<span class="text-amber-300">"H"</span>
+          <span class="text-yellow-300">includeMargin</span>={<span class="text-cyan-300">true</span>}
+        /&gt;
+      &lt;/<span class="text-red-400">g</span>&gt;
+    &lt;/<span class="text-red-400">svg</span>&gt;
+  );
+};</code></pre>
+<div class="mt-3 pt-3 border-t border-slate-800 flex items-center justify-between">
+<span class="text-[11px] text-slate-400">Output standard: UTF-8 SVG string</span>
+<button class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-[11px] font-sans font-semibold transition-colors flex items-center gap-1.5" onclick="navigator.clipboard.writeText('Standard 200x200 Safe Zone injection copied.'); alert('React Component copied to clipboard!')">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+                Copy Snippet
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER (Shared Component JSON Blueprint) ================= -->
+<footer class="w-full bg-surface-card dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant mt-auto">
+<div class="max-w-7xl mx-auto py-space-lg px-gutter-lg flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span class="text-headline-sm font-headline-sm font-bold text-slate-text-strong dark:text-inverse-on-surface">QuickQR Studio</span>
+<span class="hidden sm:inline text-slate-300">|</span>
+<p class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm">
+          © 2024 QuickQR Studio Inc. All rights reserved. High-conversion dynamic routing and custom QR design suite.
+        </p>
+</div>
+<!-- Footer Navigation Links -->
+<div class="flex flex-wrap items-center gap-space-md justify-center">
+<a class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm hover:text-slate-text-strong dark:hover:text-inverse-on-surface hover:underline transition-colors duration-150" href="#">Privacy Policy</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm hover:text-slate-text-strong dark:hover:text-inverse-on-surface hover:underline transition-colors duration-150" href="#">Terms of Service</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm hover:text-slate-text-strong dark:hover:text-inverse-on-surface hover:underline transition-colors duration-150" href="#">Security</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm hover:text-slate-text-strong dark:hover:text-inverse-on-surface hover:underline transition-colors duration-150" href="#">API Documentation</a>
+<a class="text-slate-text-muted dark:text-outline-variant font-body-sm text-body-sm hover:text-slate-text-strong dark:hover:text-inverse-on-surface hover:underline transition-colors duration-150" href="#">Status</a>
+</div>
+</div>
+</footer>
+<!-- ================= INLINE INTERACTIONS JS ================= -->
+<script>
+    // Copy Individual Frame SVG
+    function copySvgCode(frameId) {
+      const svgElement = document.getElementById('svg-' + frameId);
+      if (svgElement) {
+        const svgString = new XMLSerializer().serializeToString(svgElement);
+        navigator.clipboard.writeText(svgString).then(() => {
+          showToast(`Copied ${frameId.toUpperCase()} vector path to clipboard!`);
+        });
+      } else {
+        navigator.clipboard.writeText(`<svg viewBox="0 0 320 380" ...>${frameId}</svg>`).then(() => {
+          showToast(`Copied ${frameId.toUpperCase()} template.`);
+        });
+      }
+    }
+
+    // Toggle 200x200 Safe Zone Guide visibility
+    const btnToggle = document.getElementById('btnToggleSafeZone');
+    btnToggle.addEventListener('click', () => {
+      document.body.classList.toggle('hide-safe-zone');
+      const isHidden = document.body.classList.contains('hide-safe-zone');
+      showToast(isHidden ? 'QR Safe Zone Guides Dimmed' : 'QR Safe Zone Guides Highlighted');
+    });
+
+    // Copy All Code Button
+    document.getElementById('btnCopyAll').addEventListener('click', () => {
+      navigator.clipboard.writeText('/* QuickQR Studio: 36 Master SVG QR Frames */\nexport const FRAMES_TOTAL = 36;\nexport const SAFE_ZONE = { width: 200, height: 200, viewBox: "0 0 320 380" };').then(() => {
+        showToast('All 36 Frame definitions copied to clipboard!');
+      });
+    });
+
+    // Export ZIP simulation
+    document.getElementById('btnZipExport').addEventListener('click', () => {
+      showToast('Generating QuickQR_36_Vector_Frames.zip (36 Production SVGs)...');
+    });
+
+    // Lightweight Atmospheric Toast Utility
+    function showToast(message) {
+      let toast = document.getElementById('dev-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'dev-toast';
+        toast.className = 'fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-xl shadow-xl border border-slate-700 font-label-md text-label-md flex items-center gap-2 transform transition-all duration-300 opacity-0 translate-y-3';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span><span>${message}</span>`;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 3200);
+    }
+  </script>
+</body></html>

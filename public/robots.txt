@@ -1,0 +1,6 @@
+# QuickQR Studio Production robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://quickqr.io/sitemap.xml
