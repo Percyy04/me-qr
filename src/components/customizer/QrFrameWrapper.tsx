@@ -27,7 +27,7 @@ export const QrFrameWrapper: React.FC<QrFrameWrapperProps> = ({
   return (
     <div className="w-full max-w-[280px] sm:max-w-[320px] mx-auto flex items-center justify-center select-none">
       {frame.renderSvg({
-        labelText: labelText ?? frame.defaultLabel,
+        labelText: labelText !== undefined ? labelText : frame.defaultLabel,
         primaryColor: primaryColor || frame.defaultColors.primary,
         secondaryColor: secondaryColor || frame.defaultColors.secondary,
         bgColor: bgColor || '#FFFFFF',

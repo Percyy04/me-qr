@@ -43,11 +43,6 @@ export const StudioMobilePageView: React.FC<StudioMobilePageViewProps> = ({ type
                   <p className="text-[11px] font-medium text-slate-700 truncate">
                     {inputs.url || 'https://quickqr.io/demo'}
                   </p>
-                  {inputs.conditionalRouting && (
-                    <span className="inline-block text-[9px] bg-indigo-50 text-indigo-700 font-semibold px-1.5 py-0.5 rounded">
-                      Smart OS Detection ON
-                    </span>
-                  )}
                 </div>
                 <a
                   href={inputs.url || '#'}

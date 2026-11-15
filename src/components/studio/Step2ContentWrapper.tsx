@@ -4,6 +4,7 @@ import { FormALinkRouting } from './forms/FormALinkRouting';
 import { FormBFileMedia } from './forms/FormBFileMedia';
 import { FormCVCard } from './forms/FormCVCard';
 import { FormDWifiWhatsApp } from './forms/FormDWifiWhatsApp';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface Step2Props {
   type: QRType;
@@ -12,6 +13,7 @@ interface Step2Props {
 }
 
 export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChange }) => {
+  const { t } = useLanguage();
   const variant = getFormVariant(type);
 
   const renderActiveForm = () => {
@@ -31,13 +33,13 @@ export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChan
   const getVariantTitle = () => {
     switch (variant) {
       case 'form-a':
-        return 'Link / URL & Conditional Routing';
+        return t('step2UrlDesc');
       case 'form-b':
-        return 'File & Media Landing Page Builder';
+        return t('step2FileDesc');
       case 'form-c':
-        return 'vCard Digital Business Card Profile';
+        return t('step2VcardDesc');
       case 'form-d':
-        return type === 'wifi' ? 'Wi-Fi Quick Join Configuration' : 'Direct Action & Message';
+        return type === 'wifi' ? t('step2WifiDesc') : t('step2DirectDesc');
     }
   };
 
@@ -50,7 +52,9 @@ export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChan
             2
           </span>
           <div>
-            <h2 className="text-lg font-bold text-slate-text-strong font-display">Enter Content</h2>
+            <h2 className="text-lg font-bold text-slate-text-strong font-display">
+              {t('step2Title')}
+            </h2>
             <p className="text-xs text-slate-text-muted">{getVariantTitle()}</p>
           </div>
         </div>

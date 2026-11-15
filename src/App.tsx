@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import { QuickQRStudioApp } from './components/studio/QuickQRStudioApp';
 import { TrustedBrands } from './components/sections/TrustedBrands';
 import { HowItWorks } from './components/sections/HowItWorks';
@@ -9,18 +10,20 @@ import { Footer } from './components/layout/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-canvas-bg text-slate-text-strong font-sans antialiased selection:bg-primary-container selection:text-white">
-      {/* QuickQR Studio Master Application based on Stitch AI */}
-      <QuickQRStudioApp />
+    <LanguageProvider>
+      <div className="min-h-screen flex flex-col bg-canvas-bg text-slate-text-strong font-sans antialiased selection:bg-primary-container selection:text-white">
+        {/* QuickQR Studio Master Application based on Stitch AI */}
+        <QuickQRStudioApp />
 
-      {/* Supporting Conversion Sections from ME-QR Ecosystem */}
-      <TrustedBrands />
-      <HowItWorks />
-      <FeaturesHighlight />
-      <FAQSection />
-      <CTASection />
-      <Footer />
-    </div>
+        {/* Supporting Conversion Sections from ME-QR Ecosystem */}
+        <TrustedBrands />
+        <HowItWorks />
+        <FeaturesHighlight />
+        <FAQSection />
+        <CTASection />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 

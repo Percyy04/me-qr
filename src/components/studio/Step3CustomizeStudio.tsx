@@ -4,6 +4,7 @@ import { FrameTab } from './customize/FrameTab';
 import { PatternEyeTab } from './customize/PatternEyeTab';
 import { ColorTab } from './customize/ColorTab';
 import { LogoTab } from './customize/LogoTab';
+import { useLanguage } from '../../context/LanguageContext';
 import { Crop, Grid, Palette, Image, RotateCcw } from 'lucide-react';
 
 interface Step3Props {
@@ -15,9 +16,9 @@ interface Step3Props {
 type TabKey = 'frames' | 'patterns' | 'colors' | 'logo';
 
 export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, onReset }) => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<TabKey>('frames');
 
-  // Quick Preset Handlers
   const applyPreset = (presetName: string) => {
     if (presetName === 'minimal') {
       onChange({
@@ -67,40 +68,43 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
             3
           </span>
           <div>
-            <h2 className="text-lg font-bold text-slate-text-strong font-display">Customize Appearance</h2>
-            <p className="text-xs text-slate-text-muted">Tùy biến khung, hoa văn, dải màu và logo nhận diện</p>
+            <h2 className="text-lg font-bold text-slate-text-strong font-display">
+              {t('step3Title')}
+            </h2>
+            <p className="text-xs text-slate-text-muted">{t('step3Subtitle')}</p>
           </div>
         </div>
 
         {/* Quick Presets & Reset */}
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-semibold text-slate-400">Preset:</span>
+          <span className="text-[11px] font-semibold text-slate-400">{t('presetsLabel')}</span>
           <button
             type="button"
             onClick={() => applyPreset('minimal')}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-tint text-primary-container hover:bg-indigo-100 transition-colors"
+            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-tint text-primary-container hover:bg-indigo-100 transition-colors cursor-pointer"
           >
-            Minimal
+            {t('presetMinimal')}
           </button>
           <button
             type="button"
             onClick={() => applyPreset('vibrant')}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-canvas-bg hover:bg-slate-200 text-slate-700 transition-colors"
+            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-canvas-bg hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer"
           >
-            Vibrant
+            {t('presetVibrant')}
           </button>
           <button
             type="button"
             onClick={() => applyPreset('dark')}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-canvas-bg hover:bg-slate-200 text-slate-700 transition-colors"
+            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-canvas-bg hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer"
           >
-            Dark
+            {t('presetDark')}
           </button>
           <button
             type="button"
+            aria-label={t('resetDesign')}
             onClick={onReset}
-            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors ml-1"
-            title="Đặt lại thiết kế"
+            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors ml-1 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-container"
+            title={t('resetDesign')}
           >
             <RotateCcw size={14} />
           </button>
@@ -112,53 +116,53 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
         <button
           type="button"
           onClick={() => setActiveTab('frames')}
-          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px ${
+          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer ${
             activeTab === 'frames'
               ? 'border-primary-container text-primary-container'
               : 'border-transparent text-slate-text-muted hover:text-slate-text-strong'
           }`}
         >
           <Crop size={14} />
-          <span>Khung (Frames)</span>
+          <span>{t('tabFrames')}</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab('patterns')}
-          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px ${
+          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer ${
             activeTab === 'patterns'
               ? 'border-primary-container text-primary-container'
               : 'border-transparent text-slate-text-muted hover:text-slate-text-strong'
           }`}
         >
           <Grid size={14} />
-          <span>Hình dạng & Mắt</span>
+          <span>{t('tabPatterns')}</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab('colors')}
-          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px ${
+          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer ${
             activeTab === 'colors'
               ? 'border-primary-container text-primary-container'
               : 'border-transparent text-slate-text-muted hover:text-slate-text-strong'
           }`}
         >
           <Palette size={14} />
-          <span>Màu sắc & Gradient</span>
+          <span>{t('tabColors')}</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab('logo')}
-          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px ${
+          className={`flex items-center gap-2 px-3 py-2.5 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer ${
             activeTab === 'logo'
               ? 'border-primary-container text-primary-container'
               : 'border-transparent text-slate-text-muted hover:text-slate-text-strong'
           }`}
         >
           <Image size={14} />
-          <span>Logo & Thương hiệu</span>
+          <span>{t('tabLogo')}</span>
         </button>
       </div>
 

@@ -11,6 +11,7 @@ import {
 } from '../../../utils/exportHelper';
 import { ENV } from '../../../config/env';
 import { useScannability } from '../../../hooks/useScannability';
+import { useLanguage } from '../../../context/LanguageContext';
 import { Download, Copy, Check, Loader2 } from 'lucide-react';
 
 interface Props {
@@ -20,6 +21,7 @@ interface Props {
 }
 
 export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix }) => {
+  const { t } = useLanguage();
   const hiddenRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -64,7 +66,7 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
       qrRef.current.update(buildOptions(400));
     }
 
-    const t = setTimeout(() => {
+    const timer = setTimeout(() => {
       const raw = hiddenRef.current?.querySelector('canvas');
       if (raw && previewRef.current) {
         previewRef.current.width = raw.width;
@@ -72,7 +74,7 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
         previewRef.current.getContext('2d')?.drawImage(raw, 0, 0);
       }
     }, 40);
-    return () => clearTimeout(t);
+    return () => clearTimeout(timer);
   }, [payload, design]);
 
   const handleDownload = async () => {
@@ -120,33 +122,45 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
         <div className="mt-2.5 flex items-center justify-between w-full px-2 text-xs">
           <div className="flex items-center gap-1.5">
             <span className={`w-2 h-2 rounded-full ${scannability.isScannable ? 'bg-emerald-500 animate-ping' : 'bg-amber-500'}`} />
-            <span className="font-semibold text-slate-700">{scannability.isScannable ? '100% Scannable' : 'Contrast Warning'}</span>
+            <span className="font-semibold text-slate-700">
+              {scannability.isScannable ? t('scannable100') : t('contrastWarning')}
+            </span>
             {!scannability.isScannable && onAutoFix && (
-              <button type="button" onClick={onAutoFix} className="text-[10px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-1.5 py-0.5 rounded cursor-pointer">
-                Auto-Fix
+              <button
+                type="button"
+                aria-label={t('autoFix')}
+                onClick={onAutoFix}
+                className="text-[10px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-1.5 py-0.5 rounded cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500"
+              >
+                {t('autoFix')}
               </button>
             )}
           </div>
-          <button type="button" onClick={handleCopy} className="flex items-center gap-1 text-[11px] text-primary-container font-semibold hover:underline cursor-pointer">
+          <button
+            type="button"
+            aria-label={t('copy')}
+            onClick={handleCopy}
+            className="flex items-center gap-1 text-[11px] text-primary-container font-semibold hover:underline cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-container rounded"
+          >
             {copied ? <Check size={12} className="text-secondary-cta" /> : <Copy size={12} />}
-            <span>{copied ? 'Đã sao chép' : 'Copy'}</span>
+            <span>{copied ? t('copied') : t('copy')}</span>
           </button>
         </div>
       </div>
 
-      {/* Format & Size Selectors matching ME-QR */}
+      {/* Format & Size Selectors */}
       <div className="grid grid-cols-2 gap-2 text-xs">
         <div>
-          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">Định dạng</label>
-          <select value={format} onChange={(e) => setFormat(e.target.value as 'png' | 'svg' | 'pdf')} className="w-full px-2.5 py-1.5 bg-canvas-bg border border-border-subtle rounded-lg text-slate-700 font-semibold">
+          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">{t('format')}</label>
+          <select value={format} onChange={(e) => setFormat(e.target.value as 'png' | 'svg' | 'pdf')} className="w-full px-2.5 py-1.5 bg-canvas-bg border border-border-subtle rounded-lg text-slate-700 font-semibold cursor-pointer">
             <option value="png">PNG (Raster)</option>
             <option value="svg">SVG (Vector)</option>
             <option value="pdf">PDF (Print)</option>
           </select>
         </div>
         <div>
-          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">Kích thước</label>
-          <select value={size} onChange={(e) => setSize(parseInt(e.target.value, 10))} className="w-full px-2.5 py-1.5 bg-canvas-bg border border-border-subtle rounded-lg text-slate-700 font-semibold">
+          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">{t('size')}</label>
+          <select value={size} onChange={(e) => setSize(parseInt(e.target.value, 10))} className="w-full px-2.5 py-1.5 bg-canvas-bg border border-border-subtle rounded-lg text-slate-700 font-semibold cursor-pointer">
             <option value="500">500x500 px</option>
             <option value="1000">1000x1000 px</option>
             <option value="2000">2000x2000 px</option>
@@ -159,15 +173,15 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
         type="button"
         onClick={handleDownload}
         disabled={isExporting}
-        className="w-full py-3 px-4 rounded-xl bg-secondary-cta hover:bg-emerald-600 disabled:opacity-75 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+        className="w-full py-3 px-4 rounded-xl bg-secondary-cta hover:bg-emerald-600 disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
       >
         {isExporting ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} strokeWidth={2.5} />}
-        <span>{isExporting ? 'Đang tạo file chất lượng cao...' : 'Tải xuống MÃ QR'}</span>
+        <span>{isExporting ? t('generating') : t('downloadBtn')}</span>
       </button>
 
       {/* Legal & Free Disclaimer */}
-      <p className="text-[10px] text-slate-400 text-center leading-relaxed px-1">
-        Bằng cách nhấp vào "Tải xuống MÃ QR" bạn đồng ý với <a href="#terms" className="text-primary-container underline hover:text-indigo-800">Điều khoản & Điều kiện</a>. Phiên bản miễn phí có chứa quảng cáo.
+      <p className="text-[10px] text-slate-500 text-center leading-relaxed px-1">
+        {t('termsDisclaimer')}
       </p>
     </div>
   );

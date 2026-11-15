@@ -21,7 +21,7 @@ export const campusFrames: QrFrameTemplate[] = [
 <circle cx="300" cy="90" fill="#F8FAFC" r="12" stroke={props.primaryColor || `#3B82F6`} strokeWidth="3"></circle>
 <line stroke={props.secondaryColor || `#93C5FD`} strokeDasharray="6 4" strokeWidth="2" x1="36" x2="284" y1="90" y2="90"></line>
 <rect fill="#EFF6FF" height="38" rx="8" width="220" x="50" y="38"></rect>
-<text fill="#1D4ED8" fontFamily="Plus Jakarta Sans" fontSize="14" fontWeight="700" textAnchor="middle" x="160" y="62">{props.labelText || `CHECK-IN SỰ KIỆN 🎟️`}</text>
+<text fill="#1D4ED8" fontFamily="Plus Jakarta Sans" fontSize="14" fontWeight="700" textAnchor="middle" x="160" y="62">{props.labelText ?? `CHECK-IN SỰ KIỆN 🎟️`}</text>
 <SafeZone>{props.children}</SafeZone>
 <rect fill="#F1F5F9" height="22" rx="4" width="200" x="60" y="325"></rect>
 <line stroke="#334155" strokeWidth="2" x1="75" x2="75" y1="330" y2="342"></line>
@@ -45,7 +45,7 @@ export const campusFrames: QrFrameTemplate[] = [
 <circle cx="160" cy="39" fill="#334155" r="3"></circle>
 <rect fill="#FFFFFF" height="316" rx="16" stroke={props.primaryColor || `#4F46E5`} strokeWidth="2.5" width="270" x="25" y="44"></rect>
 <rect fill={props.primaryColor || `#4F46E5`} height="42" rx="16" width="270" x="25" y="44"></rect>
-<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="70">{props.labelText || `THẺ THÀNH VIÊN CLB 🪪`}</text>
+<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="70">{props.labelText ?? `THẺ THÀNH VIÊN CLB 🪪`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill={props.primaryColor || `#4F46E5`} fontFamily="Plus Jakarta Sans" fontSize="11" fontWeight="600" textAnchor="middle" x="160" y="336">HỌC SINH • SINH VIÊN VN</text>
       </svg>
@@ -65,7 +65,7 @@ export const campusFrames: QrFrameTemplate[] = [
 <polygon fill="#10B981" points="260,40 268,45 264,52"></polygon>
 <polygon fill={props.secondaryColor || `#F59E0B`} points="50,75 58,72 55,80"></polygon>
 <rect fill={props.secondaryColor || `#F59E0B`} height="42" rx="10" width="240" x="40" y="38"></rect>
-<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="13" fontWeight="800" textAnchor="middle" x="160" y="65">{props.labelText || `TUYỂN QUÂN / APPLY NGAY 📢`}</text>
+<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="13" fontWeight="800" textAnchor="middle" x="160" y="65">{props.labelText ?? `TUYỂN QUÂN / APPLY NGAY 📢`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#B45309" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="336">HẠN NỘP: 23H59 CHỦ NHẬT</text>
       </svg>
@@ -86,7 +86,7 @@ export const campusFrames: QrFrameTemplate[] = [
 <circle cx="208" cy="72" fill="#F59E0B" r="3"></circle>
 <SafeZone>{props.children}</SafeZone>
 <rect fill={props.secondaryColor || `#0284C7`} height="30" rx="8" width="220" x="50" y="318"></rect>
-<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="338">{props.labelText || `XEM DEMO ĐỒ ÁN 🎓`}</text>
+<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="338">{props.labelText ?? `XEM DEMO ĐỒ ÁN 🎓`}</text>
       </svg>
     ),
   },
@@ -101,7 +101,7 @@ export const campusFrames: QrFrameTemplate[] = [
 <rect fill="#FFFFFF" height="328" rx="14" stroke={props.primaryColor || `#059669`} strokeWidth="2.5" width="270" x="25" y="32"></rect>
 <rect fill={props.secondaryColor || `#E2E8F0`} height="26" rx="6" stroke={props.primaryColor || `#059669`} strokeWidth="2" width="80" x="120" y="18"></rect>
 <circle cx="160" cy="30" fill={props.primaryColor || `#059669`} r="4"></circle>
-<text fill="#065F46" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="75">{props.labelText || `KHẢO SÁT NGHIÊN CỨU 📝`}</text>
+<text fill="#065F46" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="75">{props.labelText ?? `KHẢO SÁT NGHIÊN CỨU 📝`}</text>
 <SafeZone>{props.children}</SafeZone>
 <path d="M125 330 L135 340 L155 320" stroke="#10B981" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
 <text fill="#065F46" fontFamily="Inter" fontSize="11" fontWeight="600" x="180" y="335">DÀNH 2 PHÚT</text>
@@ -117,7 +117,7 @@ export const campusFrames: QrFrameTemplate[] = [
     renderSvg: (props) => (
       <svg viewBox="0 0 320 380" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg" fill="none">
 <path d="M25 55 L90 55 L115 35 L295 35 Q300 35 300 40 L300 345 Q300 355 290 355 L35 355 Q25 355 25 345 Z" fill={props.primaryColor || `#F5F3FF`} stroke={props.secondaryColor || `#7C3AED`} strokeWidth="2.5"></path>
-<text fill="#6D28D9" fontFamily="Plus Jakarta Sans" fontSize="13" fontWeight="700" textAnchor="middle" x="165" y="75">{props.labelText || `TÀI LIỆU ÔN THI 📂`}</text>
+<text fill="#6D28D9" fontFamily="Plus Jakarta Sans" fontSize="13" fontWeight="700" textAnchor="middle" x="165" y="75">{props.labelText ?? `TÀI LIỆU ÔN THI 📂`}</text>
 <SafeZone>{props.children}</SafeZone>
 <rect fill="#DDD6FE" height="22" rx="11" width="160" x="80" y="325"></rect>
 <text fill="#5B21B6" fontFamily="Inter" fontSize="10" fontWeight="600" textAnchor="middle" x="160" y="340">GOOGLE DRIVE / ONEDRIVE</text>

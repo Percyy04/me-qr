@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { QRInputs } from '../../../types/qr.types';
+import { useLanguage } from '../../../context/LanguageContext';
 import { UploadCloud, FileText, Trash2 } from 'lucide-react';
 
 interface FormBProps {
@@ -8,6 +9,7 @@ interface FormBProps {
 }
 
 export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
+  const { t } = useLanguage();
   const [isDragging, setIsDragging] = useState(false);
 
   const fileData = inputs.file || {
@@ -45,11 +47,13 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
 
   return (
     <div className="space-y-4">
-      {/* Storage quota header */}
+      {/* Attachment Header */}
       <div className="flex items-center justify-between pb-2 border-b border-border-subtle">
-        <span className="text-xs font-bold text-slate-text-strong">File & Media Attachment</span>
+        <span className="text-xs font-bold text-slate-text-strong">
+          {t('fileMediaTitle')}
+        </span>
         <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-canvas-bg border border-border-subtle text-slate-text-muted">
-          Storage Quota: {fileData.size ? fileData.size : '0 MB'} / 20 MB
+          Max: 20 MB
         </span>
       </div>
 
@@ -79,10 +83,8 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
           <div className="w-10 h-10 mx-auto rounded-full bg-indigo-tint text-primary-container flex items-center justify-center mb-2">
             <UploadCloud size={20} />
           </div>
-          <p className="text-xs font-bold text-slate-text-strong">Kéo thả tệp PDF, Ảnh, Audio, hoặc PPTX vào đây</p>
-          <p className="text-[11px] text-slate-text-muted mt-1">
-            Dung lượng tối đa: 20MB. Hoặc <span className="text-primary-container underline">chọn từ thiết bị</span>
-          </p>
+          <p className="text-xs font-bold text-slate-text-strong">{t('fileDropPrompt')}</p>
+          <p className="text-[11px] text-slate-text-muted mt-1">{t('fileDropSubtext')}</p>
         </div>
       ) : (
         /* Uploaded File State Card */
@@ -102,8 +104,8 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
           <button
             type="button"
             onClick={removeFile}
-            className="text-slate-400 hover:text-rose-500 p-1 rounded transition-colors"
-            title="Xóa tệp"
+            className="text-slate-400 hover:text-rose-500 p-1 rounded transition-colors cursor-pointer"
+            title={t('fileRemove')}
           >
             <Trash2 size={16} />
           </button>
@@ -112,9 +114,10 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
 
       {/* Mini Landing Page Builder Inputs */}
       <div className="space-y-3 pt-2 border-t border-border-subtle">
-        <h4 className="text-xs font-bold text-slate-text-strong">Trang Đích Di Động (Landing Page Metadata)</h4>
         <div>
-          <label className="block text-[11px] font-semibold text-slate-700 mb-1">Tiêu đề hiển thị (Display Title)</label>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
+            {t('fileDisplayTitle')}
+          </label>
           <input
             type="text"
             value={fileData.title}
@@ -130,7 +133,9 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
         </div>
 
         <div>
-          <label className="block text-[11px] font-semibold text-slate-700 mb-1">Mô tả ngắn gọn (Description)</label>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
+            {t('fileDescription')}
+          </label>
           <textarea
             rows={2}
             value={fileData.description}
@@ -140,13 +145,15 @@ export const FormBFileMedia: React.FC<FormBProps> = ({ inputs, onChange }) => {
                 file: { ...fileData, description: e.target.value },
               })
             }
-            placeholder="Khám phá các mẫu chất liệu mới nhất..."
+            placeholder="Mô tả nội dung tài liệu..."
             className="w-full px-3 py-2 text-xs bg-canvas-bg border border-border-subtle rounded-lg text-slate-text-strong focus:outline-none focus:ring-2 focus:ring-primary-container"
           />
         </div>
 
         <div>
-          <label className="block text-[11px] font-semibold text-slate-700 mb-1">Nút kêu gọi hành động (CTA Button)</label>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
+            {t('fileCtaButton')}
+          </label>
           <input
             type="text"
             value={fileData.ctaText}

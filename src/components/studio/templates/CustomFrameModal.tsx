@@ -6,6 +6,7 @@ import { getFrameById } from '../../../constants/qrFrameRegistry';
 import { QrFrameWrapper } from '../../customizer/QrFrameWrapper';
 import { ModalCategoryAccordion } from './ModalCategoryAccordion';
 import { Logo } from '../../common/Logo';
+import { useLanguage } from '../../../context/LanguageContext';
 import { X, Search } from 'lucide-react';
 
 interface CustomFrameModalProps {
@@ -21,6 +22,7 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
   currentDesign,
   onApply,
 }) => {
+  const { t } = useLanguage();
   const [staged, setStaged] = useState<QRDesign>(currentDesign);
   const [openCatId, setOpenCatId] = useState<string>('campus');
   const [search, setSearch] = useState('');
@@ -60,7 +62,7 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
       frame: {
         ...staged.frame,
         id: frame.id,
-        templateUrl: null, // SVG frame active, no legacy WebP needed
+        templateUrl: null,
         text: frame.defaultLabel,
         frameColor: frame.defaultColors.primary,
         textColor: '#FFFFFF',
@@ -90,13 +92,13 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/60 backdrop-blur-xs">
       <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-5xl w-full max-h-[90vh] flex flex-col overflow-hidden">
-        {/* Header matching Stitch AI & ME-QR */}
+        {/* Header */}
         <div className="flex items-center justify-between px-6 py-3.5 border-b border-slate-100">
           <div className="flex items-center gap-3">
             <Logo size="sm" showText={false} />
             <div>
-              <h2 className="text-base sm:text-lg font-bold text-slate-800">Khung Tùy Chỉnh (Stitch Mega-Library)</h2>
-              <p className="text-xs text-slate-500">36 Mẫu Khung Vector SVG chuẩn hóa tọa độ Safe-Zone</p>
+              <h2 className="text-base sm:text-lg font-bold text-slate-800">{t('customFrameModalTitle')}</h2>
+              <p className="text-xs text-slate-500">{t('customFrameModalSubtitle')}</p>
             </div>
           </div>
           <button type="button" onClick={onClose} className="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer">
@@ -115,7 +117,7 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Tìm kiếm khung theo nhu cầu (Sự kiện, Trà sữa, VietQR, Tết, Esports, Cafe)..."
+                  placeholder={t('searchFramePlaceholder')}
                   className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
@@ -144,21 +146,21 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
               </QrFrameWrapper>
               <div className="mt-3 text-center">
                 <span className="text-[11px] font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
-                  {currentFrame ? `${currentFrame.name} (${currentFrame.id})` : 'CHƯA CHỌN KHUNG'}
+                  {currentFrame ? `${currentFrame.name} (${currentFrame.id})` : t('noFrameSelected')}
                 </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Modal Bottom Actions matching ME-QR */}
+        {/* Modal Bottom Actions */}
         <div className="flex items-center justify-between px-6 py-3.5 border-t border-slate-200 bg-white">
           <button
             type="button"
             onClick={onClose}
             className="px-6 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-50 cursor-pointer"
           >
-            Hủy
+            {t('cancel')}
           </button>
           <button
             type="button"
@@ -168,7 +170,7 @@ export const CustomFrameModal: React.FC<CustomFrameModalProps> = ({
             }}
             className="px-6 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-sm cursor-pointer"
           >
-            Áp dụng
+            {t('apply')}
           </button>
         </div>
       </div>

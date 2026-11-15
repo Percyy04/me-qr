@@ -20,7 +20,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <rect fill="#94A3B8" height="12" rx="2" width="50" x="135" y="16"></rect>
 <rect fill="#CBD5E1" height="14" width="36" x="142" y="28"></rect>
 <rect fill="#64748B" height="6" rx="2" width="80" x="120" y="40"></rect>
-<text fill={props.secondaryColor || `#78350F`} fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="78">{props.labelText || `MENU CÀ PHÊ &amp; TRÀ ☕`}</text>
+<text fill={props.secondaryColor || `#78350F`} fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="78">{props.labelText ?? `MENU CÀ PHÊ &amp; TRÀ ☕`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#92400E" fontFamily="Inter" fontSize="11" fontWeight="700" textAnchor="middle" x="160" y="336">CÀ PHÊ MUỐI • BẠC XỈU • TRÀ ĐÀO</text>
       </svg>
@@ -37,7 +37,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <rect fill={props.primaryColor || `#FFF7ED`} height="320" rx="20" stroke={props.secondaryColor || `#EA580C`} strokeWidth="2.5" width="270" x="25" y="35"></rect>
 <circle cx="160" cy="24" fill="#F97316" r="6"></circle>
 <path d="M130 35 Q160 22 190 35" fill="none" stroke={props.secondaryColor || `#EA580C`} strokeWidth="3"></path>
-<text fill="#C2410C" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="75">{props.labelText || `THỰC ĐƠN MÓN NGON 🍽️`}</text>
+<text fill="#C2410C" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="75">{props.labelText ?? `THỰC ĐƠN MÓN NGON 🍽️`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#9A3412" fontFamily="Inter" fontSize="10.5" fontWeight="600" textAnchor="middle" x="160" y="336">XEM MENU &amp; ĐẶT MÓN TẠI BÀN</text>
       </svg>
@@ -58,7 +58,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <polygon fill="#FFFFFF" points="150,25 175,25 165,55 140,55"></polygon>
 <polygon fill="#FFFFFF" points="200,25 225,25 215,55 190,55"></polygon>
 <polygon fill="#FFFFFF" points="250,25 275,25 265,55 240,55"></polygon>
-<text fill={props.secondaryColor || `#B91C1C`} fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="85">{props.labelText || `QUÉT ĐẶT ĐỒ ĂN NGAY 🥖`}</text>
+<text fill={props.secondaryColor || `#B91C1C`} fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="85">{props.labelText ?? `QUÉT ĐẶT ĐỒ ĂN NGAY 🥖`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#7F1D1D" fontFamily="Inter" fontSize="10.5" fontWeight="700" textAnchor="middle" x="160" y="338">BÁNH MÌ • BÚN BÒ • TRÀ TẮC</text>
       </svg>
@@ -75,7 +75,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <path d="M40 30 L280 30 L295 335 L25 335 Z" fill="#FFFFFF" stroke={props.primaryColor || `#4F46E5`} strokeWidth="2.5"></path>
 <rect fill={props.secondaryColor || `#312E81`} height="20" rx="4" width="290" x="15" y="335"></rect>
 <rect fill="#EEF2FF" height="32" rx="16" stroke={props.primaryColor || `#4F46E5`} strokeWidth="1.5" width="130" x="95" y="44"></rect>
-<text fill="#4338CA" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="65">{props.labelText || `BÀN SỐ 08`}</text>
+<text fill="#4338CA" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="65">{props.labelText ?? `BÀN SỐ 08`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#3730A3" fontFamily="Inter" fontSize="11" fontWeight="700" textAnchor="middle" x="160" y="322">GỌI MÓN &amp; THANH TOÁN 🧾</text>
       </svg>
@@ -97,7 +97,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <polygon points="108,2 111,9 119,10 113,15 115,23 108,19 101,23 103,15 97,10 105,9"></polygon>
 <polygon points="140,2 143,9 151,10 145,15 147,23 140,19 133,23 135,15 129,10 137,9"></polygon>
 </g>
-<text fill="#B45309" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="85">{props.labelText || `ĐÁNH GIÁ 5 SAO GOOGLE ⭐`}</text>
+<text fill="#B45309" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="85">{props.labelText ?? `ĐÁNH GIÁ 5 SAO GOOGLE ⭐`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#92400E" fontFamily="Inter" fontSize="10.5" fontWeight="600" textAnchor="middle" x="160" y="335">TẶNG NGAY VOUCHER 10% KHI REVIEW</text>
       </svg>
@@ -114,7 +114,7 @@ export const fnbFrames: QrFrameTemplate[] = [
 <rect fill={props.primaryColor || `#FDF2F8`} height="330" rx="22" stroke={props.secondaryColor || `#DB2777`} strokeWidth="2.5" width="270" x="25" y="25"></rect>
 <path d="M152 40 L168 56 M168 40 L152 56" stroke={props.secondaryColor || `#DB2777`} strokeLinecap="round" strokeWidth="2.5"></path>
 <circle cx="160" cy="48" fill="#F472B6" r="3"></circle>
-<text fill="#BE185D" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="80">{props.labelText || `ƯU ĐÃI LÀM ĐẸP -20% ✂️`}</text>
+<text fill="#BE185D" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="80">{props.labelText ?? `ƯU ĐÃI LÀM ĐẸP -20% ✂️`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#9D174D" fontFamily="Inter" fontSize="10.5" fontWeight="700" textAnchor="middle" x="160" y="336">SPA • NAILS • HAIR SALON</text>
       </svg>

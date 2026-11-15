@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { QRType } from '../../types/qr.types';
 import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { AllTypesModal } from './AllTypesModal';
+import { useLanguage } from '../../context/LanguageContext';
 import {
   Link, AlignLeft, Image as ImageIcon, FileText,
   MapPin, Wifi, Video, Sparkles
@@ -10,12 +11,6 @@ import {
 interface Step1Props {
   selectedType: QRType;
   onSelectType: (type: QRType) => void;
-}
-
-interface QuickItem {
-  id: QRType;
-  label: string;
-  icon: React.ReactNode;
 }
 
 const FacebookIcon = () => (
@@ -30,32 +25,32 @@ const XTwitterIcon = () => (
   </svg>
 );
 
-const PRIMARY_ITEMS: QuickItem[] = [
-  { id: 'url', label: 'Liên kết / URL', icon: <Link size={20} strokeWidth={2.2} /> },
-  { id: 'text', label: 'Văn bản', icon: <AlignLeft size={20} strokeWidth={2.2} /> },
-  { id: 'image', label: 'Hình ảnh', icon: <ImageIcon size={20} strokeWidth={2.2} /> },
-  { id: 'pdf', label: 'PDF', icon: <FileText size={20} strokeWidth={2.2} /> },
-  { id: 'social', label: 'Facebook', icon: <FacebookIcon /> },
-  { id: 'map', label: 'Google Maps', icon: <MapPin size={20} strokeWidth={2.2} /> },
-  { id: 'wifi', label: 'Wi-Fi', icon: <Wifi size={20} strokeWidth={2.2} /> },
-  { id: 'phone', label: 'X (Twitter)', icon: <XTwitterIcon /> },
-  { id: 'multiurl', label: 'Video', icon: <Video size={20} strokeWidth={2.2} /> },
-];
-
 export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectType }) => {
+  const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
 
-  const isSelectedInPrimary = PRIMARY_ITEMS.some((item) => item.id === selectedType);
+  const primaryItems = [
+    { id: 'url' as QRType, label: t('typeUrl'), icon: <Link size={20} strokeWidth={2.2} /> },
+    { id: 'text' as QRType, label: t('typeText'), icon: <AlignLeft size={20} strokeWidth={2.2} /> },
+    { id: 'image' as QRType, label: t('typeImage'), icon: <ImageIcon size={20} strokeWidth={2.2} /> },
+    { id: 'pdf' as QRType, label: t('typePdf'), icon: <FileText size={20} strokeWidth={2.2} /> },
+    { id: 'social' as QRType, label: 'Facebook', icon: <FacebookIcon /> },
+    { id: 'map' as QRType, label: t('typeMap'), icon: <MapPin size={20} strokeWidth={2.2} /> },
+    { id: 'wifi' as QRType, label: t('typeWifi'), icon: <Wifi size={20} strokeWidth={2.2} /> },
+    { id: 'phone' as QRType, label: 'X (Twitter)', icon: <XTwitterIcon /> },
+    { id: 'multiurl' as QRType, label: 'Video', icon: <Video size={20} strokeWidth={2.2} /> },
+  ];
+
+  const isSelectedInPrimary = primaryItems.some((item) => item.id === selectedType);
   const activeCustomCat = !isSelectedInPrimary
     ? BENTO_CATEGORIES.find((c) => c.id === selectedType)
     : null;
 
   return (
     <>
-      {/* Sleek Horizontal Icon Bar Matching ME-QR */}
       <section className="bg-white rounded-2xl border border-slate-200/80 p-2.5 sm:p-3 shadow-xs">
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-none py-0.5">
-          {PRIMARY_ITEMS.map((item) => {
+          {primaryItems.map((item) => {
             const isActive = selectedType === item.id;
             return (
               <button
@@ -78,7 +73,6 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
             );
           })}
 
-          {/* Dynamic Extra Button if a non-primary type was selected via modal */}
           {activeCustomCat && (
             <button
               type="button"
@@ -94,18 +88,16 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
             </button>
           )}
 
-          {/* Xem Tất cả CTA Button */}
           <button
             type="button"
             onClick={() => setModalOpen(true)}
             className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-bold text-xs rounded-xl px-4 py-2 flex items-center justify-center shrink-0 h-[72px] sm:h-[76px] transition-colors shadow-xs cursor-pointer whitespace-nowrap min-w-[88px]"
           >
-            <span>Xem Tất cả</span>
+            <span>{t('step1AllTypes')}</span>
           </button>
         </div>
       </section>
 
-      {/* Full 17+ Types Modal */}
       <AllTypesModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

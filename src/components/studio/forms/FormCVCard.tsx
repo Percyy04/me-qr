@@ -1,5 +1,6 @@
 import React from 'react';
 import { QRInputs } from '../../../types/qr.types';
+import { useLanguage } from '../../../context/LanguageContext';
 import { Camera, User, Building, Phone, Mail, Globe, MapPin } from 'lucide-react';
 
 interface FormCProps {
@@ -8,6 +9,7 @@ interface FormCProps {
 }
 
 export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
+  const { t } = useLanguage();
   const v = inputs.vcard;
 
   const update = (field: keyof QRInputs['vcard'], val: string) => {
@@ -51,7 +53,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
 
         <div className="flex-1 grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">Họ (Last Name)</label>
+            <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">{t('vcardLastName')}</label>
             <input
               type="text"
               value={v.lastName}
@@ -61,7 +63,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
             />
           </div>
           <div>
-            <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">Tên (First Name)</label>
+            <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">{t('vcardFirstName')}</label>
             <input
               type="text"
               value={v.firstName}
@@ -78,7 +80,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
         <div>
           <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
             <Building size={12} />
-            <span>Chức vụ (Job Title)</span>
+            <span>{t('vcardJobTitle')}</span>
           </label>
           <input
             type="text"
@@ -89,7 +91,9 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
           />
         </div>
         <div>
-          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">Công ty (Company)</label>
+          <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1">
+            {t('vcardCompany')}
+          </label>
           <input
             type="text"
             value={v.organization}
@@ -105,7 +109,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
         <div>
           <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
             <Phone size={12} />
-            <span>Số điện thoại (Mobile)</span>
+            <span>{t('vcardMobile')}</span>
           </label>
           <input
             type="tel"
@@ -118,7 +122,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
         <div>
           <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
             <Mail size={12} />
-            <span>Email</span>
+            <span>{t('vcardEmail')}</span>
           </label>
           <input
             type="email"
@@ -135,7 +139,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
         <div>
           <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
             <Globe size={12} />
-            <span>Website</span>
+            <span>{t('vcardWebsite')}</span>
           </label>
           <input
             type="url"
@@ -148,7 +152,7 @@ export const FormCVCard: React.FC<FormCProps> = ({ inputs, onChange }) => {
         <div>
           <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
             <MapPin size={12} />
-            <span>Thành phố, Quốc gia</span>
+            <span>{t('vcardCity')}</span>
           </label>
           <input
             type="text"

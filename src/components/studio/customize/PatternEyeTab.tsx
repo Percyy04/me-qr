@@ -1,5 +1,6 @@
 import React from 'react';
 import { QRDesign, BodyDotType, CornerSquareType, CornerDotType } from '../../../types/qr.types';
+import { useLanguage } from '../../../context/LanguageContext';
 import { Circle, Square } from 'lucide-react';
 
 interface PatternEyeTabProps {
@@ -7,36 +8,38 @@ interface PatternEyeTabProps {
   onChange: (design: QRDesign) => void;
 }
 
-const BODY_PATTERNS: { id: BodyDotType; label: string; desc: string }[] = [
-  { id: 'square', label: 'Square', desc: 'Tiêu chuẩn ISO' },
-  { id: 'rounded', label: 'Rounded', desc: 'Bo tròn nhẹ' },
-  { id: 'dots', label: 'Dots', desc: 'Chấm bi tròn' },
-  { id: 'extra-rounded', label: 'Capsule', desc: 'Con nhộng' },
-  { id: 'classy', label: 'Classy', desc: 'Vát góc nhọn' },
-  { id: 'classy-rounded', label: 'Soft Cut', desc: 'Vát mềm mại' },
-];
-
-const EYE_FRAMES: { id: CornerSquareType; label: string }[] = [
-  { id: 'square', label: 'Vuông' },
-  { id: 'extra-rounded', label: 'Bo góc' },
-  { id: 'dot', label: 'Tròn' },
-];
-
-const EYE_CENTERS: { id: CornerDotType; label: string }[] = [
-  { id: 'square', label: 'Vuông' },
-  { id: 'dot', label: 'Chấm tròn' },
-];
-
 export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }) => {
+  const { t } = useLanguage();
+
+  const bodyPatterns: { id: BodyDotType; label: string; desc: string }[] = [
+    { id: 'square', label: 'Square', desc: t('patternSquare') },
+    { id: 'rounded', label: 'Rounded', desc: t('patternRounded') },
+    { id: 'dots', label: 'Dots', desc: t('patternDots') },
+    { id: 'extra-rounded', label: 'Capsule', desc: t('patternExtraRounded') },
+    { id: 'classy', label: 'Classy', desc: t('patternClassy') },
+    { id: 'classy-rounded', label: 'Soft Cut', desc: t('patternClassyRounded') },
+  ];
+
+  const eyeFrames: { id: CornerSquareType; label: string }[] = [
+    { id: 'square', label: t('eyeSquare') },
+    { id: 'extra-rounded', label: t('eyeRounded') },
+    { id: 'dot', label: t('eyeDot') },
+  ];
+
+  const eyeCenters: { id: CornerDotType; label: string }[] = [
+    { id: 'square', label: t('eyeCenterSquare') },
+    { id: 'dot', label: t('eyeCenterDot') },
+  ];
+
   return (
     <div className="space-y-4 pt-1">
       {/* Body Pattern Styles */}
       <div>
         <label className="block text-xs font-bold text-slate-text-strong mb-2">
-          Hoa văn thân mã (QR Body Pattern Style)
+          {t('patternBodyTitle')}
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-          {BODY_PATTERNS.map((p) => {
+          {bodyPatterns.map((p) => {
             const isSelected = design.dots.type === p.id;
             return (
               <button
@@ -48,7 +51,7 @@ export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }
                     dots: { ...design.dots, type: p.id },
                   })
                 }
-                className={`p-2.5 rounded-xl border text-left transition-all ${
+                className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
                     ? 'border-primary-container bg-indigo-tint/50 ring-2 ring-primary-container/20'
                     : 'border-border-subtle bg-white hover:border-slate-300'
@@ -74,10 +77,10 @@ export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }
         {/* Corner Outer Eyes */}
         <div>
           <label className="block text-xs font-bold text-slate-text-strong mb-2">
-            Mắt quét ngoài (Corner Outer Eyes)
+            {t('patternEyeOuterTitle')}
           </label>
           <div className="grid grid-cols-3 gap-2">
-            {EYE_FRAMES.map((ef) => {
+            {eyeFrames.map((ef) => {
               const isSelected = design.cornersSquare.type === ef.id;
               return (
                 <button
@@ -89,7 +92,7 @@ export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }
                       cornersSquare: { ...design.cornersSquare, type: ef.id },
                     })
                   }
-                  className={`py-2 px-1 text-center rounded-xl border transition-all ${
+                  className={`py-2 px-1 text-center rounded-xl border transition-all cursor-pointer ${
                     isSelected
                       ? 'border-primary-container bg-indigo-tint/50 text-primary-container font-bold ring-1 ring-primary-container/30'
                       : 'border-border-subtle bg-white text-slate-600 hover:border-slate-300 text-xs'
@@ -105,10 +108,10 @@ export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }
         {/* Corner Inner Eyes */}
         <div>
           <label className="block text-xs font-bold text-slate-text-strong mb-2">
-            Tâm mắt trong (Corner Inner Dots)
+            {t('patternEyeCenterTitle')}
           </label>
           <div className="grid grid-cols-2 gap-2">
-            {EYE_CENTERS.map((ec) => {
+            {eyeCenters.map((ec) => {
               const isSelected = design.cornersDot.type === ec.id;
               return (
                 <button
@@ -120,7 +123,7 @@ export const PatternEyeTab: React.FC<PatternEyeTabProps> = ({ design, onChange }
                       cornersDot: { ...design.cornersDot, type: ec.id },
                     })
                   }
-                  className={`py-2 px-1 text-center rounded-xl border transition-all ${
+                  className={`py-2 px-1 text-center rounded-xl border transition-all cursor-pointer ${
                     isSelected
                       ? 'border-primary-container bg-indigo-tint/50 text-primary-container font-bold ring-1 ring-primary-container/30'
                       : 'border-border-subtle bg-white text-slate-600 hover:border-slate-300 text-xs'

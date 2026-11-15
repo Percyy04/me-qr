@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { QRDesign, QRInputs, QRType } from '../../../types/qr.types';
 import { StudioQRCanvasView } from './StudioQRCanvasView';
 import { StudioMobilePageView } from './StudioMobilePageView';
+import { useLanguage } from '../../../context/LanguageContext';
 import { QrCode, Smartphone } from 'lucide-react';
 
 interface StudioPreviewColumnProps {
@@ -19,11 +20,12 @@ export const StudioPreviewColumn: React.FC<StudioPreviewColumnProps> = ({
   design,
   onAutoFix,
 }) => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'qr' | 'mobile'>('qr');
 
   return (
     <aside className="w-full space-y-4 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-none">
-      {/* Real-time Preview Card matching ME-QR ❸ Tạo & tải QR */}
+      {/* Real-time Preview Card */}
       <div className="bg-surface-card rounded-2xl border border-border-subtle p-5 shadow-elevated">
         {/* Card Header & Step Indicator */}
         <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-border-subtle">
@@ -31,11 +33,13 @@ export const StudioPreviewColumn: React.FC<StudioPreviewColumnProps> = ({
             <span className="w-6 h-6 rounded-lg bg-primary-container text-white text-xs font-bold flex items-center justify-center shadow-xs">
               3
             </span>
-            <h3 className="text-sm font-bold text-slate-text-strong font-display">Tạo & tải QR</h3>
+            <h3 className="text-sm font-bold text-slate-text-strong font-display">
+              {t('previewTitle')}
+            </h3>
           </div>
 
           <span className="text-[10px] font-bold uppercase tracking-wider text-primary-container bg-indigo-tint px-2 py-0.5 rounded-full">
-            LIVE 60FPS
+            {t('livePreviewBadge')}
           </span>
         </div>
 
@@ -51,7 +55,7 @@ export const StudioPreviewColumn: React.FC<StudioPreviewColumnProps> = ({
             }`}
           >
             <QrCode size={15} />
-            <span>QR Canvas</span>
+            <span>{t('tabQrCanvas')}</span>
           </button>
 
           <button
@@ -64,7 +68,7 @@ export const StudioPreviewColumn: React.FC<StudioPreviewColumnProps> = ({
             }`}
           >
             <Smartphone size={15} />
-            <span>Mobile Page</span>
+            <span>{t('tabMobilePage')}</span>
           </button>
         </div>
 

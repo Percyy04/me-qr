@@ -6,6 +6,7 @@ import { Step1TypeBento } from './Step1TypeBento';
 import { Step2ContentWrapper } from './Step2ContentWrapper';
 import { Step3CustomizeStudio } from './Step3CustomizeStudio';
 import { StudioPreviewColumn } from './preview/StudioPreviewColumn';
+import { useLanguage } from '../../context/LanguageContext';
 
 const INITIAL_INPUTS: QRInputs = {
   url: 'https://quickqr.io/launch',
@@ -108,6 +109,7 @@ const INITIAL_DESIGN: QRDesign = {
 };
 
 export const QuickQRStudioApp: React.FC = () => {
+  const { t } = useLanguage();
   const [type, setType] = useState<QRType>('url');
   const [inputs, setInputs] = useState<QRInputs>(INITIAL_INPUTS);
   const [design, setDesign] = useState<QRDesign>(INITIAL_DESIGN);
@@ -124,33 +126,26 @@ export const QuickQRStudioApp: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-canvas-bg text-slate-text-strong font-sans antialiased">
-      {/* Top Header */}
       <StudioHeader />
 
       {/* Hero Title Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-8 pb-4">
         <div className="max-w-3xl">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-text-strong font-display tracking-tight">
-            Create Custom & Dynamic QR Codes
+            {t('heroTitle')}
           </h1>
           <p className="text-xs sm:text-sm text-slate-text-muted mt-1 leading-relaxed">
-            Nền tảng tạo và tùy biến mã QR chuyên nghiệp với giao diện Bento Grid, hỗ trợ điều hướng thông minh và 100% bảo mật client-side.
+            {t('heroSubtitle')}
           </p>
         </div>
       </div>
 
-      {/* Main Workspace (2-Column Grid: 8 Cols Editor vs 4 Cols Sticky Preview) */}
+      {/* Main Workspace */}
       <main className="max-w-7xl mx-auto px-4 sm:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column (8 cols): 3-Step Studio Flow */}
           <div className="lg:col-span-8 space-y-6">
-            {/* Step 1: Choose QR Type (Bento Grid) */}
             <Step1TypeBento selectedType={type} onSelectType={setType} />
-
-            {/* Step 2: Enter Content (Conditional Rendering 1 of 4 Forms) */}
             <Step2ContentWrapper type={type} inputs={inputs} onChange={setInputs} />
-
-            {/* Step 3: Customize Appearance (4 Sub-Tabs) */}
             <Step3CustomizeStudio
               design={design}
               onChange={setDesign}
@@ -158,7 +153,6 @@ export const QuickQRStudioApp: React.FC = () => {
             />
           </div>
 
-          {/* Right Column (4 cols): Sticky Real-time Preview (Pinned at top-20) */}
           <div className="lg:col-span-4 lg:sticky lg:top-20 self-start z-30">
             <StudioPreviewColumn
               type={type}

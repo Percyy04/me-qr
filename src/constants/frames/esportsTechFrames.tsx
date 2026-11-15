@@ -18,7 +18,7 @@ export const esportsTechFrames: QrFrameTemplate[] = [
       <svg viewBox="0 0 320 380" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg" fill="none">
 <path d="M160 22 L285 55 L285 240 Q285 330 160 365 Q35 330 35 240 L35 55 Z" fill={props.primaryColor || `#FAF5FF`} stroke={props.secondaryColor || `#9333EA`} strokeWidth="3"></path>
 <rect fill={props.secondaryColor || `#9333EA`} height="34" rx="8" width="180" x="70" y="45"></rect>
-<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="68">{props.labelText || `ĐĂNG KÝ GIẢI ĐẤU 🎮`}</text>
+<text fill="#FFFFFF" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="800" textAnchor="middle" x="160" y="68">{props.labelText ?? `ĐĂNG KÝ GIẢI ĐẤU 🎮`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#7E22CE" fontFamily="Plus Jakarta Sans" fontSize="11" fontWeight="700" textAnchor="middle" x="160" y="338">5v5 TOURNAMENT • FREE</text>
       </svg>
@@ -37,7 +37,7 @@ export const esportsTechFrames: QrFrameTemplate[] = [
 <path d="M285 55 L285 35 L265 35" stroke={props.secondaryColor || `#22D3EE`} strokeWidth="4"></path>
 <path d="M35 325 L35 345 L55 345" stroke={props.secondaryColor || `#22D3EE`} strokeWidth="4"></path>
 <path d="M285 325 L285 345 L265 345" stroke={props.secondaryColor || `#22D3EE`} strokeWidth="4"></path>
-<text fill="#10B981" fontFamily="JetBrains Mono" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="65">{props.labelText || `&gt; QUÉT KHÁM PHÁ ⚡ &lt;`}</text>
+<text fill="#10B981" fontFamily="JetBrains Mono" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="65">{props.labelText ?? `&gt; QUÉT KHÁM PHÁ ⚡ &lt;`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#64748B" fontFamily="JetBrains Mono" fontSize="9" textAnchor="middle" x="160" y="335">CYBER_LINK // PROTOCOL_V4</text>
       </svg>
@@ -55,7 +55,7 @@ export const esportsTechFrames: QrFrameTemplate[] = [
 <circle cx="160" cy="48" fill="#1E293B" r="28"></circle>
 <circle cx="160" cy="48" fill="#FDA4AF" r="10"></circle>
 <circle cx="160" cy="48" fill="#FFFFFF" r="3"></circle>
-<text fill="#9F1239" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="96">{props.labelText || `ĐẶT VÉ ĐÊM NHẠC 🎸`}</text>
+<text fill="#9F1239" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="96">{props.labelText ?? `ĐẶT VÉ ĐÊM NHẠC 🎸`}</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill={props.secondaryColor || `#E11D48`} fontFamily="Plus Jakarta Sans" fontSize="10.5" fontWeight="600" textAnchor="middle" x="160" y="342">ACOUSTIC LIVE @ 20:00</text>
       </svg>
@@ -92,7 +92,7 @@ export const esportsTechFrames: QrFrameTemplate[] = [
 <circle cx="42" cy="44" fill={props.secondaryColor || `#EF4444`} r="5"></circle>
 <circle cx="58" cy="44" fill="#F59E0B" r="5"></circle>
 <circle cx="74" cy="44" fill="#10B981" r="5"></circle>
-<text fill="#94A3B8" fontFamily="JetBrains Mono" fontSize="10" textAnchor="middle" x="160" y="48">{props.labelText || `terminal — git clone`}</text>
+<text fill="#94A3B8" fontFamily="JetBrains Mono" fontSize="10" textAnchor="middle" x="160" y="48">{props.labelText ?? `terminal — git clone`}</text>
 <text fill="#38BDF8" fontFamily="JetBrains Mono" fontSize="11" x="40" y="80">$ npm run dev --repo</text>
 <SafeZone>{props.children}</SafeZone>
 <text fill="#F1F5F9" fontFamily="JetBrains Mono" fontSize="11" fontWeight="600" textAnchor="middle" x="160" y="336">SOURCE CODE &amp; GITHUB 💻</text>
@@ -109,7 +109,7 @@ export const esportsTechFrames: QrFrameTemplate[] = [
       <svg viewBox="0 0 320 380" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg" fill="none">
 <rect fill="#FFFFFF" height="350" rx="34" stroke={props.primaryColor || `#0F172A`} strokeWidth="4" width="260" x="30" y="15"></rect>
 <rect fill={props.primaryColor || `#0F172A`} height="14" rx="7" width="70" x="125" y="26"></rect>
-<text fill="#1E293B" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="68">{props.labelText || `TẢI APP TRẢI NGHIỆM 📱`}</text>
+<text fill="#1E293B" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="160" y="68">{props.labelText ?? `TẢI APP TRẢI NGHIỆM 📱`}</text>
 <SafeZone>{props.children}</SafeZone>
 <rect fill={props.primaryColor || `#0F172A`} height="4" rx="2" width="100" x="110" y="342"></rect>
 <text fill="#2563EB" fontFamily="Plus Jakarta Sans" fontSize="11" fontWeight="700" textAnchor="middle" x="160" y="325">APP STORE &amp; GOOGLE PLAY</text>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { QRDesign } from '../../../types/qr.types';
+import { useLanguage } from '../../../context/LanguageContext';
+import { Sparkles } from 'lucide-react';
 
 interface ColorTabProps {
   design: QRDesign;
@@ -9,6 +11,7 @@ interface ColorTabProps {
 const PRESET_COLORS = ['#4F46E5', '#10B981', '#0F172A', '#7C3AED', '#2563EB', '#D97706', '#E11D48', '#059669'];
 
 export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
+  const { t } = useLanguage();
   const isGradient = design.dots.gradient.enabled;
 
   const handlePreset = (hex: string) => {
@@ -34,29 +37,32 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
         <button
           type="button"
           onClick={() => onChange({ ...design, dots: { ...design.dots, gradient: { ...design.dots.gradient, enabled: false } } })}
-          className={`flex-1 py-1.5 rounded-lg transition-all ${!isGradient ? 'bg-white text-primary-container shadow-xs' : 'text-slate-text-muted'}`}
+          className={`flex-1 py-1.5 rounded-lg transition-all cursor-pointer ${!isGradient ? 'bg-white text-primary-container shadow-xs' : 'text-slate-text-muted'}`}
         >
-          Màu đơn sắc (Solid Color)
+          {t('solidColorMode')}
         </button>
         <button
           type="button"
           onClick={() => onChange({ ...design, dots: { ...design.dots, gradient: { ...design.dots.gradient, enabled: true } } })}
-          className={`flex-1 py-1.5 rounded-lg transition-all ${isGradient ? 'bg-white text-primary-container shadow-xs' : 'text-slate-text-muted'}`}
+          className={`flex-1 py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${isGradient ? 'bg-white text-primary-container shadow-xs font-bold' : 'text-slate-text-muted hover:text-slate-text-strong'}`}
         >
-          Dải màu Gradient ✨
+          <Sparkles size={13} className={isGradient ? 'text-primary-container' : 'text-slate-400'} />
+          <span>{t('gradientColorMode')}</span>
         </button>
       </div>
 
-      {/* Preset Swatches */}
+      {/* Preset Swatches with accessible touch targets */}
       <div>
-        <label className="block text-xs font-bold text-slate-text-strong mb-2">Bảng màu nhanh</label>
-        <div className="flex items-center gap-2">
+        <label className="block text-xs font-bold text-slate-text-strong mb-2">{t('quickPalette')}</label>
+        <div className="flex items-center gap-2.5 flex-wrap">
           {PRESET_COLORS.map((hex) => (
             <button
               key={hex}
               type="button"
+              aria-label={`Color ${hex}`}
+              title={`Color ${hex}`}
               onClick={() => handlePreset(hex)}
-              className="w-7 h-7 rounded-lg transition-transform hover:scale-110 shadow-xs border border-white"
+              className="w-8 h-8 rounded-xl transition-transform hover:scale-110 shadow-xs border border-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container focus-visible:ring-offset-1"
               style={{ backgroundColor: hex }}
             />
           ))}
@@ -66,7 +72,7 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
       {/* Color Controls */}
       {!isGradient ? (
         <div className="p-3 bg-canvas-bg rounded-xl border border-border-subtle flex items-center justify-between">
-          <span className="text-xs font-bold text-slate-text-strong">Màu chính mã QR</span>
+          <span className="text-xs font-bold text-slate-text-strong">{t('mainQrColor')}</span>
           <div className="flex items-center gap-2">
             <input
               type="color"
@@ -88,7 +94,7 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
         <div className="p-3 bg-canvas-bg rounded-xl border border-border-subtle space-y-3">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-[11px] font-semibold text-slate-700 mb-1">Màu bắt đầu</label>
+              <label className="block text-[11px] font-semibold text-slate-700 mb-1">{t('gradientStartColor')}</label>
               <div className="flex items-center gap-2">
                 <input
                   type="color"
@@ -105,7 +111,7 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
               </div>
             </div>
             <div>
-              <label className="block text-[11px] font-semibold text-slate-700 mb-1">Màu kết thúc</label>
+              <label className="block text-[11px] font-semibold text-slate-700 mb-1">{t('gradientEndColor')}</label>
               <div className="flex items-center gap-2">
                 <input
                   type="color"
@@ -124,7 +130,7 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
           </div>
           <div>
             <div className="flex justify-between text-[11px] text-slate-600 mb-1">
-              <span>Góc xoay Gradient</span>
+              <span>{t('gradientRotation')}</span>
               <span className="font-mono">{design.dots.gradient.rotation}°</span>
             </div>
             <input
@@ -147,8 +153,8 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
       {/* Background Color & Transparency */}
       <div className="pt-3 border-t border-border-subtle flex items-center justify-between">
         <div>
-          <span className="text-xs font-bold text-slate-text-strong block">Màu nền (Background)</span>
-          <span className="text-[11px] text-slate-text-muted">Nền trắng hoặc trong suốt</span>
+          <span className="text-xs font-bold text-slate-text-strong block">{t('backgroundColor')}</span>
+          <span className="text-[11px] text-slate-text-muted">{t('transparentBg')}</span>
         </div>
         <div className="flex items-center gap-3">
           <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer">
@@ -161,9 +167,9 @@ export const ColorTab: React.FC<ColorTabProps> = ({ design, onChange }) => {
                   background: { ...design.background, isTransparent: e.target.checked },
                 })
               }
-              className="w-4 h-4 rounded text-primary-container accent-primary-container"
+              className="w-4 h-4 rounded text-primary-container accent-primary-container cursor-pointer"
             />
-            <span>Nền trong suốt</span>
+            <span>{t('transparentBg')}</span>
           </label>
           {!design.background.isTransparent && (
             <input

@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { QRType } from '../../types/qr.types';
 import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { Logo } from '../common/Logo';
+import { useLanguage } from '../../context/LanguageContext';
 import {
   X, Search, Check, Link, FileText, User, Wifi, MessageCircle,
   Image, Smartphone, Share2, MapPin, Type, Music, Calendar, Mail,
@@ -40,6 +41,7 @@ export const AllTypesModal: React.FC<AllTypesModalProps> = ({
   selectedType,
   onSelectType,
 }) => {
+  const { t } = useLanguage();
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -80,14 +82,14 @@ export const AllTypesModal: React.FC<AllTypesModalProps> = ({
           <div className="flex items-center gap-3">
             <Logo size="sm" showText={false} />
             <div>
-              <h3 className="text-base font-bold text-slate-800">Tất cả các loại mã QR</h3>
-              <p className="text-xs text-slate-500">Chọn định dạng mã QR phù hợp với chiến dịch của bạn</p>
+              <h3 className="text-base font-bold text-slate-800">{t('modalAllTypesTitle')}</h3>
+              <p className="text-xs text-slate-500">{t('modalAllTypesDesc')}</p>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors cursor-pointer"
           >
             <X size={16} />
           </button>
@@ -101,7 +103,7 @@ export const AllTypesModal: React.FC<AllTypesModalProps> = ({
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Tìm kiếm loại mã QR (WiFi, vCard, PDF, Menu, SMS, v.v.)..."
+              placeholder={t('searchTypePlaceholder')}
               className="w-full pl-10 pr-4 py-2 text-xs bg-white border border-slate-200 rounded-xl text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
@@ -119,7 +121,7 @@ export const AllTypesModal: React.FC<AllTypesModalProps> = ({
                   onSelectType(cat.id);
                   onClose();
                 }}
-                className={`p-3.5 rounded-xl border text-left transition-all relative flex flex-col justify-between group ${
+                className={`p-3.5 rounded-xl border text-left transition-all relative flex flex-col justify-between group cursor-pointer ${
                   isActive
                     ? 'border-purple-500 bg-purple-50/60 ring-2 ring-purple-500/20 shadow-xs'
                     : 'border-slate-200 bg-white hover:border-purple-300 hover:bg-slate-50/80'

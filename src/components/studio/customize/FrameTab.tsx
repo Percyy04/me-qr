@@ -3,7 +3,8 @@ import { QRDesign } from '../../../types/qr.types';
 import { QrFrameTemplate } from '../../../types/qrFrame';
 import { QR_FRAME_REGISTRY, getFrameById } from '../../../constants/qrFrameRegistry';
 import { CustomFrameModal } from '../templates/CustomFrameModal';
-import { Type, Sparkles, Palette } from 'lucide-react';
+import { useLanguage } from '../../../context/LanguageContext';
+import { Type, Sparkles, Palette, X } from 'lucide-react';
 
 interface FrameTabProps {
   design: QRDesign;
@@ -11,6 +12,7 @@ interface FrameTabProps {
 }
 
 export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
+  const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const frame = design.frame;
   const activeFrame = getFrameById(frame.id);
@@ -44,24 +46,32 @@ export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-slate-800">Khung Vector SVG</span>
-            <span className="text-[9px] px-1.5 py-0.2 rounded font-bold bg-purple-100 text-purple-700">36 Khung Stitch AI</span>
+            <span className="text-xs font-bold text-slate-800">{t('frameLibraryTitle')}</span>
+            <span className="text-[9px] px-1.5 py-0.2 rounded font-bold bg-purple-100 text-purple-700">
+              {t('frameLibraryBadge')}
+            </span>
           </div>
-          <button type="button" onClick={() => setModalOpen(true)} className="text-[11px] font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1 cursor-pointer">
-            <Sparkles size={12} /><span>Mở kho 36 khung</span>
+          <button
+            type="button"
+            onClick={() => setModalOpen(true)}
+            className="text-[11px] font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1 cursor-pointer"
+          >
+            <Sparkles size={12} />
+            <span>{t('frameOpenModal')}</span>
           </button>
         </div>
 
         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
           <button
             type="button"
+            aria-label={t('frameNone')}
             onClick={() => handleSelectFrame(null)}
-            className={`w-14 h-16 rounded-xl border flex flex-col items-center justify-center shrink-0 cursor-pointer ${
+            className={`w-14 h-16 rounded-xl border flex flex-col items-center justify-center shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 ${
               !activeFrame || frame.id === 'NONE' || frame.id === 'none' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20 shadow-xs' : 'border-slate-200 bg-white hover:bg-slate-50'
             }`}
           >
-            <span className="text-slate-400 text-sm font-bold mb-0.5">✕</span>
-            <span className="text-[9px] text-slate-500">Không</span>
+            <X size={16} className="text-slate-400 mb-0.5" />
+            <span className="text-[9px] text-slate-500">{t('frameNone')}</span>
           </button>
 
           {quickFrames.map((tpl) => {
@@ -90,7 +100,7 @@ export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
             className="w-14 h-16 rounded-xl border border-slate-200 bg-slate-50 hover:bg-purple-50 hover:border-purple-300 text-slate-700 hover:text-purple-700 font-bold text-xs flex flex-col items-center justify-center shrink-0 cursor-pointer transition-all"
           >
             <span className="text-sm font-extrabold text-purple-600">+36</span>
-            <span className="text-[8px] font-medium text-slate-500">Tất cả</span>
+            <span className="text-[8px] font-medium text-slate-500">{t('frameAllCount')}</span>
           </button>
         </div>
       </div>
@@ -99,13 +109,14 @@ export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
       <div className="p-3 bg-canvas-bg rounded-xl border border-border-subtle space-y-3">
         <div>
           <label className="block text-[11px] font-semibold text-slate-700 mb-1 flex items-center gap-1">
-            <Type size={12} /><span>Chữ trên banner khung (labelText)</span>
+            <Type size={12} />
+            <span>{t('frameBannerLabel')}</span>
           </label>
           <input
             type="text"
             value={frame.text}
             onChange={(e) => onChange({ ...design, frame: { ...frame, text: e.target.value } })}
-            placeholder={activeFrame ? activeFrame.defaultLabel : 'QUÉT ĐỂ TRUY CẬP'}
+            placeholder={activeFrame ? activeFrame.defaultLabel : t('frameBannerPlaceholder')}
             className="w-full px-2.5 py-1.5 text-xs bg-white border border-border-subtle rounded-lg font-bold tracking-wider uppercase text-slate-text-strong focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
@@ -113,7 +124,8 @@ export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
         <div className="grid grid-cols-2 gap-3 pt-1 border-t border-slate-200/60">
           <div>
             <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
-              <Palette size={11} /><span>Màu khung chính</span>
+              <Palette size={11} />
+              <span>{t('framePrimaryColor')}</span>
             </label>
             <div className="flex items-center gap-2 bg-white border border-border-subtle rounded-lg px-2 py-1">
               <input
@@ -128,7 +140,8 @@ export const FrameTab: React.FC<FrameTabProps> = ({ design, onChange }) => {
 
           <div>
             <label className="block text-[10px] font-bold uppercase text-slate-500 mb-1 flex items-center gap-1">
-              <Palette size={11} /><span>Màu điểm nhấn</span>
+              <Palette size={11} />
+              <span>{t('frameAccentColor')}</span>
             </label>
             <div className="flex items-center gap-2 bg-white border border-border-subtle rounded-lg px-2 py-1">
               <input
