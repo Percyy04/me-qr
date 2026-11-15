@@ -56,12 +56,12 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
     backgroundOptions: { color: design.background.isTransparent ? 'rgba(0,0,0,0)' : design.background.color },
     image: design.logo.url || undefined,
     imageOptions: { hideBackgroundDots: design.logo.hideBackgroundDots, imageSize: design.logo.size, margin: design.logo.margin, crossOrigin: 'anonymous' },
-    qrOptions: { errorCorrectionLevel: 'H' },
+    qrOptions: { errorCorrectionLevel: design.errorCorrectionLevel || (design.logo.url ? 'H' : 'Q') },
   });
 
   useEffect(() => {
     if (isHalftone && previewRef.current) {
-      const matrix = generateQRMatrix(payload, 'H');
+      const matrix = generateQRMatrix(payload, design.errorCorrectionLevel || 'H');
       renderHalftoneQRToCanvas(previewRef.current, matrix, logoImg, {
         size: 400, logoScale: design.logo.size || 0.75,
         darkColor: design.dots.color || '#000000', lightColor: design.background.color || '#ffffff',
@@ -89,7 +89,7 @@ export const StudioQRCanvasView: React.FC<Props> = ({ payload, design, onAutoFix
     setIsExporting(true);
     try {
       if (isHalftone) {
-        const matrix = generateQRMatrix(payload, 'H');
+        const matrix = generateQRMatrix(payload, design.errorCorrectionLevel || 'H');
         const opt = { size, logoScale: design.logo.size || 0.75, darkColor: design.dots.color || '#000000', lightColor: design.background.color || '#ffffff' };
         if (format === 'png') await exportHalftonePNG(matrix, logoImg, opt, 'halftone-qr.png');
         else if (format === 'svg') exportHalftoneSVG(matrix, logoImg, opt, 'halftone-qr.svg');

@@ -46,4 +46,11 @@ describe('Halftone QR Engine', () => {
     expect(svg).toContain('viewBox="0 0 500 500"');
     expect(svg).toContain('</svg>');
   });
+
+  it('generates QR matrix with different error correction levels', () => {
+    const dataL = generateQRMatrix('https://me-qr.com/sample-data-demo-path', 'L');
+    const dataH = generateQRMatrix('https://me-qr.com/sample-data-demo-path', 'H');
+    expect(dataL.size).toBeLessThanOrEqual(dataH.size);
+    expect(dataH.size).toBeGreaterThan(dataL.size);
+  });
 });

@@ -111,6 +111,7 @@ export interface QRInputs {
 
 export interface QRDesign {
   mode?: 'classic' | 'logo';
+  errorCorrectionLevel?: 'L' | 'M' | 'Q' | 'H';
   frame: {
     id: FrameId;
     templateUrl: string | null;

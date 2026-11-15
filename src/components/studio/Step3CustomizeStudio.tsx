@@ -4,6 +4,7 @@ import { FrameTab } from './customize/FrameTab';
 import { PatternEyeTab } from './customize/PatternEyeTab';
 import { ColorTab } from './customize/ColorTab';
 import { LogoTab } from './customize/LogoTab';
+import { LevelTab } from './customize/LevelTab';
 import { PRESET_LOGOS } from '../../data/presetLogos';
 import { useLanguage } from '../../context/LanguageContext';
 import { Sparkles, Paintbrush } from 'lucide-react';
@@ -14,7 +15,7 @@ interface Step3Props {
   onReset: () => void;
 }
 
-type TabKey = 'frames' | 'patterns' | 'logo' | 'colors';
+type TabKey = 'frames' | 'patterns' | 'colors' | 'logo' | 'level';
 
 export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, onReset }) => {
   const { t } = useLanguage();
@@ -43,14 +44,15 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
   };
 
   const tabs: TabKey[] = styleMode === 'logo'
-    ? ['logo', 'colors']
-    : ['frames', 'patterns', 'logo', 'colors'];
+    ? ['logo', 'colors', 'level']
+    : ['frames', 'patterns', 'colors', 'logo', 'level'];
 
   const tabLabels: Record<TabKey, string> = {
     frames: t('tabFrame'),
     patterns: t('tabShape'),
+    colors: t('tabColor'),
     logo: t('tabLogoShort'),
-    colors: t('tabLevel'),
+    level: t('tabLevel'),
   };
 
   return (
@@ -170,8 +172,9 @@ export const Step3CustomizeStudio: React.FC<Step3Props> = ({ design, onChange, o
       <div>
         {activeTab === 'frames' && <FrameTab design={design} onChange={onChange} />}
         {activeTab === 'patterns' && <PatternEyeTab design={design} onChange={onChange} />}
-        {activeTab === 'logo' && <LogoTab design={design} onChange={onChange} />}
         {activeTab === 'colors' && <ColorTab design={design} onChange={onChange} />}
+        {activeTab === 'logo' && <LogoTab design={design} onChange={onChange} />}
+        {activeTab === 'level' && <LevelTab design={design} onChange={onChange} />}
       </div>
     </section>
   );

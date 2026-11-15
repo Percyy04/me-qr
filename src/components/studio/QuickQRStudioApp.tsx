@@ -58,6 +58,7 @@ const INITIAL_INPUTS: QRInputs = {
 };
 
 const INITIAL_DESIGN: QRDesign = {
+  errorCorrectionLevel: 'H',
   frame: {
     id: 'none',
     templateUrl: null,

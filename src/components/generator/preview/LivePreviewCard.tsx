@@ -63,7 +63,7 @@ export const LivePreviewCard: React.FC<LivePreviewCardProps> = ({
       crossOrigin: 'anonymous',
     },
     qrOptions: {
-      errorCorrectionLevel: design.logo.url ? 'H' : 'Q',
+      errorCorrectionLevel: design.errorCorrectionLevel || (design.logo.url ? 'H' : 'Q'),
     },
   });
   useEffect(() => {
