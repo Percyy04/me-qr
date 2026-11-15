@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
-  Bold, Italic, Underline, Strikethrough, List, ListOrdered,
-  Code, Quote, Eye, Edit3, Eraser, Sparkles
+  Bold, Italic, Underline, Strikethrough,
+  AlignLeft, AlignCenter, AlignRight,
+  List, ListOrdered, RemoveFormatting, Eraser, Sparkles
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -12,156 +13,147 @@ export interface TextEditorProps {
   className?: string;
 }
 
-export function parseMarkdownToHtml(raw: string): string {
-  if (!raw) return '<p class="text-slate-400 italic">Chưa có nội dung xem trước...</p>';
-  const escaped = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  return escaped
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/~~(.*?)~~/g, '<del class="text-slate-400">$1</del>')
-    .replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g, '<u class="underline decoration-primary-container">$1</u>')
-    .replace(/`([^`]+)`/g, '<code class="bg-slate-100 text-purple-600 px-1 py-0.5 rounded font-mono text-[11px]">$1</code>')
-    .replace(/^[•\-]\s+(.*)$/gm, '<li class="ml-4 list-disc text-slate-700">$1</li>')
-    .replace(/^(\d+)\.\s+(.*)$/gm, '<li class="ml-4 list-decimal text-slate-700">$2</li>')
-    .replace(/^&gt;\s+(.*)$/gm, '<blockquote class="border-l-2 border-primary-container pl-2 text-slate-500 italic my-1">$1</blockquote>')
-    .replace(/\n/g, '<br />');
-}
-
-export const TextEditor: React.FC<TextEditorProps> = ({ value, onChange, placeholder, className = '' }) => {
+export const TextEditor: React.FC<TextEditorProps> = ({
+  value,
+  onChange,
+  placeholder,
+  className = '',
+}) => {
   const { t, language } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'write' | 'preview'>('write');
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const editorRef = useRef<HTMLDivElement>(null);
+  const isTypingRef = useRef(false);
 
-  const applyFormat = (prefix: string, suffix = prefix) => {
-    const el = textareaRef.current;
-    if (!el) return;
-    const start = el.selectionStart;
-    const end = el.selectionEnd;
-    const text = el.value;
-    const sel = text.substring(start, end) || (language === 'vi' ? 'văn bản' : 'text');
-    onChange(text.substring(0, start) + prefix + sel + suffix + text.substring(end));
-    setTimeout(() => {
-      el.focus();
-      el.setSelectionRange(start + prefix.length, start + prefix.length + sel.length);
-    }, 10);
+  useEffect(() => {
+    if (editorRef.current && !isTypingRef.current) {
+      if (editorRef.current.innerText.trim() !== value.trim()) {
+        editorRef.current.innerText = value;
+      }
+    }
+  }, [value]);
+
+  const handleInput = () => {
+    if (!editorRef.current) return;
+    isTypingRef.current = true;
+    onChange(editorRef.current.innerText);
+    setTimeout(() => { isTypingRef.current = false; }, 50);
   };
 
-  const applyLinePrefix = (pfx: string) => {
-    const el = textareaRef.current;
-    if (!el) return;
-    const start = el.selectionStart;
-    const text = el.value;
-    const sel = text.substring(start, el.selectionEnd);
-    const lines = sel.split('\n').map((l, i) => `${pfx === '1. ' ? `${i + 1}. ` : pfx}${l}`).join('\n');
-    onChange(text.substring(0, start) + (lines || pfx) + text.substring(el.selectionEnd));
-    setTimeout(() => el.focus(), 10);
+  const exec = (cmd: string) => {
+    document.execCommand(cmd, false);
+    if (editorRef.current) {
+      onChange(editorRef.current.innerText);
+      editorRef.current.focus();
+    }
   };
 
-  const stripMarkdown = () => {
-    const clean = value
-      .replace(/\*\*(.*?)\*\*/g, '$1')
-      .replace(/\*(.*?)\*/g, '$1')
-      .replace(/~~(.*?)~~/g, '$1')
-      .replace(/<\/?u>/g, '')
-      .replace(/`([^`]+)`/g, '$1')
-      .replace(/^[•\-]\s+/gm, '')
-      .replace(/^>\s+/gm, '');
-    onChange(clean);
+  const loadTemplate = (html: string) => {
+    if (!editorRef.current) return;
+    editorRef.current.innerHTML = html;
+    onChange(editorRef.current.innerText);
+    editorRef.current.focus();
   };
 
   const charCount = value.length;
   const wordCount = value.trim() ? value.trim().split(/\s+/).length : 0;
 
+  const btn = (cmd: string, title: string, icon: React.ReactNode) => (
+    <button
+      key={cmd}
+      type="button"
+      onMouseDown={(e) => { e.preventDefault(); exec(cmd); }}
+      title={title}
+      className="p-1.5 rounded hover:bg-white hover:text-slate-900 cursor-pointer transition-colors"
+    >
+      {icon}
+    </button>
+  );
+
   return (
-    <div className={`w-full border border-gray-200 rounded-xl bg-gray-50 overflow-hidden shadow-xs ${className}`}>
-      {/* Flowbite WYSIWYG Header Toolbar */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-gray-200 bg-gray-50 flex-wrap gap-1.5">
-        <div className="flex flex-wrap items-center divide-gray-200 divide-x text-gray-500">
+    <div className={`w-full border border-slate-300 rounded-xl bg-slate-50 overflow-hidden shadow-xs focus-within:ring-2 focus-within:ring-primary-container focus-within:border-transparent transition-all ${className}`}>
+      {/* Ribbon Toolbar */}
+      <div className="flex items-center justify-between px-2.5 py-1.5 border-b border-slate-200 bg-slate-100 flex-wrap gap-1 text-slate-700">
+        <div className="flex items-center flex-wrap divide-x divide-slate-300">
           <div className="flex items-center space-x-0.5 pr-2">
-            <button type="button" onClick={() => applyFormat('**')} title={t('textEditorBold')} className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Bold size={14} strokeWidth={2.5} />
-            </button>
-            <button type="button" onClick={() => applyFormat('*')} title={t('textEditorItalic')} className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Italic size={14} strokeWidth={2.5} />
-            </button>
-            <button type="button" onClick={() => applyFormat('<u>', '</u>')} title={t('textEditorUnderline')} className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Underline size={14} strokeWidth={2.5} />
-            </button>
-            <button type="button" onClick={() => applyFormat('~~')} title="Strikethrough" className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Strikethrough size={14} strokeWidth={2.5} />
-            </button>
+            {btn('bold', t('textEditorBold'), <Bold size={14} strokeWidth={2.5} />)}
+            {btn('italic', t('textEditorItalic'), <Italic size={14} strokeWidth={2.5} />)}
+            {btn('underline', t('textEditorUnderline'), <Underline size={14} strokeWidth={2.5} />)}
+            {btn('strikeThrough', 'Gạch ngang', <Strikethrough size={14} strokeWidth={2.5} />)}
           </div>
           <div className="flex items-center space-x-0.5 px-2">
-            <button type="button" onClick={() => applyLinePrefix('- ')} title={t('textEditorBullet')} className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <List size={14} />
-            </button>
-            <button type="button" onClick={() => applyLinePrefix('1. ')} title={t('textEditorNumbered')} className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <ListOrdered size={14} />
-            </button>
-            <button type="button" onClick={() => applyFormat('`')} title="Code" className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Code size={14} />
-            </button>
-            <button type="button" onClick={() => applyLinePrefix('> ')} title="Quote" className="p-1.5 rounded hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
-              <Quote size={14} />
-            </button>
+            {btn('justifyLeft', 'Căn lề trái', <AlignLeft size={14} />)}
+            {btn('justifyCenter', 'Căn lề giữa', <AlignCenter size={14} />)}
+            {btn('justifyRight', 'Căn lề phải', <AlignRight size={14} />)}
           </div>
-          <div className="flex items-center pl-2">
-            <button type="button" onClick={stripMarkdown} title="Lọc bỏ mã Markdown" className="text-[11px] font-semibold text-gray-500 hover:text-primary-container px-1.5 py-1 rounded hover:bg-gray-100 cursor-pointer">
-              Lọc MD
-            </button>
-            <button type="button" onClick={() => onChange('')} title={t('textEditorClear')} className="p-1.5 rounded hover:text-rose-600 hover:bg-rose-50 cursor-pointer text-gray-400">
+          <div className="flex items-center space-x-0.5 px-2">
+            {btn('insertUnorderedList', t('textEditorBullet'), <List size={14} />)}
+            {btn('insertOrderedList', t('textEditorNumbered'), <ListOrdered size={14} />)}
+          </div>
+          <div className="flex items-center pl-2 space-x-0.5">
+            {btn('removeFormat', 'Xóa định dạng đang chọn', <RemoveFormatting size={14} />)}
+            <button
+              type="button"
+              onClick={() => { if (editorRef.current) { editorRef.current.innerHTML = ''; onChange(''); } }}
+              title={t('textEditorClear')}
+              className="p-1.5 rounded hover:bg-rose-50 hover:text-rose-600 cursor-pointer text-slate-400 transition-colors"
+            >
               <Eraser size={14} />
             </button>
           </div>
         </div>
 
-        {/* Flowbite Write / Preview Tabs */}
-        <div className="flex items-center bg-gray-200/80 p-0.5 rounded-lg text-xs font-semibold">
-          <button type="button" onClick={() => setActiveTab('write')} className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all cursor-pointer ${activeTab === 'write' ? 'bg-white text-gray-900 shadow-xs' : 'text-gray-600 hover:text-gray-900'}`}>
-            <Edit3 size={12} /><span>Soạn thảo</span>
-          </button>
-          <button type="button" onClick={() => setActiveTab('preview')} className={`flex items-center gap-1 px-2.5 py-1 rounded-md transition-all cursor-pointer ${activeTab === 'preview' ? 'bg-white text-primary-container shadow-xs' : 'text-gray-600 hover:text-gray-900'}`}>
-            <Eye size={12} /><span>Xem trước MD</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Editor Body: Write vs Flowbite Markdown Preview */}
-      <div className="bg-white">
-        {activeTab === 'write' ? (
-          <textarea
-            ref={textareaRef}
-            rows={5}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            placeholder={placeholder || t('textEditorPlaceholder')}
-            className="block w-full p-3.5 text-xs text-gray-900 bg-white border-0 focus:ring-0 focus:outline-none resize-y min-h-[110px] font-sans"
-          />
-        ) : (
-          <div
-            className="w-full p-3.5 text-xs text-gray-800 bg-white min-h-[110px] leading-relaxed break-words font-sans"
-            dangerouslySetInnerHTML={{ __html: parseMarkdownToHtml(value) }}
-          />
-        )}
-      </div>
-
-      {/* Flowbite Bottom Status Bar */}
-      <div className="flex items-center justify-between px-3 py-2 bg-gray-50 border-t border-gray-200 text-[10px] text-gray-500 font-mono flex-wrap gap-2">
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-gray-700">{charCount} {t('charCount')}</span>
-          <span>•</span>
-          <span className="font-semibold text-gray-700">{wordCount} {t('wordCount')}</span>
-          <span className="text-gray-400">| Flowbite WYSIWYG Standard</span>
-        </div>
-        <div className="flex items-center gap-1.5 font-sans">
-          <span className="text-gray-400 flex items-center gap-1"><Sparkles size={11} className="text-amber-500" />{t('snippets')}</span>
-          <button type="button" onClick={() => onChange('📌 **Ghi chú quan trọng:**\n- Hạn chót: 30/11/2026\n- Vui lòng quét mã để xem chi tiết')} className="px-2 py-0.5 rounded bg-white hover:bg-gray-100 border border-gray-200 font-medium text-gray-600 text-[11px] cursor-pointer">
+        {/* Quick Document Templates */}
+        <div className="flex items-center gap-1.5 text-xs">
+          <span className="text-slate-400 flex items-center gap-1 text-[11px]">
+            <Sparkles size={11} className="text-amber-500" />
+            <span>{t('snippets')}</span>
+          </span>
+          <button
+            type="button"
+            onClick={() => loadTemplate(
+              language === 'vi'
+                ? '<div><b>📌 GHI CHÚ QUAN TRỌNG</b></div><div>• Nội dung công việc cần hoàn thành</div><div>• Hạn chót: 30/11/2026</div><div>• Liên hệ phòng điều phối khi cần hỗ trợ.</div>'
+                : '<div><b>📌 IMPORTANT NOTICE</b></div><div>• Key action item to complete</div><div>• Deadline: November 30, 2026</div><div>• Please contact coordinator for details.</div>'
+            )}
+            className="px-2 py-0.5 rounded-md bg-white hover:bg-slate-200 border border-slate-300 font-medium text-slate-700 text-[11px] cursor-pointer shadow-2xs"
+          >
             {t('snippetNote')}
           </button>
-          <button type="button" onClick={() => onChange('🎉 *Kính chúc bạn vạn sự như ý, an khang thịnh vượng!*')} className="px-2 py-0.5 rounded bg-white hover:bg-gray-100 border border-gray-200 font-medium text-gray-600 text-[11px] cursor-pointer">
+          <button
+            type="button"
+            onClick={() => loadTemplate(
+              language === 'vi'
+                ? '<div><b>🎉 KÍNH CHÚC BẠN VÀ GIA ĐÌNH</b></div><div><i>An khang thịnh vượng, vạn sự như ý, thành công rực rỡ!</i></div>'
+                : '<div><b>🎉 BEST WISHES TO YOU</b></div><div><i>May joy, good health, and success follow you in every step!</i></div>'
+            )}
+            className="px-2 py-0.5 rounded-md bg-white hover:bg-slate-200 border border-slate-300 font-medium text-slate-700 text-[11px] cursor-pointer shadow-2xs"
+          >
             {t('snippetWish')}
           </button>
         </div>
+      </div>
+
+      {/* Word Document Sheet */}
+      <div className="p-3 bg-slate-200/50">
+        <div
+          ref={editorRef}
+          contentEditable
+          suppressContentEditableWarning
+          onInput={handleInput}
+          data-placeholder={placeholder || t('textEditorPlaceholder')}
+          className="w-full min-h-[120px] max-h-[300px] overflow-y-auto p-4 bg-white rounded-lg border border-slate-200 shadow-xs text-xs text-slate-800 font-sans leading-relaxed focus:outline-none empty:before:content-[attr(data-placeholder)] empty:before:text-slate-400 empty:before:pointer-events-none"
+        />
+      </div>
+
+      {/* Status Bar */}
+      <div className="flex items-center justify-between px-3 py-1.5 bg-slate-100 border-t border-slate-200 text-[10px] text-slate-500 font-mono">
+        <div className="flex items-center gap-2">
+          <span>{charCount} {t('charCount')}</span>
+          <span>•</span>
+          <span>{wordCount} {t('wordCount')}</span>
+        </div>
+        <span className="font-sans text-slate-400">
+          {language === 'vi' ? 'Trang soạn thảo văn bản mini' : 'Mini Document Editor'}
+        </span>
       </div>
     </div>
   );
