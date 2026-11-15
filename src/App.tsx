@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { LanguageProvider } from './context/LanguageContext';
 import { QuickQRStudioApp } from './components/studio/QuickQRStudioApp';
 import { HowItWorks } from './components/sections/HowItWorks';
@@ -34,6 +35,7 @@ export const App: React.FC = () => {
           <Route path="*" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </LanguageProvider>
   );
 };
