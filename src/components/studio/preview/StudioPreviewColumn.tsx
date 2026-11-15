@@ -25,51 +25,41 @@ export const StudioPreviewColumn: React.FC<StudioPreviewColumnProps> = ({
 
   return (
     <aside className="w-full space-y-4 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-none">
-      {/* Real-time Preview Card */}
-      <div className="bg-surface-card rounded-2xl border border-border-subtle p-5 shadow-elevated">
-        {/* Card Header & Step Indicator */}
-        <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-border-subtle">
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-primary-container text-white text-xs font-bold flex items-center justify-center shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs">
+        {/* Step 3 Header: Circle 3 & "Tạo & tải QR" */}
+        <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100">
+          <div className="flex items-center gap-2.5">
+            <span className="w-6 h-6 rounded-full bg-[#1E293B] text-white text-xs font-bold flex items-center justify-center shrink-0">
               3
             </span>
-            <h3 className="text-sm font-bold text-slate-text-strong font-display">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 font-display">
               {t('previewTitle')}
             </h3>
           </div>
 
-          <span className="text-[10px] font-bold uppercase tracking-wider text-primary-container bg-indigo-tint px-2 py-0.5 rounded-full">
-            {t('livePreviewBadge')}
-          </span>
-        </div>
-
-        {/* Tab Switcher: QR Canvas vs Mobile Page */}
-        <div className="grid grid-cols-2 p-1 bg-canvas-bg rounded-xl border border-border-subtle mb-4 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => setActiveTab('qr')}
-            className={`py-2 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-              activeTab === 'qr'
-                ? 'bg-white text-primary-container shadow-xs font-bold'
-                : 'text-slate-text-muted hover:text-slate-text-strong'
-            }`}
-          >
-            <QrCode size={15} />
-            <span>{t('tabQrCanvas')}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('mobile')}
-            className={`py-2 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-              activeTab === 'mobile'
-                ? 'bg-white text-primary-container shadow-xs font-bold'
-                : 'text-slate-text-muted hover:text-slate-text-strong'
-            }`}
-          >
-            <Smartphone size={15} />
-            <span>{t('tabMobilePage')}</span>
-          </button>
+          {/* Compact QR / Mobile switcher */}
+          <div className="flex items-center bg-slate-100 p-0.5 rounded-lg text-xs">
+            <button
+              type="button"
+              onClick={() => setActiveTab('qr')}
+              className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                activeTab === 'qr' ? 'bg-white text-purple-600 shadow-2xs font-bold' : 'text-slate-500'
+              }`}
+              title={t('tabQrCanvas')}
+            >
+              <QrCode size={14} />
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('mobile')}
+              className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                activeTab === 'mobile' ? 'bg-white text-purple-600 shadow-2xs font-bold' : 'text-slate-500'
+              }`}
+              title={t('tabMobilePage')}
+            >
+              <Smartphone size={14} />
+            </button>
+          </div>
         </div>
 
         {/* Active View Render */}

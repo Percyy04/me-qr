@@ -4,8 +4,8 @@ import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { AllTypesModal } from './AllTypesModal';
 import { useLanguage } from '../../context/LanguageContext';
 import {
-  Link, AlignLeft, User, MessageCircle,
-  MapPin, Wifi, Mail, Sparkles
+  Link, AlignLeft, Image as ImageIcon, FileText,
+  MapPin, Wifi, PlayCircle, Sparkles
 } from 'lucide-react';
 
 interface Step1Props {
@@ -32,12 +32,12 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
   const baseItems: { id: QRType; label: string; icon: React.ReactNode }[] = [
     { id: 'url', label: t('typeUrl'), icon: <Link size={18} strokeWidth={2.2} /> },
     { id: 'text', label: t('typeText'), icon: <AlignLeft size={18} strokeWidth={2.2} /> },
-    { id: 'vcard', label: t('typeVcard'), icon: <User size={18} strokeWidth={2.2} /> },
-    { id: 'wifi', label: t('typeWifi'), icon: <Wifi size={18} strokeWidth={2.2} /> },
-    { id: 'whatsapp', label: t('typeWhatsapp'), icon: <MessageCircle size={18} strokeWidth={2.2} /> },
-    { id: 'social', label: 'Facebook', icon: <FacebookIcon /> },
+    { id: 'image', label: t('typeImage'), icon: <ImageIcon size={18} strokeWidth={2.2} /> },
+    { id: 'pdf', label: t('typePdf'), icon: <FileText size={18} strokeWidth={2.2} /> },
+    { id: 'social', label: t('typeSocial'), icon: <FacebookIcon /> },
     { id: 'map', label: t('typeMap'), icon: <MapPin size={18} strokeWidth={2.2} /> },
-    { id: 'phone', label: 'X (Twitter)', icon: <XTwitterIcon /> },
+    { id: 'wifi', label: t('typeWifi'), icon: <Wifi size={18} strokeWidth={2.2} /> },
+    { id: 'phone', label: t('typePhone'), icon: <XTwitterIcon /> },
   ];
 
   const isSelectedInBase = baseItems.some((item) => item.id === selectedType);
@@ -47,13 +47,12 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
 
   const ninthItem = activeCustomCat
     ? { id: activeCustomCat.id, label: activeCustomCat.title, icon: <Sparkles size={18} strokeWidth={2.2} /> }
-    : { id: 'email' as QRType, label: t('typeEmail'), icon: <Mail size={18} strokeWidth={2.2} /> };
+    : { id: 'multiurl' as QRType, label: t('typeMultiurl'), icon: <PlayCircle size={18} strokeWidth={2.2} /> };
 
   const displayedItems = [...baseItems, ninthItem];
 
   return (
     <>
-      {/* 1-Row Horizontal Bar Matching Reference UI */}
       <section className="bg-white rounded-2xl border border-slate-200/80 p-2 sm:p-2.5 shadow-xs w-full">
         <div className="grid grid-cols-5 md:grid-cols-10 gap-1 sm:gap-1.5 w-full">
           {displayedItems.map((item) => {
@@ -79,7 +78,6 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
             );
           })}
 
-          {/* 10th Button: Xem Tất cả */}
           <button
             type="button"
             onClick={() => setModalOpen(true)}

@@ -134,9 +134,14 @@ export const QuickQRStudioApp: React.FC = () => {
 
       {/* Main Workspace */}
       <main className="max-w-7xl mx-auto px-4 sm:px-8 pb-16">
+        {/* Full-width Horizontal Category Bar spanning across editor and preview */}
+        <div className="mb-6">
+          <Step1TypeBento selectedType={type} onSelectType={setType} />
+        </div>
+
+        {/* 2-Column Split: Left (Steps 1 & 2) vs Right (Step 3 Preview) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-8 space-y-6">
-            <Step1TypeBento selectedType={type} onSelectType={setType} />
             <Step2ContentWrapper type={type} inputs={inputs} onChange={setInputs} />
             <Step3CustomizeStudio
               design={design}

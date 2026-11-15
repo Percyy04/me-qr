@@ -27,39 +27,19 @@ export const Step2ContentWrapper: React.FC<Step2Props> = ({ type, inputs, onChan
     }
   };
 
-  const getVariantTitle = () => {
-    switch (variant) {
-      case 'form-a':
-        return t('step2UrlDesc');
-      case 'form-c':
-        return t('step2VcardDesc');
-      case 'form-d':
-        return type === 'wifi' ? t('step2WifiDesc') : t('step2DirectDesc');
-    }
-  };
-
   return (
-    <section className="bg-surface-card rounded-2xl border border-border-subtle p-6 shadow-subtle transition-all">
-      {/* Header with Step 2 Badge */}
-      <div className="flex items-center justify-between pb-4 border-b border-border-subtle mb-4">
-        <div className="flex items-center gap-3">
-          <span className="w-8 h-8 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold text-sm shadow-sm">
-            2
-          </span>
-          <div>
-            <h2 className="text-lg font-bold text-slate-text-strong font-display">
-              {t('step2Title')}
-            </h2>
-            <p className="text-xs text-slate-text-muted">{getVariantTitle()}</p>
-          </div>
-        </div>
-
-        <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-indigo-tint text-primary-container border border-indigo-200">
-          {variant.toUpperCase()}
+    <section className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-6 shadow-xs transition-all">
+      {/* Header with Dark Circle 1 & "Thêm nội dung" */}
+      <div className="flex items-center gap-2.5 pb-4 mb-4 border-b border-slate-100">
+        <span className="w-6 h-6 rounded-full bg-[#1E293B] text-white flex items-center justify-center font-bold text-xs shrink-0">
+          1
         </span>
+        <h2 className="text-base sm:text-lg font-bold text-slate-900 font-display">
+          {t('step2Title')}
+        </h2>
       </div>
 
-      {/* Conditional Rendering of 1 Form Variant */}
+      {/* Dynamic Content Form */}
       {renderActiveForm()}
     </section>
   );
