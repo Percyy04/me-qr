@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
             'vendor-react': ['react', 'react-dom'],
             'vendor-qr': ['qr-code-styling'],
             'vendor-pdf': ['jspdf'],
+            'vendor-editor': ['@tiptap/react', '@tiptap/starter-kit', '@tiptap/extension-underline'],
           },
         },
       },
