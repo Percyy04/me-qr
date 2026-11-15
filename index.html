@@ -4,15 +4,115 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ME-QR Clone | Tạo mã QR miễn phí chất lượng cao 100% Client-Side</title>
-    <meta name="description" content="Trình tạo mã QR miễn phí 100% Client-Side không giới hạn lượt quét, tùy biến màu sắc, khung, logo và tải xuống PNG, SVG, PDF." />
+    <title>QuickQR Studio | Tạo mã QR chuyên nghiệp & Miễn phí 100% Client-Side</title>
+    <meta name="description" content="Trình tạo mã QR chuyên nghiệp, tùy biến logo halftone, khung viền, hoa văn và tải xuống PNG, SVG, PDF. 100% riêng tư và bảo mật trên trình duyệt." />
+    <link rel="canonical" href="https://quickqr.io/" />
+    <link rel="alternate" hreflang="vi" href="https://quickqr.io/" />
+    <link rel="alternate" hreflang="en" href="https://quickqr.io/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://quickqr.io/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quickqr.io/" />
+    <meta property="og:site_name" content="QuickQR Studio" />
+    <meta property="og:title" content="QuickQR Studio | Tạo mã QR chuyên nghiệp & Miễn phí" />
+    <meta property="og:description" content="Trình tạo mã QR tùy biến cao, hỗ trợ logo halftone, vCard, Wi-Fi, WhatsApp, Google Maps. Tải vector SVG & PNG sắc nét." />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="QuickQR Studio | Trình tạo mã QR chuyên nghiệp" />
+    <meta name="twitter:description" content="Tạo mã QR miễn phí 100% Client-Side. Không lưu trữ dữ liệu, không giới hạn lượt quét." />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://quickqr.io/#website",
+          "url": "https://quickqr.io/",
+          "name": "QuickQR Studio",
+          "description": "Trình tạo mã QR chuyên nghiệp miễn phí 100% Client-Side",
+          "inLanguage": "vi-VN"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://quickqr.io/#app",
+          "name": "QuickQR Studio",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "VND"
+          },
+          "featureList": [
+            "Tạo mã QR URL và website",
+            "Tạo mã QR Wi-Fi kết nối tự động",
+            "Tạo mã QR danh bạ vCard thông minh",
+            "Tạo mã QR nhúng Logo Halftone",
+            "Xuất file vector SVG và PNG độ phân giải cao"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://quickqr.io/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Mã QR tạo tại đây có miễn phí và vĩnh viễn không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có! Toàn bộ mã QR được tạo trực tiếp 100% trên trình duyệt của bạn (Client-Side), không qua máy chủ trung gian, không bị gắn quảng cáo chuyển hướng và không bao giờ hết hạn sử dụng."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Có giới hạn số lần quét mã QR không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hoàn toàn không giới hạn. Dữ liệu (URL, Wi-Fi, vCard...) được mã hóa trực tiếp vào các ô vuông của mã QR tĩnh (Static QR), nên bất kỳ ai quét bằng camera đều đọc trực tiếp dữ liệu mà không thông qua bất kỳ server nào."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Nên tải định dạng nào: PNG, SVG hay PDF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PNG phù hợp để chia sẻ trên mạng xã hội hoặc gửi tin nhắn. SVG là định dạng vector vô hạn độ nét, lý tưởng cho in ấn bao bì, ấn phẩm kích thước lớn. PDF thích hợp để in ngay ra giấy A4 kèm tiêu đề trang trọng."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Làm sao để đảm bảo mã QR luôn quét được khi thêm logo hoặc đổi màu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ứng dụng tự động nâng mức sửa lỗi (Error Correction) lên mức cao (Q hoặc H) khi bạn thêm logo. Bạn nên giữ độ tương phản cao giữa màu hoa văn và màu nền (tốt nhất là hoa văn đậm trên nền sáng)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Thông tin cá nhân hoặc mật khẩu Wi-Fi của tôi có an toàn không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tuyệt đối an toàn. Vì ứng dụng chạy 100% phía trình duyệt (Client-Side), không có bất kỳ dữ liệu nào được gửi lên server hoặc lưu trữ ở bất kỳ cơ sở dữ liệu nào."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

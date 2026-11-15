@@ -36,12 +36,13 @@ export const Footer: React.FC = () => {
         {/* Column 3 */}
         <div>
           <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">
-            Định dạng xuất
+            Tài nguyên & Hướng dẫn
           </h4>
           <ul className="space-y-2 text-xs">
-            <li><a href="#generator-widget" className="hover:text-white transition-colors">PNG độ nét cao (4K)</a></li>
-            <li><a href="#generator-widget" className="hover:text-white transition-colors">Vector SVG vô hạn zoom</a></li>
-            <li><a href="#generator-widget" className="hover:text-white transition-colors">Bản in tài liệu PDF A4</a></li>
+            <li><a href="#blog" className="hover:text-white transition-colors">Cẩm nang kiến thức QR</a></li>
+            <li><a href="#faq" className="hover:text-white transition-colors">Câu hỏi thường gặp (FAQ)</a></li>
+            <li><a href="/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Sơ đồ trang (Sitemap)</a></li>
+            <li><a href="#generator-widget" className="hover:text-white transition-colors">Xuất SVG & PDF sắc nét</a></li>
           </ul>
         </div>
 

@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { QuickQRStudioApp } from './components/studio/QuickQRStudioApp';
 import { HowItWorks } from './components/sections/HowItWorks';
 import { FeaturesHighlight } from './components/sections/FeaturesHighlight';
+import { BlogSection } from './components/sections/BlogSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { CTASection } from './components/sections/CTASection';
 import { Footer } from './components/layout/Footer';
@@ -17,6 +18,7 @@ export const App: React.FC = () => {
         {/* Supporting Conversion Sections from ME-QR Ecosystem */}
         <HowItWorks />
         <FeaturesHighlight />
+        <BlogSection />
         <FAQSection />
         <CTASection />
         <Footer />

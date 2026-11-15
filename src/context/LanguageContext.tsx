@@ -30,6 +30,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     if (typeof document !== 'undefined') {
       document.documentElement.lang = language;
+      if (language === 'en') {
+        document.title = 'QuickQR Studio | Professional QR Code Generator & 100% Client-Side Free';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'Professional QR code generator with halftone logo customization, SVG and PNG exports. 100% private in your browser.');
+      } else {
+        document.title = 'QuickQR Studio | Tạo mã QR chuyên nghiệp & Miễn phí 100% Client-Side';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'Trình tạo mã QR chuyên nghiệp, tùy biến logo halftone, khung viền, hoa văn và tải xuống PNG, SVG, PDF. 100% riêng tư và bảo mật trên trình duyệt.');
+      }
     }
   }, [language]);
 
