@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022C22" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="20"/>
+  <circle cx="400" cy="200" r="160" fill="url(#glow)" opacity="0.15" filter="blur(40px)"/>
+  <path d="M360,170 Q400,140 440,170 Q470,200 450,230 L460,260 L430,250 Q400,270 370,250 Q340,220 360,170 Z" fill="none" stroke="#34D399" stroke-width="7"/><circle cx="400" cy="210" r="12" fill="#34D399"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#F1F5F9" letter-spacing="1.5">WHATSAPP DIRECT CHAT TRIGGER</text>
+</svg>

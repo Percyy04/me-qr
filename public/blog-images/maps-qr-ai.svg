@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#431407" />
+      <stop offset="100%" stop-color="#7C2D12" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="20"/>
+  <circle cx="400" cy="200" r="160" fill="url(#glow)" opacity="0.15" filter="blur(40px)"/>
+  <path d="M400,150 C380,150 365,165 365,185 C365,210 400,250 400,250 C400,250 435,210 435,185 C435,165 420,150 400,150 Z" fill="#FB923C"/><circle cx="400" cy="185" r="10" fill="#431407"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#F1F5F9" letter-spacing="1.5">GOOGLE MAPS LOCATION PIN</text>
+</svg>

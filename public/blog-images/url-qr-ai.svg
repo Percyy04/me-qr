@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="20"/>
+  <circle cx="400" cy="200" r="160" fill="url(#glow)" opacity="0.15" filter="blur(40px)"/>
+  <path d="M360,180 L380,160 Q400,140 420,160 L440,180 Q460,200 440,220 L420,240 M440,180 L420,200 M380,220 L360,240 Q340,260 360,280 L380,260" stroke="#60A5FA" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#F1F5F9" letter-spacing="1.5">DYNAMIC WEB URL & UTM ROUTING</text>
+</svg>

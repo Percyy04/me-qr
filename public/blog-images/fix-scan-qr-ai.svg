@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134E4A" />
+      <stop offset="100%" stop-color="#115E59" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="100%" stop-color="#14B8A6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="20"/>
+  <circle cx="400" cy="200" r="160" fill="url(#glow)" opacity="0.15" filter="blur(40px)"/>
+  <path d="M340,160 L340,140 L360,140 M440,140 L460,140 L460,160 M460,240 L460,260 L440,260 M360,260 L340,260 L340,240" stroke="#2DD4BF" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M380,200 L395,215 L425,185" stroke="#2DD4BF" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#F1F5F9" letter-spacing="1.5">SCANNABILITY AUDIT & CONTRAST FIX</text>
+</svg>

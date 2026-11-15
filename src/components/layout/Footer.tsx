@@ -39,10 +39,10 @@ export const Footer: React.FC = () => {
             Tài nguyên & Hướng dẫn
           </h4>
           <ul className="space-y-2 text-xs">
-            <li><a href="#blog" className="hover:text-white transition-colors">Cẩm nang kiến thức QR</a></li>
-            <li><a href="#faq" className="hover:text-white transition-colors">Câu hỏi thường gặp (FAQ)</a></li>
+            <li><a href="/blog" className="hover:text-white transition-colors">Cẩm nang kiến thức QR (Blog)</a></li>
+            <li><a href="/#faq" className="hover:text-white transition-colors">Câu hỏi thường gặp (FAQ)</a></li>
             <li><a href="/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Sơ đồ trang (Sitemap)</a></li>
-            <li><a href="#generator-widget" className="hover:text-white transition-colors">Xuất SVG & PDF sắc nét</a></li>
+            <li><a href="/#generator-widget" className="hover:text-white transition-colors">Xuất SVG & PDF sắc nét</a></li>
           </ul>
         </div>
 

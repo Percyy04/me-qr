@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, Crown, Globe, ChevronDown, Check } from 'lucide-react';
 import { Logo } from '../common/Logo';
 import { useLanguage } from '../../context/LanguageContext';
@@ -29,7 +30,9 @@ export const StudioHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo & Version Pill */}
         <div className="flex items-center gap-3">
-          <Logo size="md" />
+          <Link to="/" className="flex items-center gap-2 hover:opacity-95 transition-opacity">
+            <Logo size="md" />
+          </Link>
           <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-indigo-tint text-primary-container border border-indigo-200">
             {t('proBadge')}
           </span>
@@ -37,10 +40,13 @@ export const StudioHeader: React.FC = () => {
 
         {/* Center Nav Links */}
         <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600">
-          <a href="#blog" className="hover:text-purple-600 transition-colors">
-            {language === 'en' ? 'Guides' : 'Cẩm nang QR'}
-          </a>
-          <a href="#faq" className="hover:text-purple-600 transition-colors">
+          <Link to="/" className="hover:text-purple-600 transition-colors">
+            {language === 'en' ? 'Studio' : 'Tạo mã QR'}
+          </Link>
+          <Link to="/blog" className="hover:text-purple-600 transition-colors">
+            {language === 'en' ? 'Blog & Guides' : 'Cẩm nang QR'}
+          </Link>
+          <a href="/#faq" className="hover:text-purple-600 transition-colors">
             {language === 'en' ? 'FAQ' : 'Hỏi đáp'}
           </a>
         </nav>
