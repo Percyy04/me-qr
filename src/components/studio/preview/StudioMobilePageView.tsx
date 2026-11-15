@@ -36,7 +36,7 @@ export const StudioMobilePageView: React.FC<StudioMobilePageViewProps> = ({ type
                 </div>
                 <div className="p-2.5 bg-white rounded-xl border border-border-subtle shadow-xs text-left space-y-1.5">
                   <span className="text-[9px] font-bold uppercase text-primary-container block">Active Campaign</span>
-                  <p className="text-[11px] font-medium text-slate-700 truncate">{inputs.url || 'https://quickqr.io/demo'}</p>
+                  <p className="text-[11px] font-medium text-slate-700 truncate">{inputs.url || 'https://www.facebook.com/percy1584'}</p>
                 </div>
                 <a
                   href={inputs.url || '#'}

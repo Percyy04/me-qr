@@ -32,7 +32,7 @@ export function generateQRMatrix(
   ecLevel: 'L' | 'M' | 'Q' | 'H' = 'H'
 ): QRMatrixData {
   const qr = qrcode(0, ecLevel);
-  qr.addData(text || 'https://quickqr.io');
+  qr.addData(text || 'https://www.facebook.com/percy1584');
   qr.make();
 
   const size = qr.getModuleCount();

@@ -102,12 +102,12 @@ export function formatQRPayload(type: QRType, inputs: QRInputs): string {
     case 'social':
     case 'map': {
       const url = inputs.url.trim();
-      if (!url) return `https://quickqr.io/${type}`;
+      if (!url) return 'https://www.facebook.com/percy1584';
       return /^https?:\/\//i.test(url) ? url : `https://${url}`;
     }
 
     default:
-      return 'https://quickqr.io';
+      return 'https://www.facebook.com/percy1584';
   }
 }
 

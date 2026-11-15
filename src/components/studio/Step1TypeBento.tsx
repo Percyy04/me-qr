@@ -4,8 +4,8 @@ import { BENTO_CATEGORIES } from '../../data/bentoCategories';
 import { AllTypesModal } from './AllTypesModal';
 import { useLanguage } from '../../context/LanguageContext';
 import {
-  Link, AlignLeft, Image as ImageIcon, FileText,
-  MapPin, Wifi, PlayCircle, Sparkles
+  Link, AlignLeft, Image as ImageIcon, User,
+  MapPin, Wifi, MessageCircle, Sparkles
 } from 'lucide-react';
 
 interface Step1Props {
@@ -33,7 +33,7 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
     { id: 'url', label: t('typeUrl'), icon: <Link size={18} strokeWidth={2.2} /> },
     { id: 'text', label: t('typeText'), icon: <AlignLeft size={18} strokeWidth={2.2} /> },
     { id: 'image', label: t('typeImage'), icon: <ImageIcon size={18} strokeWidth={2.2} /> },
-    { id: 'pdf', label: t('typePdf'), icon: <FileText size={18} strokeWidth={2.2} /> },
+    { id: 'vcard', label: t('typeVcard'), icon: <User size={18} strokeWidth={2.2} /> },
     { id: 'social', label: t('typeSocial'), icon: <FacebookIcon /> },
     { id: 'map', label: t('typeMap'), icon: <MapPin size={18} strokeWidth={2.2} /> },
     { id: 'wifi', label: t('typeWifi'), icon: <Wifi size={18} strokeWidth={2.2} /> },
@@ -47,7 +47,7 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
 
   const ninthItem = activeCustomCat
     ? { id: activeCustomCat.id, label: activeCustomCat.title, icon: <Sparkles size={18} strokeWidth={2.2} /> }
-    : { id: 'multiurl' as QRType, label: t('typeMultiurl'), icon: <PlayCircle size={18} strokeWidth={2.2} /> };
+    : { id: 'whatsapp' as QRType, label: t('typeWhatsapp'), icon: <MessageCircle size={18} strokeWidth={2.2} /> };
 
   const displayedItems = [...baseItems, ninthItem];
 

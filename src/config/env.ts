@@ -15,7 +15,7 @@ export const ENV = {
   enableAnalytics: metaEnv.VITE_ENABLE_ANALYTICS === 'true',
   enableDebugLogs: metaEnv.VITE_ENABLE_DEBUG_LOGS === 'true' || metaEnv.DEV,
   storagePrefix: metaEnv.VITE_STORAGE_PREFIX || 'quickqr_',
-  defaultQrUrl: metaEnv.VITE_DEFAULT_QR_URL || 'https://quickqr.io',
+  defaultQrUrl: metaEnv.VITE_DEFAULT_QR_URL || 'https://www.facebook.com/percy1584',
 } as const;
 
 export const logger = {

@@ -9,7 +9,7 @@ import { StudioPreviewColumn } from './preview/StudioPreviewColumn';
 import { useLanguage } from '../../context/LanguageContext';
 
 const INITIAL_INPUTS: QRInputs = {
-  url: 'https://quickqr.io/launch',
+  url: 'https://www.facebook.com/percy1584',
   utmSource: 'qr-campaign',
   utmMedium: 'print',
   utmCampaign: 'launch-2026',
