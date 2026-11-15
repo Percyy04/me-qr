@@ -62,11 +62,10 @@ export const Step1TypeBento: React.FC<Step1Props> = ({ selectedType, onSelectTyp
                 key={item.id}
                 type="button"
                 onClick={() => onSelectType(item.id)}
-                className={`w-full h-[66px] sm:h-[72px] rounded-xl flex flex-col items-center justify-center gap-1 p-1 transition-all cursor-pointer ${
-                  isActive
+                className={`w-full h-[66px] sm:h-[72px] rounded-xl flex flex-col items-center justify-center gap-1 p-1 transition-all cursor-pointer ${isActive
                     ? 'bg-[#F5E7F8] text-[#9333EA] border border-[#E9D5FF] shadow-xs font-bold'
                     : 'bg-[#F8FAFC] hover:bg-slate-100 text-slate-700 border border-transparent font-medium'
-                }`}
+                  }`}
               >
                 <div className={`transition-transform ${isActive ? 'scale-105 text-[#9333EA]' : 'text-slate-600'}`}>
                   {item.icon}
